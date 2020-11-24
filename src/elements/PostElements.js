@@ -7,7 +7,22 @@ export const PostWrapper = styled.main`
   padding: ${props =>
     `${props.theme.spacings.xLarge} ${props.theme.spacings.xxLarge}`};
   box-shadow: ${props => props.theme.shadows.shadow1};
-  grid-column: 2 / span 6;
+  z-index: 10;
+
+
+//add styles on the posts, normal css styles
+
+code {
+  font-family: ${props=>props.theme.fonts.code};
+  font-size:1rem;
+  line-height: 1.875rem;
+  color: ${props=>props.theme.colors.light1};
+  background-color: ${props=>props.theme.colors.dark3};
+  padding: 0 0.3rem;
+}
+  @media ${props => props.theme.breakpoints.tablet} {
+    grid-column: 2 / span 6;
+  }
 
   @media ${props => props.theme.breakpoints.mobile} {
     padding: ${props =>
