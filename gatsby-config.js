@@ -1,5 +1,13 @@
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    title: 'My blogggg',
+    description: 'Awesome blog to checkout',
+    url: 'https://temmie.com',
+    image: 'office.jpg',
+    twitterUsername: '@temmmie_',
+    author: 'Temitope'
+  },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,

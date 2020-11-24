@@ -1,6 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { FeatureImage, Content, Container, ContentCard } from "../components"
+import {
+  FeatureImage,
+  Content,
+  Container,
+  ContentCard,
+  Seo,
+} from "../components"
 import { H1, P } from "../elements"
 import Pagination from "../components/Pagination"
 
@@ -13,6 +19,7 @@ export default function allPosts({ pageContext, data }) {
   const posts = data.allMdx.edges
   return (
     <Container>
+      <Seo />
       <FeatureImage />
       <Content>
         <H1 textAlign="center" margin="0 0 1rem 0">
