@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import {
   FooterWrapper,
   FooterSocialWrapper,
-  FooterSocialIcons,
+  FooterSocialIcons, P
 } from "../elements"
 
 export const Footer = () => {
@@ -40,7 +40,7 @@ export const Footer = () => {
             <img src={data.youtube.publicURL} alt="youtube-icon" />
           </a>
         </FooterSocialIcons>
-        <p>&copy 2020 Company. All right reserved</p>
+        <P size='xSmall' color='dark3'>&copy 2020 Company. All right reserved</P>
       </FooterSocialWrapper>
     </FooterWrapper>
   )
