@@ -1,3 +1,15 @@
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === `MarkdownRemark`) {
+    const value = createFilePath({ node, getNode })
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    })
+  }
+}
+
 exports.createPages = async function ({ actions, graphql }) {
   const { data } = await graphql(`
     query {
@@ -6,6 +18,7 @@ exports.createPages = async function ({ actions, graphql }) {
           node {
             frontmatter {
               slug
+              title
             }
             id
           }
@@ -15,13 +28,13 @@ exports.createPages = async function ({ actions, graphql }) {
   `)
 
   // Create paginated pages for post
-
-  const postPerPage = 3
-  const numPages = Math.ceil(data.allMdx.edges.length / postPerPage)
+  const posts = data.allMdx.edges
+  const postPerPage = 1
+  const numPages = Math.ceil(posts.length / postPerPage)
 
   Array.from({ length: numPages }).forEach((_, i) => {
     actions.createPage({
-      path: i === 0 ? `/` : `/${i + 1}`,
+      path: i === 0 ? `/blog` : `/blog/${i + 1}`,
       component: require.resolve("./src/templates/allPosts.js"),
       context: {
         limit: postPerPage,
@@ -33,13 +46,16 @@ exports.createPages = async function ({ actions, graphql }) {
   })
 
   //Create single blog posts
-  data.allMdx.edges.forEach(edge => {
+  posts.forEach((edge, index) => {
     const slug = edge.node.frontmatter.slug
     const id = edge.node.id
+    const previous = index === posts.length - 1 ? null : posts[index + 1].node
+    const next = index === 0 ? null : posts[index - 1].node
+
     actions.createPage({
-      path: slug,
+      path: `blog/${slug}`,
       component: require.resolve(`./src/templates/singlePost.js`),
-      context: { id },
+      context: { id, previous, next },
     })
   })
 }
