@@ -1,5 +1,9 @@
 import React from "react"
-import { HomeHeader } from "../elements/HeaderElements"
+import {
+  HomeHeader,
+  HomeHeaderAvatar,
+  HomeHeaderProfileSummary,
+} from "../elements/HeaderElements"
 import ImageLoad from "../utils/ImageLoader"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
@@ -16,12 +20,17 @@ export default function Header({ fixed }) {
   `)
   return (
     <HomeHeader>
-      <div className="profile__summary">
+      <HomeHeaderProfileSummary>
         <div className="intro">
           <h2>
             Hi, I am <span className="my__name">TEMITOPE AYODELE</span>
           </h2>
-          <p>A Frontend engineer based in Lagos, Nigeria</p>
+          <p className="role">Frontend Engineer and Technical writer</p>
+          <p className="summary">
+            I am a web-accessibility and open-source advocate. I am a great
+            team-player who has worked with awesome teams to build great
+            products. I am self-taught with rich experience on React and Vue.
+          </p>
         </div>
         <div className="contact__links">
           <a
@@ -46,9 +55,9 @@ export default function Header({ fixed }) {
             Dev
           </a>
         </div>
-      </div>
-      <div className="avatar">
-        <Img
+      </HomeHeaderProfileSummary>
+      <HomeHeaderAvatar>
+        {/* <Img
           fixed={fixed ? fixed : data.imageSharp.fixed}
           style={{
             // position: 'absolute',
@@ -60,13 +69,23 @@ export default function Header({ fixed }) {
             border: "4px solid gray",
             objectFit: "cover",
           }}
+        /> */}
+        <Img
+          fixed={fixed ? fixed : data.imageSharp.fixed}
+          style={{
+            width: "100%",
+            height: "100%",
+            borderRadius: "50%",
+            // border: "4px solid gray",
+            objectFit: "cover",
+          }}
         />
         {/* <ImageLoad
           src={require('../images/avatar.jpg')}
         //   placeholder={require('../../src/assets/images/blur.png')}
           alt="Decription"
         /> */}
-      </div>
+      </HomeHeaderAvatar>
     </HomeHeader>
   )
 }

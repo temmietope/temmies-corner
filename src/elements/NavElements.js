@@ -25,7 +25,13 @@ export const NavWrapper = styled.nav`
   align-items: center;
   left: 0;
   top: 0;
-  background: white;
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+  -o-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
+
+  backdrop-filter: blur(10px);
+  /* height: 3rem; */
   .logo {
     display: block;
     float: left;
@@ -44,12 +50,12 @@ export const NavWrapper = styled.nav`
     -webkit-text-fill-color: transparent;
     text-shadow: 2px 2px 434349;
   }
-input{
-  position: absolute;
-  right: 1rem;
-  height: 100%;
-  opacity: 0;
-}
+  input {
+    position: absolute;
+    right: 1rem;
+    height: 100%;
+    opacity: 0;
+  }
   ul {
     list-style: none;
     display: flex;

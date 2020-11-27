@@ -23,7 +23,8 @@ export default function Home({ pageContext, data }) {
   return (
     <Container>
       <Seo />
-      {/* <Header /> */}
+      <Header />
+      {/* <FeatureImage/> */}
       <Content page="home">
         {/* <H1 textAlign="center" margin="0 0 1rem 0">
           Latest Posts
