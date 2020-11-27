@@ -17,8 +17,9 @@ export const ContentCard = ({ date, title, excerpt, slug, page }) => {
       </P>
       <Button href={slug}>Read More</Button> */}
       <h2>{title}</h2>
-      <p className='excerpt'>{excerpt}</p>
       <small>{date}</small>
+
+      <p className="excerpt">{excerpt}</p>
       {/* <Button href={slug}>Read More</Button> */}
     </CardWrapper>
   )

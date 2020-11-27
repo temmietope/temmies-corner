@@ -29,13 +29,14 @@ export default function Home({ pageContext, data }) {
         {/* <H1 textAlign="center" margin="0 0 1rem 0">
           Latest Posts
         </H1> */}
-        <PageHead page="home">Latest Posts</PageHead>
-
-        <div className="view-all">
-          <Link to="blog">
-            <button to="/blog">All Posts</button>
+        {/* <PageHead page="home">Latest Posts</PageHead> */}
+        <div className='home__content-header'>
+          <h3>Recent Posts</h3>
+          <Link to="/blog" className="view-all">
+            All Posts
           </Link>
         </div>
+
         <div className="posts">
           {posts.map(post => (
             <ContentCard
@@ -55,7 +56,7 @@ export default function Home({ pageContext, data }) {
 
 export const pageQuery = graphql`
   query RecentPostsQuery {
-    allMdx(sort: { fields: frontmatter___date, order: DESC }, limit: 3) {
+    allMdx(sort: { fields: frontmatter___date, order: DESC }, limit: 2) {
       edges {
         node {
           frontmatter {
