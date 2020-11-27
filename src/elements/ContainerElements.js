@@ -27,6 +27,7 @@ export const ContainerWrapper = styled.div`
   align-items: center;
   flex-flow: column;
   background: white;
+  --padding: 10%;
 
   @media ${(props) => props.theme.breakpoints.tablet} {
     /* grid-template-columns: 2rem repeat(6, 1fr) 2rem;

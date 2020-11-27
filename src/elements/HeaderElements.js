@@ -1,7 +1,8 @@
 import styled from "styled-components"
 
 export const HomeHeader = styled.div`
-  width: 90%;
+  /* width: 90%; */
+  padding: 0 var(--padding);
   height: 35rem;
   position: relative;
   display: flex;
@@ -46,7 +47,7 @@ export const HomeHeader = styled.div`
 
 export const HomeHeaderProfileSummary = styled.div`
   // width: 50%;
-  flex: 0.8;
+  flex: 0.7;
   box-sizing: border-box;
 
   .intro {

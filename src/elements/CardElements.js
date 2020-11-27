@@ -4,10 +4,6 @@ import { Link } from "gatsby"
 
 export const CardWrapper = styled(props => <Link {...props} />)`
   padding: 2rem;
-  /* display: flex;
-  flex-direction: column; */
-  display: grid;
-  grid-template-rows: 30% 10% 55%;
   height: 20rem;
   grid-gap: 3%;
   justify-content: space-between;
@@ -16,26 +12,31 @@ export const CardWrapper = styled(props => <Link {...props} />)`
   color: inherit;
   position: relative;
   transition: all 1s;
+  background: #fff;
+  border-radius: 7px;
   h2 {
     font-size: 1.8rem;
-    border: 1px solid;
+    min-height: 30%;
+    max-height: 30%;
   }
-  p.excerpt {
+  .excerpt {
     font-size: 1.2rem;
-    border: 1px solid;
     line-height: 2rem;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
     overflow: hidden;
-    /* margin: 1rem 0; */
   }
   small {
-    text-align: right;
-    border: 1px solid;
+    min-height: 10%;
+    max-height: 10%;
+    margin: 1rem 0;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
+    span:nth-child(1) {
+      font-weight: bold;
+    }
   }
   :hover {
     filter: brightness(1.35);

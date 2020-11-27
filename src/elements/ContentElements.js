@@ -19,13 +19,14 @@ export const ContentWrapper = styled.main`
   ${props =>
     props.page === "home" &&
     css`
-      padding: 3% 10%;
-      background: #999;
+      padding: 3% var(--padding);
+      background: #edf7fa;
       .posts {
         margin-top: 2rem;
         display: grid;
-        grid-template-columns: auto auto;
-        grid-gap: 2rem;
+        grid-template-columns: 48% 48%;
+        /* grid-gap: 2%; */
+        justify-content: space-between;
       }
       .home__content-header {
         width: 100%;
@@ -33,6 +34,7 @@ export const ContentWrapper = styled.main`
         justify-content: space-between;
         align-items: center;
         h3 {
+          font-size: 1.5rem;
         }
         .view-all {
           text-decoration: none;

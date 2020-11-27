@@ -3,7 +3,8 @@ import { CardWrapper, H2, P } from "../elements"
 import Button from "./Button"
 
 
-export const ContentCard = ({ date, title, excerpt, slug, page }) => {
+export const ContentCard = ({ date, title, excerpt, slug, page, tags }) => {
+  console.log(tags)
   return (
     <CardWrapper to={slug} page={page}>
       {/* <P size="xSmall" textAlign="center" margin="0 0 0.5rem 0">
@@ -17,7 +18,7 @@ export const ContentCard = ({ date, title, excerpt, slug, page }) => {
       </P>
       <Button href={slug}>Read More</Button> */}
       <h2>{title}</h2>
-      <small>{date}</small>
+      <small><span>{tags}</span> <span>{date}</span></small>
 
       <p className="excerpt">{excerpt}</p>
       {/* <Button href={slug}>Read More</Button> */}

@@ -46,6 +46,7 @@ export default function Home({ pageContext, data }) {
               title={post.node.frontmatter.title}
               excerpt={post.node.frontmatter.excerpt}
               slug={`blog/${post.node.frontmatter.slug}`}
+              tags={post.node.frontmatter.tags}
             />
           ))}
         </div>
@@ -64,6 +65,7 @@ export const pageQuery = graphql`
             title
             date
             excerpt
+            tags
           }
         }
       }
