@@ -11,7 +11,7 @@ import {
 import { H1, P } from "../elements"
 import Pagination from "../components/Pagination"
 import Header from "../components/Header"
-import Button from "../components/Button"
+import Contact from "../components/Contact"
 
 export default function Home({ pageContext, data }) {
   //   const { currentPage, numPages } = pageContext
@@ -26,11 +26,7 @@ export default function Home({ pageContext, data }) {
       <Header />
       {/* <FeatureImage/> */}
       <Content page="home">
-        {/* <H1 textAlign="center" margin="0 0 1rem 0">
-          Latest Posts
-        </H1> */}
-        {/* <PageHead page="home">Latest Posts</PageHead> */}
-        <div className='home__content-header'>
+        <div className="home__content-header">
           <h3>Recent Posts</h3>
           <Link to="/blog" className="view-all">
             All Posts
@@ -51,6 +47,7 @@ export default function Home({ pageContext, data }) {
           ))}
         </div>
       </Content>
+      <Contact />
     </Container>
   )
 }
