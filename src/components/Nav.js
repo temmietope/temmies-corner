@@ -1,15 +1,15 @@
 import React from "react"
 import { useStaticQuery, Link, graphql } from "gatsby"
-import { NavDiv, NavWrapper } from "../elements"
+import { Logo, NavDiv, NavWrapper } from "../elements"
 
 export const Nav = () => {
   const data = useStaticQuery(graphql`
-        query {
-            logo: file(relativePath: {eq: "logo.jpeg"}){
-                publicURL
-            }
-        }
-    `)
+    query {
+      logo: file(relativePath: { eq: "logo.jpeg" }) {
+        publicURL
+      }
+    }
+  `)
   return (
     // <NavWrapper>
     //   <Link to="/">
@@ -18,11 +18,11 @@ export const Nav = () => {
     // </NavWrapper>
     <NavWrapper>
       <NavDiv>
-        <div className="logo">
+        <Logo>
           <Link to="/" className="brand" onClick={() => window.scrollTo(0, 0)}>
             TIA
           </Link>
-        </div>
+        </Logo>
         <input className="menu-btn" type="checkbox" id="menu-btn" />
         <label className="menu-icon" htmlFor="menu-btn">
           <span className="navicon"></span>

@@ -12,6 +12,7 @@ import { H1, P } from "../elements"
 import Pagination from "../components/Pagination"
 import Header from "../components/Header"
 import Contact from "../components/Contact"
+import Stack from "../components/Stack"
 
 export default function Home({ pageContext, data }) {
   //   const { currentPage, numPages } = pageContext
@@ -47,6 +48,7 @@ export default function Home({ pageContext, data }) {
           ))}
         </div>
       </Content>
+      <Stack />
       <Contact />
     </Container>
   )
@@ -54,7 +56,7 @@ export default function Home({ pageContext, data }) {
 
 export const pageQuery = graphql`
   query RecentPostsQuery {
-    allMdx(sort: { fields: frontmatter___date, order: DESC }, limit: 2) {
+    allMdx(sort: { fields: frontmatter___date, order: DESC }, limit: 4) {
       edges {
         node {
           frontmatter {

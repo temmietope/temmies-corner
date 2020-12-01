@@ -21,20 +21,22 @@ export const ContainerWrapper = styled.div`
   height: 100%;
   /* min-height: 100vh; */
   /* padding: 0 1%; */
-  padding-bottom: 2rem;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column;
   background: white;
   --padding: 10%;
+  position: relative;
 
-  @media ${(props) => props.theme.breakpoints.tablet} {
+  @media ${props => props.theme.breakpoints.tablet} {
     /* grid-template-columns: 2rem repeat(6, 1fr) 2rem;
     grid-gap: 0 1rem; */
   }
 
-  @media ${(props) => props.theme.breakpoints.mobile} {
+  @media ${props => props.theme.breakpoints.mobile} {
     /* grid-template-columns: 1rem repeat(6, 1fr) 1rem; */
   }
 `

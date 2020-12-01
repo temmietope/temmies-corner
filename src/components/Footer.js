@@ -1,47 +1,91 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import {
   FooterWrapper,
   FooterSocialWrapper,
-  FooterSocialIcons, P
+  FooterCopyright,
+  P,
+  Logo,
+  FooterEmail,
 } from "../elements"
 
 export const Footer = () => {
   const data = useStaticQuery(graphql`
     query {
-      facebook: file(relativePath: { eq: "facebook.svg" }) {
-        publicURL
-      }
       twitter: file(relativePath: { eq: "twitter.svg" }) {
         publicURL
       }
-      youtube: file(relativePath: { eq: "youtube.svg" }) {
+      instagram: file(relativePath: { eq: "instagram.svg" }) {
         publicURL
       }
-      instagram: file(relativePath: { eq: "instagram.svg" }) {
+      github: file(relativePath: { eq: "github.svg" }) {
+        publicURL
+      }
+      linkedin: file(relativePath: { eq: "linkedin.svg" }) {
+        publicURL
+      }
+      send: file(relativePath: { eq: "send.svg" }) {
         publicURL
       }
     }
   `)
   return (
     <FooterWrapper>
+      <FooterEmail>
+        <h5>Work with me?</h5>
+        <p>
+          Interested in working together? We should queue up a chat. I'll buy
+          the coffee!
+        </p>
+        <button>
+          <a href="mailto:temmieayodele@gmail.com" className="mail btn">
+            Send me a mail!
+            <img src={data.send.publicURL} alt="mail-icon" />
+          </a>
+        </button>
+      </FooterEmail>
+      <Logo>
+        <Link to="/" className="brand" onClick={() => window.scrollTo(0, 0)}>
+          TIA
+        </Link>
+      </Logo>
+      <div className="mantra">
+        <p>Frontend Developer and Technical writer</p>
+      </div>
       <FooterSocialWrapper>
-        <FooterSocialIcons>
-          <a href="facebook.com" target="_blank" rel="noopener noreferrer">
-            <img src={data.facebook.publicURL} alt="facebook-icon" />
-          </a>
-          <a href="twitter.com" target="_blank" rel="noopener noreferrer">
-            <img src={data.twitter.publicURL} alt="twitter-icon" />
-          </a>
-          <a href="instagram.com" target="_blank" rel="noopener noreferrer">
-            <img src={data.instagram.publicURL} alt="instagram-icon" />
-          </a>
-          <a href="youtube.com" target="_blank" rel="noopener noreferrer">
-            <img src={data.youtube.publicURL} alt="youtube-icon" />
-          </a>
-        </FooterSocialIcons>
-        <P size='xSmall' color='dark3'>&copy 2020 Company. All right reserved</P>
+        <a
+          href="https://www.github.com/temmietope"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={data.github.publicURL} alt="github-icon" />
+        </a>
+
+        <a
+          href="https://www.twitter.com/temmmie_"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={data.twitter.publicURL} alt="twitter-icon" />
+        </a>
+        <a
+          href="https://www.instagram.com/temmie_tope"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={data.instagram.publicURL} alt="instagram-icon" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/temitope-ayodele/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={data.linkedin.publicURL} alt="linkedin-icon" />
+        </a>
       </FooterSocialWrapper>
+      <FooterCopyright>
+        <p>Handcrafted by me Temitope Ayodele</p>
+      </FooterCopyright>
     </FooterWrapper>
   )
 }

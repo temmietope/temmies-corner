@@ -20,12 +20,13 @@ export const ContentWrapper = styled.main`
     props.page === "home" &&
     css`
       padding: 3% var(--padding);
-      background: #edf7fa;
+      /* background: #edf7fa; */
+      background: #d9d4e7;
       .posts {
         margin-top: 2rem;
         display: grid;
         grid-template-columns: 48% 48%;
-        /* grid-gap: 2%; */
+        grid-gap: 2rem;
         justify-content: space-between;
       }
       .home__content-header {
