@@ -57,6 +57,7 @@ export const FooterWrapper = styled.footer`
   align-items: center;
   flex-flow: column;
   background: #a786df;
+  margin-top: auto;
   /* background: #5d909e; */
   /* background-color: #edf7fa; */
   color: white;
