@@ -1,31 +1,93 @@
 import styled from "styled-components"
 
+// export const PostWrapper = styled.main`
+//   grid-column: 4 / span 8;
+//   grid-rows: 3 / span 5;
+//   background-color: ${props => props.theme.colors.light2};
+//   padding: ${props =>
+//     `${props.theme.spacings.xLarge} ${props.theme.spacings.xxLarge}`};
+//   box-shadow: ${props => props.theme.shadows.shadow1};
+//   z-index: 10;
+
+// code {
+//   font-family: ${props=>props.theme.fonts.code};
+//   font-size:1rem;
+//   line-height: 1.875rem;
+//   color: ${props=>props.theme.colors.light1};
+//   background-color: ${props=>props.theme.colors.dark3};
+//   padding: 0 0.3rem;
+// }
+//   @media ${props => props.theme.breakpoints.tablet} {
+//     grid-column: 2 / span 6;
+//   }
+
+//   @media ${props => props.theme.breakpoints.mobile} {
+//     padding: ${props =>
+//       `${props.theme.spacings.medium} ${props.theme.spacings.xxLarge}`};
+//   }
+// `
+
 export const PostWrapper = styled.main`
-  grid-column: 4 / span 8;
-  grid-rows: 3 / span 5;
-  background-color: ${props => props.theme.colors.light2};
-  padding: ${props =>
-    `${props.theme.spacings.xLarge} ${props.theme.spacings.xxLarge}`};
-  box-shadow: ${props => props.theme.shadows.shadow1};
-  z-index: 10;
-
-
-//add styles on the posts, normal css styles
-
-code {
-  font-family: ${props=>props.theme.fonts.code};
-  font-size:1rem;
-  line-height: 1.875rem;
-  color: ${props=>props.theme.colors.light1};
-  background-color: ${props=>props.theme.colors.dark3};
-  padding: 0 0.3rem;
-}
-  @media ${props => props.theme.breakpoints.tablet} {
-    grid-column: 2 / span 6;
+  padding: 2rem 5rem;
+  margin-bottom: 10rem;
+  font-size: 1.5rem;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 120%;
+    margin: 5% 0;
   }
+  h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0px 3px 6px #d9d4e7;
+    border-radius: 20px;
+    padding: 1rem;
+  }
+  p {
+    margin: 1rem 0;
+    line-height: 150%;
+  }
+  img {
+    border-radius: 10px;
+    text-align: center;
+    /* width: 100%; */
+    :hover {
+      filter: brightness(0.8);
+    }
+  }
+`
 
-  @media ${props => props.theme.breakpoints.mobile} {
-    padding: ${props =>
-      `${props.theme.spacings.medium} ${props.theme.spacings.xxLarge}`};
+export const Tags = styled.div`
+  display: flex;
+  margin: 2rem 0;
+  p {
+    padding: 0.2rem 0.7rem;
+    margin: 0 0.8rem;
+    border-radius: 5px;
+    display: grid;
+    place-items: center;
+    font-size: 1rem;
+    color: white;
+    font-weight: bold;
+  }
+  p.javascript {
+    background-color: #583952;
+  }
+  p.css {
+    background-color: #812903;
+  }
+  p.html {
+    background-color: #289410;
+  }
+  p.react {
+    background-color: #619525;
+  }
+  p.beginners {
+    background-color: #920145;
   }
 `

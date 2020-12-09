@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { H1 } from "../elements"
+import { H1, Tags } from "../elements"
 import { Container, FeatureImage, Post, Seo } from "../components"
 
 export default function singlePost({ data, pageContext }) {
@@ -9,6 +9,7 @@ export default function singlePost({ data, pageContext }) {
   const seoImage = data.mdx.frontmatter.featureImage.publicURL
   const { previous, next } = pageContext
   console.log(data)
+  const tagsArray = data.mdx.frontmatter.tags.split(",")
   return (
     <Container>
       <Seo
@@ -19,6 +20,16 @@ export default function singlePost({ data, pageContext }) {
       <FeatureImage fixed={featureImage} />
       <Post>
         <H1 margin="0 0 2rem 0">{data.mdx.frontmatter.title}</H1>
+        <Tags>
+          {tagsArray.map((tag, index) => {
+            return (
+              <p className={tag} key={index}>
+                {tag}
+              </p>
+            )
+          })}
+        </Tags>
+
         <MDXRenderer>{data.mdx.body}</MDXRenderer>
       </Post>
       <ul
@@ -58,6 +69,7 @@ export const pageQuery = graphql`
         excerpt
         slug
         title
+        tags
         featureImage {
           publicURL
           childImageSharp {

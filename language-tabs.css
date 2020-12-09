@@ -1,8 +1,9 @@
 
 .prism-code {
-  font-size: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 10px;
   -webkit-overflow-scrolling: touch;
   background-color: transparent;
   overflow: initial;

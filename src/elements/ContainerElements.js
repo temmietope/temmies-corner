@@ -19,8 +19,6 @@ import styled from "styled-components"
 
 export const ContainerWrapper = styled.div`
   height: 100%;
-  /* min-height: 100vh; */
-  /* padding: 0 1%; */
   margin: 0;
   padding: 0;
   display: flex;
