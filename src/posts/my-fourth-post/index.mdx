@@ -7,42 +7,55 @@ tags: beginners, css
 excerpt: This is definitely anotherThis is definitely another. This is definitely anotherThis is definitely anotherThis is definitely anotherThis is definitely anotherThis is definitely anotherThis is definitely another.This is definitely another. This is definitely anotherThis is definitely anotherThis is definitely anotherTh
 ---
 
-# Heading 1
-
-## Heading 2
-
-### Heading 3
-
-#### Heading 4
-
-##### Heading 5
-
-###### Heading 6
-
-[I'm an inline-style link](https://www.google.com)
-
-[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
-
-[I'm a reference-style link][Arbitrary case-insensitive reference text]
-
-[I'm a relative reference to a repository file](../blob/master/LICENSE)
-
-[You can use numbers for reference-style link definitions][1]
-
-Or leave it empty and use the [link text itself].
-
-URLs and URLs in angle brackets will automatically get turned into links. 
-http://www.example.com or <http://www.example.com> and sometimes 
-example.com (but not on Github, for example).
-
-Some text to show that the reference links can follow later.
-
-[arbitrary case-insensitive reference text]: https://www.mozilla.org
-[1]: http://slashdot.org
-[link text itself]: http://www.reddit.com
 
 
+To blur the scrolling div content behind an element, the **backdrop-filter** css property is used. The div is assigned a backdrop-filter property and also given a slightly transparent background color (e.g rgba(255, 255, 255, 0.85))
 
-```js
-code is interesting
+##### HTML
+```javascript
+<div class='wrapper'>
+  <div class='box'>Whatever is behind this div is blurred out</div>
+</div>
 ```
+
+##### CSS
+```javascript
+body {
+  margin: 0;
+}
+.wrapper {
+  max-width: 100vw;
+  background-image: url(https://images.pexels.com/photos/5491161/pexels-photo-5491161.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-color: #cccccc; 
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.box {
+  position: fixed;
+  top: 30%;
+  left: 40%;
+  color: #333;
+  font-weight: bolder;
+  width: 20%;
+  padding: 1rem;
+  border-radius: 5px;
+   background-color: rgba(255, 255, 255, 0.5);
+    -webkit-backdrop-filter: blur(4px);
+    -o-backdrop-filter: blur(4px);
+    -moz-backdrop-filter: blur(4px);
+
+    backdrop-filter: blur(4px);
+}
+```
+https://codepen.io/digitalhydra/pen/jPqWwP
+
+### Valid Example
+
+A sample usage of this is to blur the div scrolling behind the navbar in an application. See the sample code below
+
+{% codepen https://codepen.io/temmietope/pen/BazeZqq default-tab=js,result %}
+
+
+I hope this helps

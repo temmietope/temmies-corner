@@ -1,12 +1,12 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: 'My blogggg',
-    description: 'Awesome blog to checkout',
-    url: 'https://temmie.com',
-    image: 'office.jpg',
-    twitterUsername: '@temmmie_',
-    author: 'Temitope'
+    title: "Temmie's corner",
+    description: "Awesome blog to checkout",
+    url: "https://temmies_corner.com",
+    image: "office.jpg",
+    twitterUsername: "@temmmie_",
+    author: "Temitope",
   },
   plugins: [
     {
@@ -51,6 +51,20 @@ module.exports = {
       options: {
         fonts: [`roboto mono`, `muli\:400,400i,700,700i`],
         display: "swap",
+      },
+    },
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          {
+            resolve: "@weknow/gatsby-remark-codepen",
+            options: {
+              theme: "dark",
+              height: 400,
+            },
+          },
+        ],
       },
     },
   ],

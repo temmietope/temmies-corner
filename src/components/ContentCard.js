@@ -1,10 +1,12 @@
 import React from "react"
-import { CardWrapper, H2, P } from "../elements"
+import { CardWrapper, Date, H2, P, Tags, TagsAndDate } from "../elements"
 import Button from "./Button"
 
 
 export const ContentCard = ({ date, title, excerpt, slug, page, tags }) => {
   console.log(tags)
+  const tagsArray = tags && tags.split(",")
+
   return (
     <CardWrapper to={slug} page={page}>
       {/* <P size="xSmall" textAlign="center" margin="0 0 0.5rem 0">
@@ -18,7 +20,21 @@ export const ContentCard = ({ date, title, excerpt, slug, page, tags }) => {
       </P>
       <Button href={slug}>Read More</Button> */}
       <h2>{title}</h2>
-      <small><span>{tags}</span> <span>{date}</span></small>
+      <TagsAndDate>
+        <Tags page="home">
+          {tagsArray.map((tag, index) => {
+            return (
+              <p className={tag} key={index}>
+                {tag}
+              </p>
+            )
+          })}
+        </Tags>
+        <Date>{date}</Date>
+      </TagsAndDate>
+      {/* <small>
+        <span>{tags}</span> <span>{date}</span>
+      </small> */}
 
       <p className="excerpt">{excerpt}</p>
       {/* <Button href={slug}>Read More</Button> */}

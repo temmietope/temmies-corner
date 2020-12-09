@@ -28,7 +28,7 @@ import styled from "styled-components"
 // `
 
 export const PostWrapper = styled.main`
-  padding: 2rem 5rem;
+  padding: 2rem 8rem;
   margin-bottom: 10rem;
   font-size: 1.5rem;
   h1,
@@ -38,7 +38,7 @@ export const PostWrapper = styled.main`
   h5,
   h6 {
     line-height: 120%;
-    margin: 5% 0;
+    margin: 3% 0;
   }
   h1 {
     font-size: 4rem;
@@ -47,6 +47,7 @@ export const PostWrapper = styled.main`
     box-shadow: 0px 3px 6px #d9d4e7;
     border-radius: 20px;
     padding: 1rem;
+    margin: 5% 0;
   }
   p {
     margin: 1rem 0;
@@ -62,18 +63,31 @@ export const PostWrapper = styled.main`
   }
 `
 
+export const TagsAndDate = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 1rem;
+`
+
+export const Date = styled.small`
+`
+
 export const Tags = styled.div`
   display: flex;
-  margin: 2rem 0;
+  margin: ${props => (props.page === "home" ? "1rem 0" : "2rem 0")};
   p {
-    padding: 0.2rem 0.7rem;
-    margin: 0 0.8rem;
+    padding: 0.15rem 0.5rem;
+    margin: 0 0.5rem;
     border-radius: 5px;
     display: grid;
     place-items: center;
-    font-size: 1rem;
     color: white;
     font-weight: bold;
+  }
+  p:nth-child(1) {
+    margin-left: 0;
   }
   p.javascript {
     background-color: #583952;
@@ -89,5 +103,8 @@ export const Tags = styled.div`
   }
   p.beginners {
     background-color: #920145;
+  }
+  p.accessibility {
+    background-color: #3e2a81;
   }
 `

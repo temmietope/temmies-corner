@@ -6,7 +6,9 @@
   border-radius: 10px;
   -webkit-overflow-scrolling: touch;
   background-color: transparent;
-  overflow: initial;
+  overflow: auto;
+  max-width: 100%;
+  /* overflow: auto; */
 }
 
 .token {
@@ -57,4 +59,9 @@ gatsby-highlight > code[class*="language-"],
   opacity: 0.5;
   width: calc(1.2em - 4px);
   left: -2px;
+}
+
+code[class*="language-"], pre[class*="language-"] {
+    white-space: normal !important;
+    word-break: break-word !important;
 }

@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { H1, Tags } from "../elements"
+import { Date, H1, Tags, TagsAndDate } from "../elements"
 import { Container, FeatureImage, Post, Seo } from "../components"
 
 export default function singlePost({ data, pageContext }) {
@@ -20,15 +20,18 @@ export default function singlePost({ data, pageContext }) {
       <FeatureImage fixed={featureImage} />
       <Post>
         <H1 margin="0 0 2rem 0">{data.mdx.frontmatter.title}</H1>
-        <Tags>
-          {tagsArray.map((tag, index) => {
-            return (
-              <p className={tag} key={index}>
-                {tag}
-              </p>
-            )
-          })}
-        </Tags>
+        <TagsAndDate>
+          <Tags>
+            {tagsArray.map((tag, index) => {
+              return (
+                <p className={tag} key={index}>
+                  {tag}
+                </p>
+              )
+            })}
+          </Tags>
+          <Date>{data.mdx.frontmatter.date}</Date>
+        </TagsAndDate>
 
         <MDXRenderer>{data.mdx.body}</MDXRenderer>
       </Post>
