@@ -22,13 +22,13 @@ export const ContentCard = ({ date, title, excerpt, slug, page, tags }) => {
       <h2>{title}</h2>
       <TagsAndDate>
         <Tags page="home">
-          {tagsArray.map((tag, index) => {
+          {tagsArray ? tagsArray.map((tag, index) => {
             return (
               <p className={tag} key={index}>
                 {tag}
               </p>
             )
-          })}
+          }): ''}
         </Tags>
         <Date>{date}</Date>
       </TagsAndDate>
