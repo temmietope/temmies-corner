@@ -1,9 +1,9 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { Link } from "gatsby"
 
-export const PaginationWrapper = styled.div`
-  grid-column: 2 / span 12;
+// export const PaginationWrapper = styled.div`
+/* grid-column: 2 / span 12;
   padding: 3rem 0;
   display: flex;
   align-items: center;
@@ -22,11 +22,11 @@ export const PaginationWrapper = styled.div`
   }
   @media ${props => props.theme.breakpoints.tablet} {
     grid-column: 2 / span 6;
-  }
-`
+  } */
+// `
 
-export const PaginationElement = styled(props => <Link {...props} />)`
-  font-size: 0.875rem;
+// export const PaginationElement = styled(props => <Link {...props} />)`
+/* font-size: 0.875rem;
   line-height: 1.125rem;
   font-weight: 400;
   text-decoration: none;
@@ -35,5 +35,36 @@ export const PaginationElement = styled(props => <Link {...props} />)`
   &:hover,
   &:focus {
     text-decoration: underline;
+  } */
+// `
+
+export const PaginationWrapper = styled.ul`
+  list-style: none;
+  display: ${props => (props.numPages === 1 ? "none" : "flex")};
+  justify-content: ${props =>
+    props.page === "singlePost" ? "space-between" : "center"};
+  align-items: center;
+  height: 3rem;
+  box-shadow: 0px 3px 6px #d9d4e7;
+  margin-top: 2rem;
+`
+
+export const PaginationElement = styled(props => <Link {...props} />)`
+  text-decoration: none;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  padding: 0 1rem;
+  color: #333;
+  &:hover,
+  &:focus {
+    text-decoration: underline;
   }
+  ${props =>
+    props.currentPage &&
+    css`
+      text-decoration: underline;
+      border-radius: 50%;
+      font-weight: 700;
+    `}
 `

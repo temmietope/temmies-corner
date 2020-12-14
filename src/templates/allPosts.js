@@ -25,9 +25,6 @@ export default function allPosts({ pageContext, data }) {
       {/* <FeatureImage />
       <Header /> */}
       <Content page="allPosts">
-        {/* <H1 textAlign="center" margin="0 0 1rem 0">
-          My posts will be here
-        </H1> */}
         <PageHead>Blog</PageHead>
         <div className="posts">
           {posts.map(post => (
@@ -37,6 +34,7 @@ export default function allPosts({ pageContext, data }) {
               date={post.node.frontmatter.date}
               title={post.node.frontmatter.title}
               excerpt={post.node.frontmatter.excerpt}
+              tags={post.node.frontmatter.tags}
               slug={
                 isFirst
                   ? post.node.frontmatter.slug
@@ -46,14 +44,16 @@ export default function allPosts({ pageContext, data }) {
           ))}
         </div>
 
-        {/* <Pagination
+        <Pagination
           isFirst={isFirst}
           isLast={isLast}
           prevPage={prevPage}
           nextPage={nextPage}
-        /> */}
+          currentPage={currentPage}
+          numPages={numPages}
+        />
 
-        <div>
+        {/* <div className='page'>
           <ul
             style={{
               display: "flex",
@@ -72,7 +72,6 @@ export default function allPosts({ pageContext, data }) {
                   marginTop: "0.1rem",
                   marginBottom: "0.1rem",
                   padding: "0.5rem",
-                  color: "var(--themeColor)",
                 }}
               >
                 {"<< Prev"}
@@ -110,14 +109,13 @@ export default function allPosts({ pageContext, data }) {
                   marginTop: "0.1rem",
                   marginBottom: "0.1rem",
                   padding: "0.5rem",
-                  color: "var(--themeColor)",
                 }}
               >
                 {"Next >>"}
               </Link>
             )}
           </ul>
-        </div>
+        </div> */}
       </Content>
     </Container>
   )
@@ -137,6 +135,7 @@ export const pageQuery = graphql`
             title
             date
             excerpt
+            tags
           }
         }
       }

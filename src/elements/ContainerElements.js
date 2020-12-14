@@ -38,3 +38,7 @@ export const ContainerWrapper = styled.div`
     /* grid-template-columns: 1rem repeat(6, 1fr) 1rem; */
   }
 `
+
+export const ContainerDiv = styled.div`
+  margin-bottom: 5rem;
+`

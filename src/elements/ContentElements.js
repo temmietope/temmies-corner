@@ -42,15 +42,19 @@ export const ContentWrapper = styled.main`
           cursor: pointer;
         }
       }
-    `}/* ${props =>
+    `}
+  ${props =>
     props.page === "allPosts" &&
     css`
+      padding: 3% var(--padding);
       .posts {
         margin-top: 5rem;
+        height: inherit;
+        margin-bottom: 10rem;
+        width: 100%;
         display: grid;
         grid-template-columns: auto auto;
-        grid-gap: 1rem;
-        border: 1px solid;
+        grid-gap: 3rem;
       }
-    `} */
+    `}
 `

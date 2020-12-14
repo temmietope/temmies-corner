@@ -1,14 +1,20 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { Date, H1, Tags, TagsAndDate } from "../elements"
+import {
+  Date,
+  H1,
+  PaginationElement,
+  PaginationWrapper,
+  Tags,
+  TagsAndDate,
+} from "../elements"
 import { Container, FeatureImage, Post, Seo } from "../components"
 
 export default function singlePost({ data, pageContext }) {
   const featureImage = data.mdx.frontmatter.featureImage.childImageSharp.fixed
   const seoImage = data.mdx.frontmatter.featureImage.publicURL
   const { previous, next } = pageContext
-  console.log(data)
   const tagsArray = data.mdx.frontmatter.tags.split(",")
   return (
     <Container>
@@ -34,31 +40,29 @@ export default function singlePost({ data, pageContext }) {
         </TagsAndDate>
 
         <MDXRenderer>{data.mdx.body}</MDXRenderer>
+        <PaginationWrapper page='singlePost'>
+          <li>
+            {previous && (
+              <PaginationElement
+                to={`/blog/${previous.frontmatter.slug}`}
+                rel="prev"
+              >
+                {"<<" + previous.frontmatter.title}
+              </PaginationElement>
+            )}
+          </li>
+          <li>
+            {next && (
+              <PaginationElement
+                to={`/blog/${next.frontmatter.slug}`}
+                rel="next"
+              >
+                {next.frontmatter.title + ">>"}
+              </PaginationElement>
+            )}
+          </li>
+        </PaginationWrapper>
       </Post>
-      <ul
-        style={{
-          display: `flex`,
-          flexWrap: `wrap`,
-          justifyContent: `space-between`,
-          listStyle: `none`,
-          padding: 0,
-        }}
-      >
-        <li>
-          {previous && (
-            <Link to={`/blog/${previous.frontmatter.slug}`} rel="prev">
-              {"<<" + previous.frontmatter.title}
-            </Link>
-          )}
-        </li>
-        <li>
-          {next && (
-            <Link to={`/blog/${next.frontmatter.slug}`} rel="next">
-              {next.frontmatter.title + ">>"}
-            </Link>
-          )}
-        </li>
-      </ul>
     </Container>
   )
 }

@@ -1,17 +1,16 @@
-import styled, {css} from 'styled-components'
+import styled, { css } from "styled-components"
 
 export const PageHeader = styled.div`
   width: 100%;
-  background: blue;
-  padding: 3rem 0;
+  /* padding: 3rem 0; */
   h2 {
     font-size: 3rem;
     text-transform: uppercase;
     text-align: center;
   }
 
-  ${(props) =>
-    props.page === 'home' &&
+  ${props =>
+    props.page === "home" &&
     css`
       padding: 1.5rem 0;
       h2 {

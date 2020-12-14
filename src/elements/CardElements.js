@@ -16,8 +16,6 @@ export const CardWrapper = styled(props => <Link {...props} />)`
   border-radius: 7px;
   h2 {
     font-size: 1.8rem;
-    min-height: 30%;
-    max-height: 30%;
   }
   .excerpt {
     font-size: 1.2rem;
@@ -45,14 +43,54 @@ export const CardWrapper = styled(props => <Link {...props} />)`
   ${props =>
     props.page === "allPosts" &&
     css`
-      border-radius: 10px;
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 12% 25% 30% 20%/50% 20% 15% 30%;
+      /* border-radius: 20% 15% 15% 10%/10% 30% 40% 10%; */
+
       box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.3);
-      border-left: 10px solid gray;
-      margin-top: 2rem;
+      border-left: 10px solid #a786df;
+      animation: morph 8s ease-in infinite;
+      padding: 5% 10%;
     `}
   ${props =>
     props.page === "homePage" &&
     css`
-      /* border-bottom: 1px solid rgba(0, 0, 0, 0.2); */
+      h2 {
+        min-height: 30%;
+        max-height: 30%;
+      }
     `}
+
+
+@keyframes morph {
+    0% {
+      border-radius: 12% 25% 30% 20%/50% 20% 15% 30%;
+    }
+
+    25% {
+      border-radius: 15% 20% 25% 30%/40% 15% 20% 20%;
+    }
+
+    50% {
+      border-radius: 20% 15% 20% 10%/30% 30% 30% 10%;
+    }
+    60% {
+      border-radius: 17% 18% 23% 20%/35% 25% 25% 20%;
+    }
+    75% {
+      border-radius: 15% 20% 25% 30%/40% 15% 20% 20%;
+    }
+
+    80% {
+      border-radius: 15% 23% 23% 20%/43% 20% 18% 22%;
+    }
+
+    90% {
+      border-radius: 15% 23% 28% 15%/45% 25% 20% 25%;
+    }
+    100% {
+      border-radius: 13% 23% 28% 18%/48% 23% 13% 28%;
+    }
+  }
 `

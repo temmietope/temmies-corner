@@ -90,21 +90,21 @@ export const Tags = styled.div`
     margin-left: 0;
   }
   p.javascript {
-    background-color: #583952;
+    background-color: #583952d5;
   }
   p.css {
-    background-color: #812903;
+    background-color: #812903e7;
   }
   p.html {
-    background-color: #289410;
+    background-color: #1894d0aa;
   }
   p.react {
-    background-color: #619525;
+    background-color: #619525ff;
   }
   p.beginners {
-    background-color: #920145;
+    background-color: #92014577;
   }
   p.accessibility {
-    background-color: #3e2a81;
+    background-color: #3e2a8166;
   }
 `
