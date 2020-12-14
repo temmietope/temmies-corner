@@ -23,7 +23,7 @@ export default function singlePost({ data, pageContext }) {
         image={seoImage}
         description={data.mdx.frontmatter.excerpt}
       />
-      <FeatureImage fixed={featureImage} />
+      {/* <FeatureImage fixed={featureImage} /> */}
       <Post>
         <H1 margin="0 0 2rem 0">{data.mdx.frontmatter.title}</H1>
         <TagsAndDate>
@@ -40,14 +40,15 @@ export default function singlePost({ data, pageContext }) {
         </TagsAndDate>
 
         <MDXRenderer>{data.mdx.body}</MDXRenderer>
-        <PaginationWrapper page='singlePost'>
+        <PaginationWrapper page="singlePost">
           <li>
             {previous && (
               <PaginationElement
                 to={`/blog/${previous.frontmatter.slug}`}
                 rel="prev"
+                page="singlePost"
               >
-                {"<<" + previous.frontmatter.title}
+                {"<< " + previous.frontmatter.title}
               </PaginationElement>
             )}
           </li>
@@ -56,8 +57,9 @@ export default function singlePost({ data, pageContext }) {
               <PaginationElement
                 to={`/blog/${next.frontmatter.slug}`}
                 rel="next"
+                page="singlePost"
               >
-                {next.frontmatter.title + ">>"}
+                {next.frontmatter.title + " >>"}
               </PaginationElement>
             )}
           </li>

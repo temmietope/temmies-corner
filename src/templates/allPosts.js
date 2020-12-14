@@ -25,7 +25,7 @@ export default function allPosts({ pageContext, data }) {
       {/* <FeatureImage />
       <Header /> */}
       <Content page="allPosts">
-        <PageHead>Blog</PageHead>
+        <PageHead>Temmie's Corner</PageHead>
         <div className="posts">
           {posts.map(post => (
             <ContentCard
@@ -52,70 +52,6 @@ export default function allPosts({ pageContext, data }) {
           currentPage={currentPage}
           numPages={numPages}
         />
-
-        {/* <div className='page'>
-          <ul
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "center",
-              alignItems: "center",
-              listStyle: "none",
-              padding: 0,
-            }}
-          >
-            {!isFirst && (
-              <Link
-                to={prevPage}
-                rel="prev"
-                style={{
-                  marginTop: "0.1rem",
-                  marginBottom: "0.1rem",
-                  padding: "0.5rem",
-                }}
-              >
-                {"<< Prev"}
-              </Link>
-            )}
-            {Array.from({ length: numPages }, (_, i) => (
-              <li
-                key={`pagination-number${i + 1}`}
-                style={{
-                  margin: 0,
-                }}
-              >
-                <Link
-                  to={`/blog/${i === 0 ? "" : i + 1}`}
-                  style={{
-                    marginTop: "0.1rem",
-                    marginBottom: "0.1rem",
-                    padding: "0.5rem",
-                    textDecoration: "none",
-                    color:
-                      i + 1 === currentPage ? "#ffffff" : "var(--themeColor)",
-                    background:
-                      i + 1 === currentPage ? "var(--themeColor)" : "",
-                  }}
-                >
-                  {i + 1}
-                </Link>
-              </li>
-            ))}
-            {!isLast && (
-              <Link
-                to={nextPage}
-                rel="next"
-                style={{
-                  marginTop: "0.1rem",
-                  marginBottom: "0.1rem",
-                  padding: "0.5rem",
-                }}
-              >
-                {"Next >>"}
-              </Link>
-            )}
-          </ul>
-        </div> */}
       </Content>
     </Container>
   )

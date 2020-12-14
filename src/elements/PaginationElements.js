@@ -44,7 +44,7 @@ export const PaginationWrapper = styled.ul`
   justify-content: ${props =>
     props.page === "singlePost" ? "space-between" : "center"};
   align-items: center;
-  height: 3rem;
+  height: 4rem;
   box-shadow: 0px 3px 6px #d9d4e7;
   margin-top: 2rem;
 `
@@ -66,5 +66,11 @@ export const PaginationElement = styled(props => <Link {...props} />)`
       text-decoration: underline;
       border-radius: 50%;
       font-weight: 700;
+    `}
+  ${props =>
+    props.page === "singlePost" &&
+    css`
+      font-weight: 700;
+      font-size: 1rem;
     `}
 `
