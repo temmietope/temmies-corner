@@ -47,14 +47,19 @@ export const ContentWrapper = styled.main`
     props.page === "allPosts" &&
     css`
       padding: 3% var(--padding);
+      width: 100%;
       .posts {
         margin-top: 5rem;
         height: inherit;
         margin-bottom: 10rem;
         width: 100%;
         display: grid;
-        grid-template-columns: auto auto;
-        grid-gap: 3rem;
+        grid-template-columns: repeat(2, 46%);
+        grid-gap: 3rem 4%;
+        /* display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start; */
       }
     `}
 `

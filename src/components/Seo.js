@@ -13,7 +13,14 @@ export const Seo = ({ description, keywords, title, image, url, author }) => {
         const metaTitle = title || data.site.siteMetadata.title
         const metaUrl = url || data.site.siteMetadata.url
         const metaImage = image || data.site.siteMetadata.image
-        const metaKeywords = keywords || ["gatsby blog", "gatsby MDX"]
+        const metaKeywords = keywords || [
+          "frontend",
+          "tech",
+          "javascript",
+          "framework",
+          "react",
+          "vue",
+        ]
         return (
           <Helmet
             title={title}
@@ -30,10 +37,10 @@ export const Seo = ({ description, keywords, title, image, url, author }) => {
                 property: `og:description`,
                 content: metaTitle,
               },
-            //   {
-            //     property: `og:type`,
-            //     content: website,
-            //   },
+              //   {
+              //     property: `og:type`,
+              //     content: website,
+              //   },
               {
                 property: `og:image`,
                 content: metaImage,

@@ -28,6 +28,7 @@ export const ContainerWrapper = styled.div`
   background: white;
   --padding: 10%;
   position: relative;
+  width: 100vw;
 
   @media ${props => props.theme.breakpoints.tablet} {
     /* grid-template-columns: 2rem repeat(6, 1fr) 2rem;
@@ -41,4 +42,5 @@ export const ContainerWrapper = styled.div`
 
 export const ContainerDiv = styled.div`
   margin-bottom: 5rem;
+  width: 100%;
 `

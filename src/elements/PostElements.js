@@ -71,8 +71,7 @@ export const TagsAndDate = styled.div`
   font-size: 1rem;
 `
 
-export const Date = styled.small`
-`
+export const Date = styled.small``
 
 export const Tags = styled.div`
   display: flex;
@@ -85,6 +84,7 @@ export const Tags = styled.div`
     place-items: center;
     color: white;
     font-weight: bold;
+    background-color: #0f182b;
   }
   p:nth-child(1) {
     margin-left: 0;
