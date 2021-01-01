@@ -41,13 +41,14 @@ export const PostWrapper = styled.main`
     margin: 3% 0;
   }
   h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: bold;
     text-align: center;
-    box-shadow: 0px 3px 6px #d9d4e7;
+    /* box-shadow: 0px 3px 6px #d9d4e7; */
     border-radius: 20px;
     padding: 1rem;
     margin: 5% 0;
+    margin-bottom: 1%;
   }
   p {
     margin: 1rem 0;
@@ -106,5 +107,32 @@ export const Tags = styled.div`
   }
   p.accessibility {
     background-color: #3e2a8166;
+  }
+`
+
+export const AuthorLink = styled.div`
+  margin: 1rem 0;
+  margin-bottom: 5%;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color:inherit;
+    :hover{
+      text-decoration: underline;
+    }
+  }
+  img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+  }
+  p {
+    padding: 0 1%;
   }
 `

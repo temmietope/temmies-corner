@@ -43,15 +43,16 @@ export const CardWrapper = styled(props => <Link {...props} />)`
   ${props =>
     props.page === "allPosts" &&
     css`
-      width: 100%;
+      box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.4);
+
+      /* width: 100%;
       box-sizing: border-box;
       border-radius: 12% 25% 30% 20%/50% 20% 15% 30%;
-      /* border-radius: 20% 15% 15% 10%/10% 30% 40% 10%; */
 
       box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.3);
       border-left: 10px solid #a786df;
       animation: morph 8s ease-in infinite;
-      padding: 5% 10%;
+      padding: 5% 10%; */
     `}
   ${props =>
     props.page === "homePage" &&
