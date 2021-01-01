@@ -79,28 +79,28 @@ export const Tags = styled.div`
   margin: ${props => (props.page === "home" ? "1rem 0" : "2rem 0")};
   p {
     padding: 0.15rem 0.5rem;
-    margin: 0 0.5rem;
+    margin: 0 0.3rem;
     border-radius: 5px;
     display: grid;
     place-items: center;
-    color: white;
+    color: #333;
     font-weight: bold;
-    background-color: #0f182b;
+    background-color: #786;
   }
   p:nth-child(1) {
     margin-left: 0;
   }
   p.javascript {
-    background-color: #583952d5;
+    background-color: #f0db4f;
   }
   p.css {
-    background-color: #812903e7;
+    background-color: #264de4aa;
   }
   p.html {
-    background-color: #1894d0aa;
+    background-color: #e34c26;
   }
   p.react {
-    background-color: #619525ff;
+    background-color: #61DBFB;
   }
   p.beginners {
     background-color: #92014577;

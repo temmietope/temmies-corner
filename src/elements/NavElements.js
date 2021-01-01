@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components"
 
 // export const NavWrapper = styled.nav`
 //   grid-column: 2 / span 12;
@@ -62,6 +62,7 @@ export const NavWrapper = styled.nav`
     align-items: center;
     li {
       padding: 1rem;
+      cursor: pointer;
       .nav-link {
         text-decoration: none;
         font-size: 1rem;

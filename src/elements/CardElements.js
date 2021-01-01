@@ -15,7 +15,7 @@ export const CardWrapper = styled(props => <Link {...props} />)`
   background: #fff;
   border-radius: 7px;
   h2 {
-    font-size: 1.8rem;
+    /* font-size: 1.8rem; */
   }
   .excerpt {
     font-size: 1.2rem;
@@ -53,6 +53,9 @@ export const CardWrapper = styled(props => <Link {...props} />)`
       border-left: 10px solid #a786df;
       animation: morph 8s ease-in infinite;
       padding: 5% 10%; */
+      h2{
+        font-size: 1.7rem;
+      }
     `}
   ${props =>
     props.page === "homePage" &&
@@ -60,6 +63,7 @@ export const CardWrapper = styled(props => <Link {...props} />)`
       h2 {
         min-height: 30%;
         max-height: 30%;
+        font-size: 1.6rem;
       }
     `}
 

@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, Link, graphql } from "gatsby"
 import { Logo, NavDiv, NavWrapper } from "../elements"
 
-export const Nav = () => {
+export const Nav = ({scrollToRef}) => {
   const data = useStaticQuery(graphql`
     query {
       logo: file(relativePath: { eq: "logo.jpeg" }) {
@@ -31,7 +31,7 @@ export const Nav = () => {
           {/* <li>
             <a href="/#about">About</a>
           </li> */}
-          <li>
+          <li onClick={() => window.scrollTo(0, 0)}>
             <Link to="/blog" activeClassName="active" className="nav-link">
               Blog
             </Link>
@@ -39,15 +39,15 @@ export const Nav = () => {
           {/* <li>
             <a href="/#contact">Contact</a>
           </li> */}
-          <li>
+          <li onClick={() => window.scrollTo(0, 0)}>
             <Link to="/resume" activeClassName="active" className="nav-link">
               Resume
             </Link>
           </li>
           <li>
-            <Link to="/resume" activeClassName="active" className="nav-link">
+            <span className="nav-link" onClick={scrollToRef}>
               Contact
-            </Link>
+            </span>
           </li>
           {/* <li className="mode__toggle">
             <Toggle theme={theme} toggleTheme={toggleTheme} />
