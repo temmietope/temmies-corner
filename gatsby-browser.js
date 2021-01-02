@@ -1,11 +1,10 @@
 import React from "react"
 import { createGlobalStyle, ThemeProvider } from "styled-components"
 import Theme from "./src/themes/theme"
-import {MDXProvider} from '@mdx-js/react'
+import { MDXProvider } from "@mdx-js/react"
 import { preToCodeBlock } from "mdx-utils"
 import "./language-tabs.css"
 import Code from "./src/components/Code"
-
 
 const GlobalStyles = createGlobalStyle`
     *{
@@ -18,18 +17,19 @@ const GlobalStyles = createGlobalStyle`
         height: 100%;
         background-color: ${props => props.theme.colors.light1};
         scroll-behavior: smooth;
+        overflow: auto;
     }
 `
 
 const components = {
   pre: preProps => {
-    const props=preToCodeBlock(preProps)
-    if(props){
-      return <Code {...props}/>
+    const props = preToCodeBlock(preProps)
+    if (props) {
+      return <Code {...props} />
     }
-    return <pre {...preProps}/>
+    return <pre {...preProps} />
   },
-  wrapper: ({children})=> <>{children}</>,
+  wrapper: ({ children }) => <>{children}</>,
 }
 
 export const wrapRootElement = ({ element }) => (

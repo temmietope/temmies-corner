@@ -32,6 +32,7 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-mdx-embed`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -51,20 +52,6 @@ module.exports = {
       options: {
         fonts: [`roboto mono`, `muli\:400,400i,700,700i`],
         display: "swap",
-      },
-    },
-    {
-      resolve: "gatsby-transformer-remark",
-      options: {
-        plugins: [
-          {
-            resolve: "@weknow/gatsby-remark-codepen",
-            options: {
-              theme: "dark",
-              height: 400,
-            },
-          },
-        ],
       },
     },
   ],

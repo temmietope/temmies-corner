@@ -1,32 +1,32 @@
 ---
 title: Blur scrolling-div content behind an element using pure CSS
 slug: blur-scrolling-div-content
-date: '2020-12-08'
+date: "2020-12-08"
 featureImage: table.png
 tags: css, html
 excerpt: Wonder how to achieve the blurring of the scrolling div content behind an element?
 ---
 
-
-
 To blur the scrolling div content behind an element, the **backdrop-filter** css property is used. The div is assigned a backdrop-filter property and also given a slightly transparent background color (e.g rgba(255, 255, 255, 0.85))
 
 ##### HTML
-```javascript
-<div class='wrapper'>
-  <div class='box'>Whatever is behind this div is blurred out</div>
+
+```html
+<div class="wrapper">
+  <div class="box">Whatever is behind this div is blurred out</div>
 </div>
 ```
 
 ##### CSS
-```javascript
+
+```css
 body {
   margin: 0;
 }
 .wrapper {
   max-width: 100vw;
   background-image: url(https://images.pexels.com/photos/5491161/pexels-photo-5491161.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
-  background-color: #cccccc; 
+  background-color: #cccccc;
   height: 500px;
   background-position: center;
   background-repeat: no-repeat;
@@ -41,21 +41,21 @@ body {
   width: 20%;
   padding: 1rem;
   border-radius: 5px;
-   background-color: rgba(255, 255, 255, 0.5);
-    -webkit-backdrop-filter: blur(4px);
-    -o-backdrop-filter: blur(4px);
-    -moz-backdrop-filter: blur(4px);
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(4px);
+  -o-backdrop-filter: blur(4px);
+  -moz-backdrop-filter: blur(4px);
 
-    backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
 }
 ```
-https://codepen.io/digitalhydra/pen/jPqWwP
+
+<CodePen codePenId="NWrVjPR" tabs={["css", "result"]} editable="true" />
 
 ### Valid Example
 
 A sample usage of this is to blur the div scrolling behind the navbar in an application. See the sample code below
 
-{% codepen https://codepen.io/temmietope/pen/BazeZqq default-tab=js,result %}
+<CodePen codePenId="BazeZqq" tabs={["css", "result"]} editable="true" />
 
-
-I hope this helps
+I hope this helps.

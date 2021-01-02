@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, Link, graphql } from "gatsby"
 import { Logo, NavDiv, NavWrapper } from "../elements"
 
-export const Nav = ({scrollToRef}) => {
+export const Nav = ({ scrollToRef }) => {
   const data = useStaticQuery(graphql`
     query {
       logo: file(relativePath: { eq: "logo.jpeg" }) {

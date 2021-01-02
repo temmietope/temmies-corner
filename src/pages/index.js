@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { graphql, Link } from "gatsby"
 import {
   FeatureImage,
@@ -21,6 +21,9 @@ export default function Home({ pageContext, data }) {
   //   const prevPage = currentPage - 1 === 1 ? '/' : `${currentPage - 1}`
   //   const nextPage = `${currentPage + 1}`
   const posts = data.allMdx.edges
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <Container>
       <Seo />

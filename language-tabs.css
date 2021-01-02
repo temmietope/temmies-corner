@@ -1,13 +1,16 @@
 .prism-code {
-  font-size: 1.5rem;
-  padding: 1rem;
+  /* font-size: 1.5rem;; */
+  font-size: 1.25rem;
+  padding: 1.3rem;
   margin: 1rem 0;
   border-radius: 10px;
   -webkit-overflow-scrolling: touch;
   background-color: transparent;
-  overflow: auto;
-  max-width: 100%;
   /* overflow: auto; */
+  max-width: 100%;
+  /* overflow: initial; */
+  overflow-x: auto;
+  box-sizing: border-box;
 }
 
 .token {
@@ -19,13 +22,12 @@ li > code {
   background: rgb(1, 22, 39);
   color: rgb(214, 222, 235);
   padding: 0.4em 0.3rem;
+  box-sizing: border-box;
 }
 
 .gatsby-highlight {
   font-size: 1rem;
   position: relative;
-  /* -webkit-overflow-scrolling: touch; */
-  /* overflow: auto; */
 }
 
 gatsby-highlight > code[class*="language-"],
@@ -62,6 +64,44 @@ gatsby-highlight > code[class*="language-"],
 
 code[class*="language-"],
 pre[class*="language-"] {
-  white-space: pre-wrap;
+  /* white-space: pre-wrap; */
   word-break: break-word !important;
+}
+
+.gatsby-highlight {
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+}
+.gatsby-highlight pre[class*="language-"] {
+  -webkit-overflow-scrolling: touch;
+}
+.gatsby-highlight pre[class*="language-"]::before {
+  background: black;
+  border-radius: 0 0 0.25rem 0.25rem;
+  color: white;
+  font-size: 12px;
+  letter-spacing: 0.025rem;
+  padding: 0.1rem 0.5rem;
+  position: absolute;
+  right: 1rem;
+  text-align: right;
+  text-transform: uppercase;
+  top: 0;
+}
+.gatsby-highlight pre[class~="language-js"]::before {
+  content: "js";
+  background: #f7df1e;
+  color: black;
+}
+
+.gatsby-highlight pre[class~="language-css"]::before {
+  content: "css";
+  background: #ff9800;
+  color: white;
+}
+
+.gatsby-highlight pre[class~="language-html"]::before {
+  content: "html";
+  background: #005a9c;
+  color: white;
 }
