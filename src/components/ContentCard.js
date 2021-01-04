@@ -3,7 +3,6 @@ import { CardWrapper, Date, H2, P, Tags, TagsAndDate } from "../elements"
 import Button from "./Button"
 
 export const ContentCard = ({ date, title, excerpt, slug, page, tags }) => {
-  console.log(tags)
   const tagsArray = tags && tags.split(",")
 
   return (

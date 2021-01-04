@@ -44,8 +44,10 @@ export const Nav = ({ scrollToRef }) => {
               Resume
             </Link>
           </li>
-          <li onClick={scrollToRef}>
-            <span className="nav-link">Contact</span>
+          <li>
+            <span className="nav-link" onClick={scrollToRef}>
+              Contact
+            </span>
           </li>
           {/* <li className="mode__toggle">
             <Toggle theme={theme} toggleTheme={toggleTheme} />
