@@ -83,30 +83,11 @@ export const Tags = styled.div`
     border-radius: 5px;
     display: grid;
     place-items: center;
-    color: #333;
+    /* color: #333; */
     font-weight: bold;
-    background-color: #786;
   }
   p:nth-child(1) {
     margin-left: 0;
-  }
-  p.javascript {
-    background-color: #f0db4f;
-  }
-  p.css {
-    background-color: #264de4aa;
-  }
-  p.html {
-    background-color: #e34c26;
-  }
-  p.react {
-    background-color: #61DBFB;
-  }
-  p.beginners {
-    background-color: #92014577;
-  }
-  p.accessibility {
-    background-color: #3e2a8166;
   }
 `
 
@@ -121,8 +102,8 @@ export const AuthorLink = styled.div`
     display: flex;
     align-items: center;
     text-decoration: none;
-    color:inherit;
-    :hover{
+    color: inherit;
+    :hover {
       text-decoration: underline;
     }
   }

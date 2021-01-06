@@ -5,8 +5,8 @@ export const PageHeader = styled.div`
   /* padding: 3rem 0; */
   h2 {
     font-size: 3rem;
-    text-transform: uppercase;
-    text-align: center;
+    /* text-transform: uppercase; */
+    /* text-align: center; */
   }
 
   ${props =>

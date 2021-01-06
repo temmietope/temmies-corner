@@ -13,12 +13,14 @@ import {
 } from "../elements"
 import { Container, FeatureImage, Post, Seo } from "../components"
 import ImageLoad from "../utils/ImageLoader"
+import StackLang from "../components/StackTag"
 
 export default function singlePost({ data, pageContext }) {
-  const featureImage = data.mdx.frontmatter.featureImage.childImageSharp.fixed
+  // const featureImage = data.mdx.frontmatter.featureImage.childImageSharp.fixed
   const seoImage = data.mdx.frontmatter.featureImage.publicURL
   const { previous, next } = pageContext
-  const tagsArray = data.mdx.frontmatter.tags.split(",")
+  const tagsArray = data.mdx.frontmatter.tags.split(", ")
+  console.log(tagsArray)
   const minRead = data.mdx.timeToRead
   return (
     <Container>
@@ -27,17 +29,17 @@ export default function singlePost({ data, pageContext }) {
         image={seoImage}
         description={data.mdx.frontmatter.excerpt}
       />
-      <FeatureImage fixed={featureImage} />
+      {/* <FeatureImage fixed={featureImage} /> */}
       <Post>
         <H1 margin="0 0 2rem 0">{data.mdx.frontmatter.title}</H1>
         <AuthorLink>
-          <Link to='/' className='link'>
-          <ImageLoad
-            src={require("../images/avatar.jpg")}
-            // placeholder={require('../../src/assets/images/blur.png')}
-            alt="Decription"
-          />
-          <P>Temitope</P>
+          <Link to="/" className="link">
+            <ImageLoad
+              src={require("../images/avatar.jpg")}
+              // placeholder={require('../../src/assets/images/blur.png')}
+              alt="Decription"
+            />
+            <P>Temitope</P>
           </Link>
           <P>{data.mdx.frontmatter.date}</P>
           <P>
@@ -47,11 +49,8 @@ export default function singlePost({ data, pageContext }) {
         <TagsAndDate>
           <Tags>
             {tagsArray.map((tag, index) => {
-              return (
-                <p className={tag} key={index}>
-                  {tag}
-                </p>
-              )
+              console.log(tag)
+              return <StackLang lang={tag} key={index} />
             })}
           </Tags>
           {/* <Date>{data.mdx.frontmatter.date}</Date> */}

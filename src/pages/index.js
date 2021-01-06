@@ -15,11 +15,6 @@ import Contact from "../components/Contact"
 import Stack from "../components/Stack"
 
 export default function Home({ pageContext, data }) {
-  //   const { currentPage, numPages } = pageContext
-  //   const isFirst = currentPage === 1
-  //   const isLast = currentPage === numPages
-  //   const prevPage = currentPage - 1 === 1 ? '/' : `${currentPage - 1}`
-  //   const nextPage = `${currentPage + 1}`
   const posts = data.allMdx.edges
   // useEffect(() => {
   //   window.scrollTo(0, 0)
