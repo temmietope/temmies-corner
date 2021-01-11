@@ -54,15 +54,15 @@ export const ContentWrapper = styled.main`
         margin-bottom: 10rem;
         box-sizing: border-box !important;
         /* width: 100%; */
-        /* display: grid;
+        display: grid;
         grid-template-columns: repeat(2, 46%);
-        grid-gap: 3rem 4%; */
+        grid-gap: 3rem 4%;
 
-        -moz-column-width: 48%;
+        /* -moz-column-width: 48%;
         -webkit-column-width: 48%;
         -moz-column-gap: 1em;
         -webkit-column-gap: 1em;
-        border: 1px solid;
+        border: 1px solid; */
         /* display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;

@@ -49,8 +49,7 @@ export default function singlePost({ data, pageContext }) {
         <TagsAndDate>
           <Tags>
             {tagsArray.map((tag, index) => {
-              console.log(tag)
-              return <StackLang lang={tag} key={index} />
+              return <StackLang lang={tag} key={index} active={true} />
             })}
           </Tags>
           {/* <Date>{data.mdx.frontmatter.date}</Date> */}

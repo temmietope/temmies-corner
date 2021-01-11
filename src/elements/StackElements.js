@@ -27,6 +27,7 @@ export const Project = styled.div`
   box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   transition: all 1s;
+  cursor: pointer;
 
   /* :hover {
     border-radius: 6% 12.5% 15% 10%/25% 10% 7.5% 15%;

@@ -39,24 +39,25 @@ export const CardWrapper = styled(props => <Link {...props} />)`
   :hover {
     /* filter: brightness(1.35); */
     box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.5);
+    transform: scale(1.04);
   }
   ${props =>
     props.page === "allPosts" &&
     css`
       box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.4);
-      display: inline-block;
+      /* display: inline-block; */
       margin: 0.25rem;
       padding: 1rem;
       /* width: 100%; */
       background: #efefef;
-      /* width: 100%;
+      width: 100%;
       box-sizing: border-box;
-      border-radius: 12% 25% 30% 20%/50% 20% 15% 30%;
+      /* border-radius: 12% 25% 30% 20%/50% 20% 15% 30%; */
 
       box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.3);
       border-left: 10px solid #a786df;
-      animation: morph 8s ease-in infinite;
-      padding: 5% 10%; */
+      /* animation: morph 8s ease-in infinite; */
+      padding: 5% 10%;
       h2 {
         font-size: 1.7rem;
       }
