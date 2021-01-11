@@ -44,27 +44,30 @@ export const CardWrapper = styled(props => <Link {...props} />)`
   ${props =>
     props.page === "allPosts" &&
     css`
+      height: inherit;
       box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.4);
-      /* display: inline-block; */
+      display: inline-block;
       margin: 0.25rem;
-      padding: 1rem;
       /* width: 100%; */
       background: #efefef;
-      width: 100%;
+      /* width: 100%; */
       box-sizing: border-box;
       /* border-radius: 12% 25% 30% 20%/50% 20% 15% 30%; */
 
       box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.3);
       border-left: 10px solid #a786df;
       /* animation: morph 8s ease-in infinite; */
-      padding: 5% 10%;
+      padding: 5%;
+      transition: 0.5s;
       h2 {
         font-size: 1.7rem;
       }
+      /* grid-row: ${props => (props.sec === "long" ? "1/3" : "3/4")}; */
     `}
   ${props =>
     props.page === "homePage" &&
     css`
+      width: 100%;
       h2 {
         min-height: 30%;
         max-height: 30%;

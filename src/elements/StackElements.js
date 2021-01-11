@@ -12,13 +12,8 @@ export const StackWrapper = styled.div`
 `
 
 export const ProjectsList = styled.div`
-  /* display: flex;
-border: 1px solid;
-background: red; */
   display: grid;
-  /* grid-template-columns: repeat(3, 32.5%); */
   grid-template-columns: repeat(2, 49%);
-
   grid-gap: 1rem 2%;
   margin: 3rem 0;
 `
