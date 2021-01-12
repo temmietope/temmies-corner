@@ -15,10 +15,11 @@ export const CardWrapper = styled(props => <Link {...props} />)`
   background: #fff;
   border-radius: 7px;
   h2 {
+    font-weight: 700;
     /* font-size: 1.8rem; */
   }
   .excerpt {
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
     line-height: 2rem;
     display: -webkit-box;
     -webkit-box-orient: vertical;

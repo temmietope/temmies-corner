@@ -5,8 +5,8 @@ import { Nav } from "./Nav"
 
 export const Container = ({ children }) => {
   useEffect(()=>{
-    window.scrollTo(0,0)
-    return()=>window.scrollTo(0,0)
+    // window.scrollTo(0,0)
+    // return()=>window.scrollTo(0,0)
   })
   const footer = useRef(null)
   const scrollToRef = ref => {

@@ -25,7 +25,7 @@ export default function allPosts({ pageContext, data }) {
       {/* <FeatureImage />
       <Header /> */}
       <Content page="allPosts">
-        <PageHead>Temmie's Corner</PageHead>
+        <PageHead>Frontco.de</PageHead>
         <div className="posts">
           {posts.map(post => (
             <ContentCard

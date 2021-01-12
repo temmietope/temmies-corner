@@ -3,8 +3,8 @@ import styled, { css } from "styled-components"
 export const PageHeader = styled.div`
   width: 100%;
   /* padding: 3rem 0; */
-  h2 {
-    font-size: 3rem;
+  h1 {
+    font-weight: bold
     /* text-transform: uppercase; */
     /* text-align: center; */
   }

@@ -60,7 +60,7 @@ const tags = {
   },
 }
 const StackLang = ({ lang, active }) => {
-    // console.log(lang)
+  // console.log(lang)
   let data = tags[lang]
   if (!data) {
     data = {
@@ -68,7 +68,11 @@ const StackLang = ({ lang, active }) => {
       text: lang,
     }
   }
-  return <StackTag color={data.color} active={active}>{data.text}</StackTag>
+  return (
+    <StackTag color={data.color} active={active}>
+      {data.text}
+    </StackTag>
+  )
 }
 
 export default StackLang

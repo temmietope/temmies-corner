@@ -6,9 +6,7 @@
   border-radius: 10px;
   -webkit-overflow-scrolling: touch;
   background-color: transparent;
-  /* overflow: auto; */
   max-width: 100%;
-  /* overflow: initial; */
   overflow-x: auto;
   box-sizing: border-box;
 }
@@ -21,7 +19,7 @@ p > code,
 li > code {
   background: rgb(1, 22, 39);
   color: rgb(214, 222, 235);
-  padding: 0.4em 0.3rem;
+  padding: 0.3% 0.5%;
   box-sizing: border-box;
 }
 
@@ -104,4 +102,21 @@ pre[class*="language-"] {
   content: "html";
   background: #005a9c;
   color: white;
+}
+
+@media only screen and (max-width: 50rem) {
+  .gatsby-highlight pre[class*="language-"]::before {
+    padding: 0.05rem 0.2rem;
+    font-size: 0.7rem;
+  }
+  .prism-code {
+    font-size: 1.2rem;
+    padding: 1.05rem;
+  }
+}
+@media only screen and (max-width: 35rem) {
+  .prism-code {
+    font-size: 1rem;
+    padding: 1rem;
+  }
 }

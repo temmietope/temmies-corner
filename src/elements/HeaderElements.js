@@ -51,19 +51,20 @@ export const HomeHeaderProfileSummary = styled.div`
   box-sizing: border-box;
 
   .intro {
-    h2 {
-      font-size: 3rem;
+    h1 {
+      font-weight: 700;
+      /* font-size: 3rem; */
       span {
         text-shadow: 2px 2px rgb(179, 171, 171);
       }
     }
 
-    p.summary {
-      font-size: 1.3rem;
+    .summary {
+      /* font-size: 1.3rem; */
       margin: 2rem 0;
     }
-    p.role {
-      font-size: 1.8rem;
+    .role {
+      /* font-size: 1.8rem; */
       font-weight: bold;
       margin-top: 1rem;
     }

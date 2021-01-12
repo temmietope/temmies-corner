@@ -1,5 +1,5 @@
 import React from "react"
-import { ProjectsList, StackWrapper } from "../elements"
+import { ProjectsList, StackWrapper, H3 } from "../elements"
 import Project from "./Project"
 
 export default function Stack() {
@@ -41,7 +41,7 @@ export default function Stack() {
   ]
   return (
     <StackWrapper>
-      <h3>Featured Projects</h3>
+      <H3 color='dark1'>Featured Projects</H3>
       <ProjectsList>
         {projects.map((project, index) => {
           return <Project key={index} project={project} />

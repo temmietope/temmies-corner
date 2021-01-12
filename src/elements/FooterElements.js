@@ -63,12 +63,13 @@ export const FooterWrapper = styled.footer`
   color: white;
   position: relative;
   .mantra {
+    text-align: center;
     p {
       font-size: 1.65rem;
     }
   }
-  @media ${props => props.theme.breakpoints.tablet} {
-    grid-column: 2 / span 6;
+  @media ${props => props.theme.breakpoints.mobile} {
+    /* grid-column: 2 / span 6; */
   }
 `
 
@@ -97,6 +98,10 @@ export const FooterSocialWrapper = styled.div`
       object-fit: contain;
     }
   }
+  @media ${props => props.theme.breakpoints.mobile} {
+    width: 100%;
+    /* margin-bottom: 20%; */
+  }
 `
 
 export const FooterCopyright = styled.div`
@@ -106,26 +111,27 @@ export const FooterCopyright = styled.div`
     font-size: 1rem;
     /* filter: brightness(0.8); */
   }
+  @media ${props => props.theme.breakpoints.mobile} {
+    margin-top: 5%;
+  }
 `
 
 export const FooterEmail = styled.div`
+  transition: all 0.7s;
   position: absolute;
   bottom: 80%;
   height: 10rem;
   width: 80%;
-  /* background: #276475; */
   background: #0e172c;
   border-radius: 20px;
   padding: 0 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  h5 {
-    font-size: 1.7rem;
-  }
   p {
     width: 50%;
     font-size: 1.25rem;
+    padding: 0 2%;
   }
   button {
     width: 20%;
@@ -135,7 +141,7 @@ export const FooterEmail = styled.div`
     background-color: inherit;
     border: 3px solid #a786df;
     border-radius: 100px 100px;
-    height: 3rem;
+    padding: 1% 2%;
     a {
       width: 100%;
       text-decoration: none;
@@ -150,6 +156,44 @@ export const FooterEmail = styled.div`
       width: 1rem;
       height: 1rem;
       margin-left: 3%;
+    }
+  }
+  @media ${props => props.theme.breakpoints.tablet} {
+    width: 90%;
+    padding: 0 4%;
+    p {
+      width: 50%;
+    }
+    button {
+      width: 23%;
+      a {
+        width: 100%;
+        font-size: 0.9rem;
+      }
+      img {
+        width: 0.8rem;
+        height: 0.8rem;
+        margin-left: 2%;
+      }
+    }
+  }
+  @media ${props => props.theme.breakpoints.mobile} {
+    min-height: 15rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    h2 {
+      width: 100%;
+    }
+    p {
+      margin: 3% 0;
+      width: 100%;
+    }
+    button {
+      width: 100%;
+      padding: 2%;
     }
   }
 `
