@@ -23,7 +23,7 @@ export default function Stack() {
     },
     {
       name: "Temmie's corner",
-      img: "github",
+      img: "logo",
       description:
         "My portfolio website that contains my biography and my blog. Built with Gatsby and graphql",
       stack: ["gatsby", "graphql", "styledComponents"],

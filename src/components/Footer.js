@@ -13,6 +13,9 @@ import {
 export const Footer = () => {
   const data = useStaticQuery(graphql`
     query {
+      logo: file(relativePath: { eq: "white-logo.svg" }) {
+        publicURL
+      }
       twitter: file(relativePath: { eq: "twitter.svg" }) {
         publicURL
       }
@@ -47,7 +50,7 @@ export const Footer = () => {
       </FooterEmail>
       <Logo>
         <Link to="/" className="brand" onClick={() => window.scrollTo(0, 0)}>
-          TIA
+          <img src={data.logo.publicURL} alt="brand-logo" />
         </Link>
       </Logo>
       <div className="mantra">
@@ -85,7 +88,7 @@ export const Footer = () => {
         </a>
       </FooterSocialWrapper>
       <FooterCopyright>
-        <p>Handcrafted by me Temitope Ayodele</p>
+        <p>Designed and Developed by me, Temitope Ayodele</p>
       </FooterCopyright>
     </FooterWrapper>
   )

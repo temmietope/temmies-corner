@@ -53,29 +53,12 @@ export const Logo = styled.div`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 2px 2px 434349;
-  /* input {
-    position: absolute;
-    right: 1rem;
-    height: 100%;
-    opacity: 0;
+  img {
+    object-fit: contain;
+    height: 2rem;
+    max-width: 6rem;
+    transition: all 0.8s;
   }
-  ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    li {
-      padding: 1rem;
-      .nav-link {
-        text-decoration: none;
-        font-size: 1rem;
-        text-transform: uppercase;
-        color: #333;
-        :hover {
-          color: blue;
-        }
-      }
-    }
-  } */
 `
 
 export const NavDiv = styled.div`
@@ -165,7 +148,7 @@ export const NavMenu = styled.ul`
       color: #333;
       text-shadow: 1px 2px 1px rgba(167, 134, 223, 0.3);
       :hover {
-        color: blue;
+        color: #a786df;
       }
     }
   }
@@ -175,7 +158,7 @@ export const NavMenu = styled.ul`
     width: 100%;
     opacity: ${props => (props.show ? "1" : "0")};
     visibility: ${props => (props.show ? "visible" : "hidden")};
-    transition: all 1s;
+    transition: all 0.6s;
     left: 0;
     top: 0;
     display: flex;
@@ -189,6 +172,9 @@ export const NavMenu = styled.ul`
     backdrop-filter: blur(4px);
     li {
       font-weight: 700;
+      .nav-link {
+        font-size: 1.3rem;
+      }
     }
   }
 `

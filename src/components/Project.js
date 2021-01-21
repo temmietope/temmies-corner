@@ -13,6 +13,9 @@ const ProjectCard = ({ project }) => {
       voguepay: file(relativePath: { eq: "voguepay.svg" }) {
         publicURL
       }
+      logo: file(relativePath: { eq: "logo.svg" }) {
+        publicURL
+      }
       reactDevtoEmbed: file(relativePath: { eq: "react-devto-embed.svg" }) {
         publicURL
       }
@@ -40,7 +43,7 @@ const ProjectCard = ({ project }) => {
             <StackLang lang={s} key={index} active={coloredTag} />
           ))}
         </div>
-        <P>{project.description}</P>
+        <P className="desc">{project.description}</P>
 
         <div className="project-links">
           {project.githubRepo && (

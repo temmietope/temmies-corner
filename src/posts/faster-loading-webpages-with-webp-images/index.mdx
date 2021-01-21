@@ -41,7 +41,7 @@ If the browser does not support webP image formats, the JPG image is loaded.
 
 To avoid the clumsiness, (as this seems like too many lines of code in my opinion, lol) you can create a component for this. Using ReactJS,
 
-```javascript
+```js
 const ImageWithFallback = ({
   src,
   fallback,
@@ -59,7 +59,7 @@ const ImageWithFallback = ({
 
 So, whenever you want to add an image in your code, you can easily import the _ImageWithFallback_ component and use as an image tag. Keep your code tidy :)
 
-```javascript
+```js
 <ImageWithFallback
   src="/images/my-image.webp"
   fallback="/images/my-image.png"

@@ -1,53 +1,5 @@
 import styled from "styled-components"
 
-// export const FooterWrapper = styled.footer`
-//   grid-column: 2 / span 12;
-//   min-height: 11.25rem;
-//   padding: 3rem 0;
-//   display: flex;
-//   justify-content: center;
-//   align-items: flex-start;
-
-//   @media ${props => props.theme.breakpoints.tablet} {
-//     grid-column: 2 / span 6;
-//   }
-// `
-
-// export const FooterSocialWrapper = styled.div`
-//   display: flex;
-//   flex-wrap: wrap;
-//   align-items: center;
-//   text-align: center;
-//   background: red;
-//   &p {
-//     text-align: center;
-//     flex: 0 0 100%;
-//   }
-// `
-
-// export const FooterSocialIcons = styled.div`
-//   flex: 0 0 100%;
-//   margin-bottom: 2rem;
-//   a {
-//     border-radius: 50%;
-//     border: 1px solid;
-//     height: 3rem;
-//     width: 3rem;
-//   }
-//   img {
-//     height: 22px;
-//     height: 1rem;
-//     width: 1rem;
-//     object-fit: contain;
-//     padding: 0 1rem;
-//     transition: filter 0.3s ease;
-//   }
-//   img:hover,
-//   img:focus {
-//     filter: brightness(50%);
-//   }
-// `
-
 export const FooterWrapper = styled.footer`
   width: 100%;
   height: 30rem;
@@ -70,6 +22,7 @@ export const FooterWrapper = styled.footer`
   }
   @media ${props => props.theme.breakpoints.mobile} {
     /* grid-column: 2 / span 6; */
+    margin-top: 8rem;
   }
 `
 
@@ -90,7 +43,9 @@ export const FooterSocialWrapper = styled.div`
     /* border: 1px solid; */
     box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.5);
 
-    border-radius: 50%;
+    /* border-radius: 50%; */
+    border-radius: 12% 25% 30% 20%/50% 20% 15% 30%;
+
     box-sizing: border-box;
     img {
       width: 50%;
@@ -140,7 +95,8 @@ export const FooterEmail = styled.div`
     align-items: center;
     background-color: inherit;
     border: 3px solid #a786df;
-    border-radius: 100px 100px;
+    /* border-radius: 100px 100px; */
+    border-radius: 12% 25% 30% 20%/50% 20% 15% 30%;
     padding: 1% 2%;
     a {
       width: 100%;

@@ -5,7 +5,7 @@ import { Logo, NavDiv, NavWrapper, NavMenu } from "../elements"
 export const Nav = ({ scrollToRef }) => {
   const data = useStaticQuery(graphql`
     query {
-      logo: file(relativePath: { eq: "logo.jpeg" }) {
+      logo: file(relativePath: { eq: "logo.svg" }) {
         publicURL
       }
     }
@@ -26,7 +26,7 @@ export const Nav = ({ scrollToRef }) => {
       <NavDiv>
         <Logo>
           <Link to="/" className="brand" onClick={() => window.scrollTo(0, 0)}>
-            TIA
+          <img src={data.logo.publicURL} alt="my logo" />
           </Link>
         </Logo>
         <input

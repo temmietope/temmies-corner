@@ -62,7 +62,9 @@ export default function Header({ fluid }) {
           style={{
             width: "100%",
             height: "100%",
-            borderRadius: "50%",
+            // borderRadius: "50%",
+            borderRadius: "12% 25% 30% 20%/50% 20% 15% 30%",
+
             objectFit: "cover",
           }}
         />

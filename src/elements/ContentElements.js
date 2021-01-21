@@ -48,7 +48,7 @@ export const ContentWrapper = styled.main`
       .posts {
         margin-top: 5rem;
         height: inherit;
-        margin-bottom: 10rem;
+        margin-bottom: 2rem;
         box-sizing: border-box !important;
         max-width: 100%;
         display: grid;
@@ -61,4 +61,10 @@ export const ContentWrapper = styled.main`
       grid-template-columns: 100%;
     }
   }
+  ${props =>
+    (props.page =
+      "notFound" &&
+      css`
+        text-align: center;
+      `)}
 `

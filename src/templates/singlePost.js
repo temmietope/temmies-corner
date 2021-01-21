@@ -48,7 +48,8 @@ export default function singlePost({ data, pageContext, fixed }) {
               style={{
                 width: "2rem",
                 height: "2rem",
-                borderRadius: "50%",
+                borderRadius: "12% 25% 30% 20%/50% 20% 15% 30%",
+                // borderRadius: "50%",
                 marginRight: "1rem",
                 objectFit: "contain",
                 textAlign: "center",

@@ -54,6 +54,9 @@ export const Project = styled.div`
       transition: all 0.8s;
     }
   }
+  .desc{
+    padding: 3% 0;
+  }
   .project-content {
     padding: 2%;
     box-sizing: border-box;

@@ -4,7 +4,7 @@ module.exports = {
     title: "Temmie's corner",
     description: "Awesome blog to checkout",
     url: "https://temmies_corner.com",
-    image: "office.jpg",
+    image: "logo.svg",
     twitterUsername: "@temmmie_",
     author: "Temitope",
   },
