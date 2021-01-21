@@ -33,6 +33,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-mdx-embed`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -52,15 +53,6 @@ module.exports = {
       options: {
         fonts: [`roboto mono`, `Nunito\:400,400i,700,700i`],
         display: "swap",
-      },
-    },
-    {
-      resolve: `gatsby-plugin-nprogress`,
-      options: {
-        // Setting a color is optional.
-        color: `#a786df`,
-        // Disable the loading spinner.
-        showSpinner: false,
       },
     },
   ],

@@ -6,17 +6,20 @@ import { preToCodeBlock } from "mdx-utils"
 import "./language-tabs.css"
 import Code from "./src/components/Code"
 
-
 const GlobalStyles = createGlobalStyle`
     *{
         box-sizing: border-box;
         margin: 0;
-        padding: 0
+        padding: 0;
     }
     body,html {
         font-family: ${props => props.theme.fonts.main};
-        height: 100%;
+        /* height: 100%; */
         background-color: ${props => props.theme.colors.light1};
+        scroll-behavior: smooth;
+        .no-scroll{
+          overflow: hidden;
+        }
     }
 `
 
