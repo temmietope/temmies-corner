@@ -13,7 +13,7 @@ export const ContentCard = ({ date, title, excerpt, slug, page, tags }) => {
       onMouseEnter={() => setColoredTag(true)}
       onMouseLeave={() => setColoredTag(false)}
     >
-      <h2>{title}</h2>
+      <H2>{title}</H2>
       <TagsAndDate>
         <Tags page="home">
           {tagsArray
@@ -25,7 +25,9 @@ export const ContentCard = ({ date, title, excerpt, slug, page, tags }) => {
         <Date>{date}</Date>
       </TagsAndDate>
 
-      <p className="excerpt">{excerpt}</p>
+      <P className="excerpt">
+        {excerpt}
+      </P>
     </CardWrapper>
   )
 }

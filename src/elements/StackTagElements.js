@@ -10,4 +10,10 @@ export const StackTag = styled.p`
     transform: scale(1.07);
     box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.5);
   }
+  @media ${props => props.theme.breakpoints.tablet} {
+    font-size: 1rem !important;
+  }
+  @media ${props => props.theme.breakpoints.mobile} {
+    font-size: 0.7rem !important;
+  }
 `

@@ -5,6 +5,7 @@ import {
   FooterSocialWrapper,
   FooterCopyright,
   P,
+  H3,
   Logo,
   FooterEmail,
 } from "../elements"
@@ -32,11 +33,11 @@ export const Footer = () => {
   return (
     <FooterWrapper>
       <FooterEmail>
-        <h5>Work with me?</h5>
-        <p>
+        <H3 color="light1">Work with me?</H3>
+        <P color="light1" size="medium">
           Interested in working together? We should queue up a chat. I'll buy
           the coffee!
-        </p>
+        </P>
         <button>
           <a href="mailto:temmieayodele@gmail.com" className="mail btn">
             Send me a mail!
@@ -50,7 +51,7 @@ export const Footer = () => {
         </Link>
       </Logo>
       <div className="mantra">
-        <p>Frontend Developer and Technical writer</p>
+        <P color="white">Frontend Developer and Technical writer</P>
       </div>
       <FooterSocialWrapper>
         <a

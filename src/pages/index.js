@@ -8,7 +8,7 @@ import {
   Seo,
   PageHead,
 } from "../components"
-import { H1, P } from "../elements"
+import { H1, P, H3 } from "../elements"
 import Pagination from "../components/Pagination"
 import Header from "../components/Header"
 import Contact from "../components/Contact"
@@ -26,9 +26,9 @@ export default function Home({ pageContext, data }) {
       {/* <FeatureImage/> */}
       <Content page="home">
         <div className="home__content-header">
-          <h3>Recent Posts</h3>
+          <H3>Recent Posts</H3>
           <Link to="/blog" className="view-all">
-            All Posts
+            <P>All Posts</P>
           </Link>
         </div>
 

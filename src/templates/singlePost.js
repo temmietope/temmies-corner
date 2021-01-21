@@ -11,17 +11,23 @@ import {
   Tags,
   TagsAndDate,
 } from "../elements"
+import Img from "gatsby-image"
+
 import { Container, FeatureImage, Post, Seo } from "../components"
 import ImageLoad from "../utils/ImageLoader"
 import StackLang from "../components/StackTag"
 
-export default function singlePost({ data, pageContext }) {
+export default function singlePost({ data, pageContext, fixed }) {
   // const featureImage = data.mdx.frontmatter.featureImage.childImageSharp.fixed
   const seoImage = data.mdx.frontmatter.featureImage.publicURL
   const { previous, next } = pageContext
   const tagsArray = data.mdx.frontmatter.tags.split(", ")
-  console.log(tagsArray)
   const minRead = data.mdx.timeToRead
+  console.log(data)
+  const myAvatar = data.imageSharp.fixed
+  const truncate = (str, no_words = 4) => {
+    return `${str.split(" ").splice(0, no_words).join(" ")} ...`
+  }
   return (
     <Container>
       <Seo
@@ -34,15 +40,25 @@ export default function singlePost({ data, pageContext }) {
         <H1 margin="0 0 2rem 0">{data.mdx.frontmatter.title}</H1>
         <AuthorLink>
           <Link to="/" className="link">
-            <ImageLoad
+            {/* <ImageLoad
               src={require("../images/avatar.jpg")}
-              // placeholder={require('../../src/assets/images/blur.png')}
               alt="Decription"
+            /> */}
+            <Img
+              fixed={myAvatar}
+              style={{
+                width: "2rem",
+                height: "2rem",
+                borderRadius: "50%",
+                marginRight: "1rem",
+                objectFit: "contain",
+                textAlign: "center",
+              }}
             />
-            <P>Temitope</P>
+            <P color="dark2">Temitope</P>
           </Link>
-          <P>{data.mdx.frontmatter.date}</P>
-          <P>
+          <P color="dark2">{data.mdx.frontmatter.date}</P>
+          <P color="dark2">
             {minRead} {minRead === 1 ? "minute" : "minutes"} read
           </P>
         </AuthorLink>
@@ -64,7 +80,7 @@ export default function singlePost({ data, pageContext }) {
                 rel="prev"
                 page="singlePost"
               >
-                {"<< " + previous.frontmatter.title}
+                {"<< " + truncate(previous.frontmatter.title)}
               </PaginationElement>
             )}
           </li>
@@ -73,9 +89,10 @@ export default function singlePost({ data, pageContext }) {
               <PaginationElement
                 to={`/blog/${next.frontmatter.slug}`}
                 rel="next"
+                className="next"
                 page="singlePost"
               >
-                {next.frontmatter.title + " >>"}
+                {truncate(next.frontmatter.title) + " >>"}
               </PaginationElement>
             )}
           </li>
@@ -87,6 +104,11 @@ export default function singlePost({ data, pageContext }) {
 
 export const pageQuery = graphql`
   query SinglePostQuery($id: String!) {
+    imageSharp(fixed: { originalName: { eq: "avatar.jpg" } }) {
+      fixed {
+        ...GatsbyImageSharpFixed
+      }
+    }
     mdx(id: { eq: $id }) {
       body
       timeToRead

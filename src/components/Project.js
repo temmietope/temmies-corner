@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import StackLang from "./StackTag"
 import { useStaticQuery } from "gatsby"
-import { Project, ProjectsList, StackWrapper } from "../elements"
+import { Project, ProjectsList, StackWrapper, H2, P } from "../elements"
 
 const ProjectCard = ({ project }) => {
   const [coloredTag, setColoredTag] = useState(false)
@@ -33,32 +33,35 @@ const ProjectCard = ({ project }) => {
       <div className="logo-wrapper">
         <img src={data[project.img].publicURL} alt="my logo" />
       </div>
-      <h4>{project.name}</h4>
-      <p>{project.description}</p>
-      <div className="stack-list">
-        {project.stack.map((s, index) => (
-          <StackLang lang={s} key={index} active={coloredTag} />
-        ))}
-      </div>
-      <div className="project-links">
-        {project.githubRepo && (
-          <a
-            href={project.githubRepo}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={data.github.publicURL} alt="my logo" />
-          </a>
-        )}
-        {project.hostedLink && (
-          <a
-            href={project.hostedLink}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={data.goTo.publicURL} alt="my logo" />
-          </a>
-        )}
+      <div className="project-content">
+        <H2>{project.name}</H2>
+        <div className="stack-list">
+          {project.stack.map((s, index) => (
+            <StackLang lang={s} key={index} active={coloredTag} />
+          ))}
+        </div>
+        <P>{project.description}</P>
+
+        <div className="project-links">
+          {project.githubRepo && (
+            <a
+              href={project.githubRepo}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={data.github.publicURL} alt="my logo" />
+            </a>
+          )}
+          {project.hostedLink && (
+            <a
+              href={project.hostedLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={data.goTo.publicURL} alt="my logo" />
+            </a>
+          )}
+        </div>
       </div>
     </Project>
   )

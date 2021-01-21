@@ -4,33 +4,35 @@ import {
   HomeHeaderAvatar,
   HomeHeaderProfileSummary,
 } from "../elements/HeaderElements"
+import { H1, H2, P } from "../elements"
 import ImageLoad from "../utils/ImageLoader"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 
-export default function Header({ fixed }) {
+export default function Header({ fluid }) {
   const data = useStaticQuery(graphql`
     query {
-      imageSharp(fixed: { originalName: { eq: "avatar.jpg" } }) {
-        fixed {
-          ...GatsbyImageSharpFixed
+      imageSharp(fluid: { originalName: { eq: "avatar.jpg" } }) {
+        fluid {
+          ...GatsbyImageSharpFluid
         }
       }
     }
   `)
+  console.log(data)
   return (
     <HomeHeader>
       <HomeHeaderProfileSummary>
         <div className="intro">
-          <h2>
+          <H1>
             Hi, I am <span className="my__name">TEMITOPE AYODELE</span>
-          </h2>
-          <p className="role">Frontend Engineer and Technical writer</p>
-          <p className="summary">
+          </H1>
+          <H2 className="role">Frontend Engineer and Technical writer</H2>
+          <P className="summary">
             I am a web-accessibility and open-source advocate. I am a great
             team-player who has worked with awesome teams to build great
             products. I am self-taught with rich experience on React and Vue.
-          </p>
+          </P>
         </div>
         <div className="contact__links">
           <a
@@ -57,21 +59,8 @@ export default function Header({ fixed }) {
         </div>
       </HomeHeaderProfileSummary>
       <HomeHeaderAvatar>
-        {/* <Img
-          fixed={fixed ? fixed : data.imageSharp.fixed}
-          style={{
-            // position: 'absolute',
-            // left: 0,
-            // top: 0,
-            width: "100%",
-            height: "100%",
-            borderRadius: "50%",
-            border: "4px solid gray",
-            objectFit: "cover",
-          }}
-        /> */}
         <Img
-          fixed={fixed ? fixed : data.imageSharp.fixed}
+          fluid={fluid ? fluid : data.imageSharp.fluid}
           style={{
             width: "100%",
             height: "100%",

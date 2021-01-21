@@ -39,6 +39,7 @@ import { Link } from "gatsby"
 // `
 
 export const PaginationWrapper = styled.ul`
+  width: 100%;
   list-style: none;
   display: ${props => (props.numPages === 1 ? "none" : "flex")};
   justify-content: ${props =>
@@ -46,7 +47,20 @@ export const PaginationWrapper = styled.ul`
   align-items: center;
   height: 4rem;
   box-shadow: 0px 3px 6px #d9d4e7;
+  padding: 0 2%;
   margin-top: 2rem;
+  box-sizing: border-box;
+  @media ${props => props.theme.breakpoints.tablet} {
+    /* display: grid; */
+    /* grid-template-columns: 48% 48%; */
+    ${props =>
+      props.page === "singlePost" &&
+      css`
+        height: inherit;
+        padding: 2%;
+        box-sizing: border-box;
+      `}
+  }
 `
 
 export const PaginationElement = styled(props => <Link {...props} />)`
@@ -56,6 +70,7 @@ export const PaginationElement = styled(props => <Link {...props} />)`
   font-weight: 400;
   padding: 0 1rem;
   color: #333;
+
   &:hover,
   &:focus {
     text-decoration: underline;
@@ -72,5 +87,9 @@ export const PaginationElement = styled(props => <Link {...props} />)`
     css`
       font-weight: 700;
       font-size: 1rem;
+      @media ${props => props.theme.breakpoints.tablet} {
+        font-size: 0.7rem;
+        line-height: 100%;
+      }
     `}
 `

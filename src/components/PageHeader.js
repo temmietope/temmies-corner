@@ -1,6 +1,10 @@
-import React from 'react'
-import { PageHeader } from '../elements'
+import React from "react"
+import { PageHeader, H1 } from "../elements"
 
 export const PageHead = ({ children, page }) => {
-  return <PageHeader page={page}><h2>{children}</h2></PageHeader>
+  return (
+    <PageHeader page={page}>
+      <H1>{children}</H1>
+    </PageHeader>
+  )
 }
