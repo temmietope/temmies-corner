@@ -5,7 +5,6 @@ import {
   HomeHeaderProfileSummary,
 } from "../elements/HeaderElements"
 import { H1, H2, P } from "../elements"
-import ImageLoad from "../utils/ImageLoader"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -64,15 +63,9 @@ export default function Header({ fluid }) {
             width: "100%",
             height: "100%",
             borderRadius: "50%",
-            // border: "4px solid gray",
             objectFit: "cover",
           }}
         />
-        {/* <ImageLoad
-          src={require('../images/avatar.jpg')}
-        //   placeholder={require('../../src/assets/images/blur.png')}
-          alt="Decription"
-        /> */}
       </HomeHeaderAvatar>
     </HomeHeader>
   )
