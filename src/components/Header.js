@@ -19,7 +19,6 @@ export default function Header({ fluid }) {
       }
     }
   `)
-  console.log(data)
   return (
     <HomeHeader>
       <HomeHeaderProfileSummary>

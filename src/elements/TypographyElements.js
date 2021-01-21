@@ -114,6 +114,7 @@ export const H2 = styled.h2`
 
 export const H3 = styled.h3`
   font-size: 1.8rem;
+  text-shadow: 1px 2px 1px rgba(167, 134, 223, 0.3);
   line-height: 1.875rem;
   color: ${props => {
     switch (props.color) {

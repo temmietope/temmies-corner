@@ -163,6 +163,7 @@ export const NavMenu = styled.ul`
       font-size: 1rem;
       text-transform: uppercase;
       color: #333;
+      text-shadow: 1px 2px 1px rgba(167, 134, 223, 0.3);
       :hover {
         color: blue;
       }
@@ -173,6 +174,7 @@ export const NavMenu = styled.ul`
     height: 100vh;
     width: 100%;
     opacity: ${props => (props.show ? "1" : "0")};
+    visibility: ${props => (props.show ? "visible" : "hidden")};
     transition: all 1s;
     left: 0;
     top: 0;

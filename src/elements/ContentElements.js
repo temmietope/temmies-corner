@@ -26,6 +26,17 @@ export const ContentWrapper = styled.main`
         .view-all {
           text-decoration: none;
           cursor: pointer;
+          box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
+          border-radius: 12% 25% 30% 20%/50% 20% 15% 30%;
+          border: 0.7px solid;
+          padding: 2%;
+          transition: all 0.7s;
+          text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
+          filter: brightness(1.1);
+          background: #d9d4e7;
+          :hover {
+            transform: scale(1.07);
+          }
         }
       }
     `}

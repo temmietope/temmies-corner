@@ -36,8 +36,11 @@ export const CardWrapper = styled(props => <Link {...props} />)`
     }
   }
   :hover {
-    box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.5);
+    /* box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.5);
+    transform: scale(1.025); */
     transform: scale(1.025);
+    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 6% 12% 15% 10%/20% 10% 7% 15%;
   }
   ${props =>
     props.page === "allPosts" &&
@@ -48,6 +51,7 @@ export const CardWrapper = styled(props => <Link {...props} />)`
       margin: 0.25rem;
       /* width: 100%; */
       background: #efefef;
+      filter: brightness(1.03);
       /* width: 100%; */
       box-sizing: border-box;
       /* border-radius: 12% 25% 30% 20%/50% 20% 15% 30%; */
