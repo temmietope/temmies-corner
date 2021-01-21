@@ -48,6 +48,7 @@ export const HomeHeader = styled.div`
   }
   @media ${props => props.theme.breakpoints.mobile} {
     height: 100%;
+    padding: 5%;
     display: flex;
     flex-flow: column-reverse;
   }
@@ -84,7 +85,7 @@ export const HomeHeaderProfileSummary = styled.div`
     }
   }
   @media ${props => props.theme.breakpoints.mobile} {
-    margin: 5% 0;
+    margin: 5% 2%;
     text-align: center;
     .contact__links {
       font-size: 0.8rem;
