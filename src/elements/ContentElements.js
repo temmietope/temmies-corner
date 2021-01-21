@@ -43,9 +43,11 @@ export const ContentWrapper = styled.main`
         display: grid;
         grid-template-columns: 48% 48%;
         grid-gap: 1rem 2%;
-        @media ${props => props.theme.breakpoints.mobile} {
-          grid-template-columns: 100%;
-        }
       }
     `}
+    @media ${props => props.theme.breakpoints.mobile} {
+    .posts {
+      grid-template-columns: 100%;
+    }
+  }
 `

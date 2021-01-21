@@ -134,7 +134,7 @@ export const FooterEmail = styled.div`
     padding: 0 2%;
   }
   button {
-    width: 20%;
+    width: 23%;
     display: flex;
     justify-content: center;
     align-items: center;

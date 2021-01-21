@@ -16,6 +16,10 @@ export const ProjectsList = styled.div`
   grid-template-columns: repeat(2, 49%);
   grid-gap: 1rem 2%; */
   margin: 3rem 0;
+  @media ${props => props.theme.breakpoints.mobile} {
+    margin: 5% 0;
+    margin-bottom: 10rem;
+  }
 `
 
 export const Project = styled.div`
@@ -33,8 +37,9 @@ export const Project = styled.div`
   padding: 5%;
   position: relative; */
   display: grid;
-  grid-template-columns: 18% 80%;
+  grid-template-columns: 15% 83%;
   justify-content: space-between;
+  transition: all 0.5s;
   .logo-wrapper {
     height: 100%;
     /* width: 25%; */
@@ -44,8 +49,8 @@ export const Project = styled.div`
 
     img {
       object-fit: contain;
-      height: 10rem;
-      max-width: 100%;
+      height: 5rem;
+      max-width: 80%;
       transition: all 0.8s;
     }
   }
@@ -101,35 +106,40 @@ export const Project = styled.div`
       }
     }
   }
-
-  @keyframes morph {
-    0% {
-      border-radius: 6% 12.5% 15% 10%/25% 10% 7.5% 15%;
+  @media ${props => props.theme.breakpoints.mobile} {
+    /* display: grid;
+  grid-template-columns: 15% 83%; */
+    margin-bottom: 1rem;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    .logo-wrapper {
+      height: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        height: 80%;
+      }
     }
-
-    25% {
-      border-radius: 7.5% 10% 12.5% 15%/20% 7.5% 10% 10%;
+    .project-content {
+      padding: 1% 0;
+      margin-top: 1%;
     }
-
-    50% {
-      border-radius: 10% 7.5% 10% 5%/15% 15% 15% 5%;
+    h2 {
+      margin: 0;
+      margin-bottom: 1%;
     }
-    60% {
-      border-radius: 8.5% 9% 11.5% 10%/17.5% 12.5% 12.5% 10%;
+    .stack-list {
+      margin: 1% 0;
     }
-    75% {
-      border-radius: 7.5% 10% 11.5% 15%/20% 7.5% 10% 10%;
-    }
-
-    80% {
-      border-radius: 7.5% 11.5% 11.5% 10%/21.5% 10% 9% 11%;
-    }
-
-    90% {
-      border-radius: 10% 15% 19% 9%/25% 16% 14% 15%;
-    }
-    100% {
-      border-radius: 8% 14% 17% 11%/28% 13% 9% 17%;
+    .project-links {
+      margin-top: 1%;
+      img {
+        width: 1rem;
+        height: 1rem;
+        margin: 0 1rem;
+      }
     }
   }
 `

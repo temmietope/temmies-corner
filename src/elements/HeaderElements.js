@@ -43,30 +43,36 @@ export const HomeHeader = styled.div`
   a:after {
     background: black;
   }
+  @media ${props => props.theme.breakpoints.tablet} {
+    height: 33rem;
+  }
+  @media ${props => props.theme.breakpoints.mobile} {
+    height: 100%;
+    display: flex;
+    flex-flow: column-reverse;
+  }
 `
 
 export const HomeHeaderProfileSummary = styled.div`
   // width: 50%;
-  flex: 0.7;
+  /* flex: 0.7; */
+  flex: 1;
   box-sizing: border-box;
-
+  transition: all 0.5s;
   .intro {
     h1 {
       font-weight: 700;
-      /* font-size: 3rem; */
       span {
         text-shadow: 2px 2px rgb(179, 171, 171);
       }
     }
 
     .summary {
-      /* font-size: 1.3rem; */
-      margin: 2rem 0;
+      margin: 4% 0;
     }
     .role {
-      /* font-size: 1.8rem; */
       font-weight: bold;
-      margin-top: 1rem;
+      margin-top: 1%;
     }
   }
 
@@ -77,22 +83,36 @@ export const HomeHeaderProfileSummary = styled.div`
       // color: inherit;
     }
   }
+  @media ${props => props.theme.breakpoints.mobile} {
+    margin: 5% 0;
+    text-align: center;
+    .contact__links {
+      font-size: 0.8rem;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 `
 
 export const HomeHeaderAvatar = styled.div`
-  flex: 0.2;
-  height: 50%;
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  /* width: 20rem;
-  height: 20rem; */
-  /* height: 30%; */
   margin-left: 5%;
-  /* max-width: 26rem; */
-  min-width: 18rem;
-  /* max-height: 26rem; */
-  min-height: 18rem;
-  img {
+  width: 18rem;
+  height: 18rem;
+  transition: all 0.5s;
+  .gatsby-image-wrapper {
+    transition: all 0.5s;
+  }
+  @media ${props => props.theme.breakpoints.tablet} {
+    width: 15rem;
+    height: 15rem;
+  }
+  @media ${props => props.theme.breakpoints.mobile} {
+    margin-left: 0;
+
+    width: 10rem;
+    height: 10rem;
   }
 `

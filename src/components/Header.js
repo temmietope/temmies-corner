@@ -9,12 +9,12 @@ import ImageLoad from "../utils/ImageLoader"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 
-export default function Header({ fixed }) {
+export default function Header({ fluid }) {
   const data = useStaticQuery(graphql`
     query {
-      imageSharp(fixed: { originalName: { eq: "avatar.jpg" } }) {
-        fixed {
-          ...GatsbyImageSharpFixed
+      imageSharp(fluid: { originalName: { eq: "avatar.jpg" } }) {
+        fluid {
+          ...GatsbyImageSharpFluid
         }
       }
     }
@@ -59,21 +59,8 @@ export default function Header({ fixed }) {
         </div>
       </HomeHeaderProfileSummary>
       <HomeHeaderAvatar>
-        {/* <Img
-          fixed={fixed ? fixed : data.imageSharp.fixed}
-          style={{
-            // position: 'absolute',
-            // left: 0,
-            // top: 0,
-            width: "100%",
-            height: "100%",
-            borderRadius: "50%",
-            border: "4px solid gray",
-            objectFit: "cover",
-          }}
-        /> */}
         <Img
-          fixed={fixed ? fixed : data.imageSharp.fixed}
+          fluid={fluid ? fluid : data.imageSharp.fluid}
           style={{
             width: "100%",
             height: "100%",

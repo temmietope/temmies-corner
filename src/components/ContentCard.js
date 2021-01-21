@@ -25,7 +25,7 @@ export const ContentCard = ({ date, title, excerpt, slug, page, tags }) => {
         <Date>{date}</Date>
       </TagsAndDate>
 
-      <P size="medium" className="excerpt">
+      <P className="excerpt">
         {excerpt}
       </P>
     </CardWrapper>

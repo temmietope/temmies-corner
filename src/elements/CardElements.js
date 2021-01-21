@@ -16,20 +16,18 @@ export const CardWrapper = styled(props => <Link {...props} />)`
   border-radius: 7px;
   h2 {
     font-weight: 700;
-    /* font-size: 1.8rem; */
   }
   .excerpt {
-    /* font-size: 1.2rem; */
-    line-height: 2rem;
+    line-height: 150%;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
     overflow: hidden;
   }
   small {
-    min-height: 10%;
+    /* min-height: 10%;
     max-height: 10%;
-    margin: 1rem 0;
+    margin: 1rem 0; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -38,9 +36,8 @@ export const CardWrapper = styled(props => <Link {...props} />)`
     }
   }
   :hover {
-    /* filter: brightness(1.35); */
     box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.5);
-    transform: scale(1.04);
+    transform: scale(1.025);
   }
   ${props =>
     props.page === "allPosts" &&
@@ -73,6 +70,17 @@ export const CardWrapper = styled(props => <Link {...props} />)`
         min-height: 30%;
         max-height: 30%;
         font-size: 1.6rem;
+      }
+      @media ${props => props.theme.breakpoints.tablet} {
+        padding: 4%;
+      }
+      @media ${props => props.theme.breakpoints.mobile} {
+        padding: 3%;
+        height: inherit;
+        h2 {
+          min-height: inherit;
+          max-height: 100%;
+        }
       }
     `}
 
