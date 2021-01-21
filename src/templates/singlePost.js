@@ -23,7 +23,6 @@ export default function singlePost({ data, pageContext, fixed }) {
   const { previous, next } = pageContext
   const tagsArray = data.mdx.frontmatter.tags.split(", ")
   const minRead = data.mdx.timeToRead
-  console.log(data)
   const myAvatar = data.imageSharp.fixed
   const truncate = (str, no_words = 4) => {
     return `${str.split(" ").splice(0, no_words).join(" ")} ...`
