@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet"
 import { StaticQuery, graphql } from "gatsby"
 
 export const Seo = ({ description, keywords, title, image, url, author }) => {
-  const slug = window.location.pathname
+  const slug = typeof window !== "undefined" ? window.location.pathname : ""
   return (
     <StaticQuery
       query={detailsQuery}

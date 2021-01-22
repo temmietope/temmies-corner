@@ -60,7 +60,6 @@ const tags = {
   },
 }
 const StackLang = ({ lang, active }) => {
-  // console.log(lang)
   let data = tags[lang]
   if (!data) {
     data = {
