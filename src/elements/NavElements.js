@@ -32,7 +32,6 @@ export const NavWrapper = styled.nav`
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 2px 2px 434349;
   }
 `
 
@@ -145,16 +144,27 @@ export const NavMenu = styled.ul`
       text-decoration: none;
       font-size: 1rem;
       text-transform: uppercase;
-      color: #333;
-      text-shadow: 1px 2px 1px rgba(167, 134, 223, 0.3);
+      color: #53316C;
+
+      /* text-shadow: 1px 2px 1px rgba(167, 134, 223, 0.3); */
+      position: relative;
+      :after{
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background: #a786df;
+        content: '';
+        left: 0;
+        bottom: 0;
+        transition: width 0.3s;
+      }
       :hover {
-        /* color: #a786df; */
-        box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
-        border-radius: 12% 25% 30% 20%/50% 20% 15% 30%;
-        border: 0.7px solid;
-        padding: 10%;
         transition: all 0.1s;
         filter: brightness(1.1);
+        transform: scale(1.1);
+        :after{
+          width: 100%;
+        }
       }
     }
   }

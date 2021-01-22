@@ -28,7 +28,9 @@ export const P = styled.p`
         return 400
     }
   }};
-  color: ${props => {
+  color: #333;
+
+  /* color: ${props => {
     switch (props.color) {
       case "dark1":
         return props.theme.colors.dark1
@@ -43,7 +45,7 @@ export const P = styled.p`
       default:
         return props.theme.colors.dark1
     }
-  }};
+  }}; */
   text-align: ${props => (props.textAlign ? props.textAlign : "none")};
   @media ${props => props.theme.breakpoints.mobile} {
     font-size: 1rem;
@@ -85,7 +87,9 @@ export const H1 = styled.h1`
 export const H2 = styled.h2`
   font-size: 1.7rem;
   line-height: 120%;
-  color: ${props => {
+  color: #53316c;
+
+  /* color: ${props => {
     switch (props.color) {
       case "dark1":
         return props.theme.colors.dark1
@@ -100,7 +104,7 @@ export const H2 = styled.h2`
       default:
         return props.theme.colors.dark1
     }
-  }};
+  }}; */
   font-weight: 400;
   text-align: ${props => (props.textAlign ? props.textAlign : "none")};
   margin: ${props => (props.margin ? props.margin : 0)};

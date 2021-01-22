@@ -13,6 +13,7 @@ export const PostWrapper = styled.main`
     line-height: 120%;
     margin: 3% 0;
     transition: all 0.5s;
+    color: #53316c;
   }
   h1 {
     font-size: 3.5rem;
@@ -26,6 +27,7 @@ export const PostWrapper = styled.main`
   p {
     margin: 1rem 0;
     line-height: 150%;
+    color: #333;
   }
   img {
     border-radius: 10px;

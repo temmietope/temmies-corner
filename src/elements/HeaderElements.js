@@ -62,10 +62,15 @@ export const HomeHeaderProfileSummary = styled.div`
   transition: all 0.5s;
   .intro {
     h1 {
+      color: #333;
+
       font-weight: 700;
       span {
-        text-shadow: 2px 2px rgb(179, 171, 171);
+        color: #53316C;
       }
+    }
+    h2{
+      color: #333;
     }
 
     .summary {

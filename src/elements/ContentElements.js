@@ -31,7 +31,7 @@ export const ContentWrapper = styled.main`
           border: 0.7px solid;
           padding: 2%;
           transition: all 0.5s;
-          text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
+          /* text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3); */
           filter: brightness(1.1);
           background: #d9d4e7;
           :hover {

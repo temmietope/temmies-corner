@@ -29,7 +29,7 @@ export default function allPosts({ pageContext, data }) {
       {/* <FeatureImage />
       <Header /> */}
       <Content page="allPosts">
-        <PageHead>Blog</PageHead>
+        <PageHead>Blog Posts</PageHead>
         <div className="posts">
           {posts.map(post => (
             <ContentCard

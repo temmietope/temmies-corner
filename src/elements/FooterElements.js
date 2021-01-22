@@ -41,10 +41,9 @@ export const FooterSocialWrapper = styled.div`
     place-items: center;
     /* padding: 1rem; */
     /* border: 1px solid; */
-    box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.5);
-
+    /* box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.5); */
     /* border-radius: 50%; */
-    border-radius: 12% 25% 30% 20%/50% 20% 15% 30%;
+    /* border-radius: 12% 25% 30% 20%/50% 20% 15% 30%; */
 
     box-sizing: border-box;
     img {
@@ -83,10 +82,13 @@ export const FooterEmail = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+    box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.5);
+
   p {
     width: 50%;
     font-size: 1.25rem;
     padding: 0 2%;
+    color: #fff;
   }
   button {
     width: 23%;
