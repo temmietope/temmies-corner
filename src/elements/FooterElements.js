@@ -82,7 +82,7 @@ export const FooterEmail = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-    box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.5);
 
   p {
     width: 50%;
@@ -97,8 +97,7 @@ export const FooterEmail = styled.div`
     align-items: center;
     background-color: inherit;
     border: 3px solid #a786df;
-    /* border-radius: 100px 100px; */
-    border-radius: 12% 25% 30% 20%/50% 20% 15% 30%;
+    border-radius: 100px 100px;
     padding: 1% 2%;
     a {
       width: 100%;
