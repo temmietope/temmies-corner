@@ -54,7 +54,7 @@ export const Footer = () => {
         </Link>
       </Logo>
       <div className="mantra">
-        <P color="white">Frontend Developer and Technical writer</P>
+        <P color="white">Frontend and Web Accessibility Engineer</P>
       </div>
       <FooterSocialWrapper>
         <a
@@ -88,7 +88,7 @@ export const Footer = () => {
         </a>
       </FooterSocialWrapper>
       <FooterCopyright>
-        <p>Designed and Developed by me, Temitope Ayodele</p>
+        <p>Designed and Developed by me, Temitope</p>
       </FooterCopyright>
     </FooterWrapper>
   )

@@ -25,7 +25,7 @@ export default function Header({ fluid }) {
           <H1>
             Hi, I am <span className="my__name">TEMITOPE AYODELE</span>
           </H1>
-          <H2 className="role">Frontend Engineer and Technical writer</H2>
+          <H2 className="role">Frontend and Web Accessibility Engineer</H2>
           <P className="summary">
             I am a web-accessibility and open-source advocate. I am a great
             team-player who has worked with awesome teams to build great
