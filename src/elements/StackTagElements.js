@@ -6,7 +6,6 @@ export const StackTag = styled.p`
   transition: all 1s;
   background-color: ${props => (props.active ? props.color : "#888")};
   cursor: pointer;
-  border: 0.7px solid;
   :hover {
     transform: scale(1.07);
   }
