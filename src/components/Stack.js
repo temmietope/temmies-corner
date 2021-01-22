@@ -28,7 +28,7 @@ export default function Stack() {
         "My portfolio website that contains my biography and my blog. Built with Gatsby and graphql",
       stack: ["gatsby", "graphql", "styledComponents"],
       githubRepo: "https://github.com/temmietope/temmies-corner",
-      hostedLink: "https://temmies-corner.netlify.app/",
+      hostedLink: "https://temmie.me/",
     },
     {
       name: "Swipe",
