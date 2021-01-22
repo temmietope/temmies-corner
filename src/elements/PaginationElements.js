@@ -87,8 +87,9 @@ export const PaginationElement = styled(props => <Link {...props} />)`
     css`
       font-weight: 700;
       font-size: 1rem;
+      padding:0 0.5rem;
       @media ${props => props.theme.breakpoints.tablet} {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
         line-height: 100%;
       }
     `}

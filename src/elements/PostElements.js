@@ -1,9 +1,12 @@
 import styled from "styled-components"
 
 export const PostWrapper = styled.main`
-  padding: 2rem 8rem;
+  padding: 0rem 8rem;
   margin-bottom: 10rem;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
+  color: #333;
+
+  /* font-size: 1.5rem; */
   h1,
   h2,
   h3,
@@ -16,18 +19,58 @@ export const PostWrapper = styled.main`
     color: #53316c;
   }
   h1 {
-    font-size: 3.5rem;
+    font-size: 2.8rem;
     font-weight: bold;
     text-align: center;
-    border-radius: 20px;
-    padding: 1rem;
-    margin: 5% 0;
+    padding: 1rem 0;
+    /* margin: 5% 0; */
+    margin: 0;
     margin-bottom: 1%;
+    @media ${props => props.theme.breakpoints.tablet} {
+      font-size: 2.5rem;
+    }
+    @media ${props => props.theme.breakpoints.mobile} {
+      font-size: 2.3rem;
+    }
+  }
+  h2 {
+    font-size: 1.7rem;
+    @media ${props => props.theme.breakpoints.tablet} {
+      font-size: 1.55rem;
+    }
+    @media ${props => props.theme.breakpoints.mobile} {
+      font-size: 1.4rem;
+    }
+  }
+  h3 {
+    font-size: 1.55rem;
+    @media ${props => props.theme.breakpoints.tablet} {
+      font-size: 1.4rem;
+    }
+    @media ${props => props.theme.breakpoints.mobile} {
+      font-size: 1.2rem;
+    }
+  }
+  h4 {
+    font-size: 1.4rem;
+    @media ${props => props.theme.breakpoints.tablet} {
+      font-size: 1.2rem;
+    }
+    @media ${props => props.theme.breakpoints.mobile} {
+      font-size: 1rem;
+    }
   }
   p {
     margin: 1rem 0;
     line-height: 150%;
     color: #333;
+    font-size: 1.1rem;
+    @media ${props => props.theme.breakpoints.mobile} {
+      font-size: 1rem;
+    }
+  }
+  ol{
+    margin-left: 8%;
   }
   img {
     border-radius: 10px;
@@ -52,11 +95,14 @@ export const PostWrapper = styled.main`
     margin-bottom: 5%;
     font-size: 1.3rem;
 
-    h1 {
+    /* h1 {
       font-size: 3rem;
-    }
+    } */
   }
-  @media ${props => props.theme.breakpoints.mobile} {
+    @media ${props => props.theme.breakpoints.mobile} {
+      font-size: 1rem;
+    }
+  /* @media ${props => props.theme.breakpoints.mobile} {
     font-size: 1.2rem;
 
     h1 {
@@ -69,7 +115,7 @@ export const PostWrapper = styled.main`
     h1 {
       font-size: 2rem;
     }
-  }
+  } */
 `
 
 export const TagsAndDate = styled.div`

@@ -1,0 +1,41 @@
+---
+title: MVC - Model, View, Controller
+slug: mvc-model-view-controller
+date: "2021-01-23"
+tags: beginners
+excerpt: When planning your app, MVC concept is very helpful as it gives you an outline of how your ideas should be organized into actual code. The idea is to group your code into three main logical components. Each of these components are built to handle specific development aspects of an application. In a web application, there are three main components for three main functions.
+---
+
+MVC is a popular way of organizing your code based on concerns. This concept was originally invented by Trygve Reenskaug, a SmallTalk programmer. The MVC pattern is widely used in program development with programming languages such as Java, Smalltalk, C, and C++. When planning your app, MVC concept is very helpful as it gives you an outline of how your ideas should be organized into actual code. The idea is to group your code into three main logical components. Each of these components are built to handle specific development aspects of an application. In a web application, there are three main components for three main functions.
+
+1. One holds data. (Model Component)
+2. One makes your app looks nice, hence in charge of the looks. (View Component)
+3. One controls how the app functions. (Controller Component)
+4. Now, let's talk more about each of these components:
+
+### Model Component
+
+The Model holds raw data. It will define the essential components of your app. It could be a single object, or it could be some structure of objects. It contains the text that communicates information to the user. For example, the products you want to sell, a set of photos, user's account and so on. It doesn't contain any information about the user interface, rather it contains all the data-related logic the user will work with.
+
+### View Component
+
+The View component is concerned with the user. It is used for all the UI logic of the application. See it as a representation of all of the things the user can see and respond to on the screen, such as buttons, display boxes, and so on. It is made up of all the functions that directly interacts with the user. It defines how the user uses and interacts with the app. It acts as a presentation filter. It is visual representation of the Model, hence, it is attached to the model in order to get the information necessary for the presentation by asking questions. It can also update the model by sending messages. In order to be able to get or send messages, it has to use the terminology of the model. We can keep changing the view, without altering the data in the Model.
+
+### Controller Component
+
+The Controller component serves as an link/interface between the user and the system. It processes all the business-logic and incoming requests. It receives users input and decides what to do with it. The controller decides what the user's input was, how the model needs to change as a result of that input, and which resulting view should be used. That is , it manipulates data using the Model component and interacts with the View component to render the final output
+
+By using the MVC pattern, it makes you able to reuse your code easily, and also allow other developers to readily understand your code. Though it will lead to you having to create more files, this is a necessary evil.
+
+## A Practical Example
+
+Let's consider a **To-do list application**. The main concept of the app is to allow users to write tasks, organize them into lists, mark them as "completed" when the task is done.
+
+####The MVC Concept
+**Model Component**: Since there will most likely be no previously documented to-do, the Model might initially just define what a "task" is, and what a "list" is for the app.
+
+**View Component**: This will be concerned with the UI, that is, how the app will look like, what the user sees, what he needs to click. Hence, generically, it should contain a section for the user to type in a task/to-do, a section that will show the list of already written to-do. The view component will determine what color you want a task marked "complete" will look like, it will determine the font you will like to use, where you want to place the "add to-do" button, where you want the to-do list to be, and so on.
+
+**Controller Component**: This will determine what happens after the user has typed in a to-do, and has clicked the "add to-do" button on the view. It will connect this button with the Model, so that on click, the Model will save the new to-do in the database.
+
+In conclusion, the MVC concept makes your code more readable, and more organised.

@@ -19,12 +19,13 @@ import StackLang from "../components/StackTag"
 
 export default function singlePost({ data, pageContext, fixed }) {
   // const featureImage = data.mdx.frontmatter.featureImage.childImageSharp.fixed
-  const seoImage = data.mdx.frontmatter.featureImage.publicURL
+  const postImage = data.mdx.frontmatter.featureImage
+  const seoImage = postImage ? postImage : null
   const { previous, next } = pageContext
   const tagsArray = data.mdx.frontmatter.tags.split(", ")
   const minRead = data.mdx.timeToRead
   const myAvatar = data.imageSharp.fixed
-  const truncate = (str, no_words = 4) => {
+  const truncate = (str, no_words = 3) => {
     return `${str.split(" ").splice(0, no_words).join(" ")} ...`
   }
   return (

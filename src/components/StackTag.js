@@ -52,7 +52,7 @@ const tags = {
   },
   beginners: {
     color: "#92014577",
-    text: "Beginner",
+    text: "Beginners",
   },
   accessibility: {
     color: "#3e2a8166",

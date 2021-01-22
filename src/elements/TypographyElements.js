@@ -148,7 +148,7 @@ export const H3 = styled.h3`
 `
 
 export const H4 = styled.h4`
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   line-height: 1.875rem;
   color: ${props => {
     switch (props.color) {
@@ -170,7 +170,7 @@ export const H4 = styled.h4`
   text-align: ${props => (props.textAlign ? props.textAlign : "none")};
   margin: ${props => (props.margin ? props.margin : 0)};
   @media ${props => props.theme.breakpoints.tablet} {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
   @media ${props => props.theme.breakpoints.mobile} {
     font-size: 1rem;
