@@ -13,6 +13,7 @@ import Pagination from "../components/Pagination"
 import Header from "../components/Header"
 import Contact from "../components/Contact"
 import Stack from "../components/Stack"
+import { Helmet } from "react-helmet"
 
 export default function Home({ pageContext, data }) {
   const posts = data.allMdx.edges
@@ -22,6 +23,9 @@ export default function Home({ pageContext, data }) {
   return (
     <Container>
       <Seo />
+      <Helmet>
+        <title>Home - Temitope Ayodele | Frontend Developer</title>
+      </Helmet>
       <Header />
       {/* <FeatureImage/> */}
       <Content page="home">

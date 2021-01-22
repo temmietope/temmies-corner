@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet"
 import { StaticQuery, graphql } from "gatsby"
 
 export const Seo = ({ description, keywords, title, image, url, author }) => {
+  const slug = window.location.pathname
   return (
     <StaticQuery
       query={detailsQuery}
@@ -11,7 +12,7 @@ export const Seo = ({ description, keywords, title, image, url, author }) => {
           description || data.site.siteMetadata.description
         const metaAuthor = author || data.site.siteMetadata.author
         const metaTitle = title || data.site.siteMetadata.title
-        const metaUrl = url || data.site.siteMetadata.url
+        const metaUrl = url || `${data.site.siteMetadata.url}${slug}`
         const metaImage = image || data.site.siteMetadata.image
         const metaKeywords = keywords || [
           "frontend",
@@ -92,6 +93,7 @@ const detailsQuery = graphql`
         description
         author
         image
+        url
       }
     }
   }

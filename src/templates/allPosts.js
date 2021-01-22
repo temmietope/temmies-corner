@@ -11,6 +11,7 @@ import {
 import { H1, P } from "../elements"
 import Pagination from "../components/Pagination"
 import Header from "../components/Header"
+import { Helmet } from "react-helmet"
 
 export default function allPosts({ pageContext, data }) {
   const { currentPage, numPages } = pageContext
@@ -22,6 +23,9 @@ export default function allPosts({ pageContext, data }) {
   return (
     <Container>
       <Seo />
+      <Helmet>
+        <title>Blog - Temitope Ayodele | Frontend Developer</title>
+      </Helmet>
       {/* <FeatureImage />
       <Header /> */}
       <Content page="allPosts">
