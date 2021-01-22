@@ -1,9 +1,10 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: "Temmie's corner",
-    description: "Awesome blog to checkout",
-    url: "https://temmies_corner.com",
+    title: "Temitope | Frontend Engineer",
+    description:
+      "Personal Blog by Temitope Ayodele. She is a Frontend and Web Accessibility Engineer and she is passionate about optimizing for web performance, user experience and accessibility.",
+    url: "https://temmie.me",
     image: "logo.svg",
     twitterUsername: "@temmmie_",
     author: "Temitope",
