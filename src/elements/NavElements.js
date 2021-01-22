@@ -148,7 +148,13 @@ export const NavMenu = styled.ul`
       color: #333;
       text-shadow: 1px 2px 1px rgba(167, 134, 223, 0.3);
       :hover {
-        color: #a786df;
+        /* color: #a786df; */
+        box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
+        border-radius: 12% 25% 30% 20%/50% 20% 15% 30%;
+        border: 0.7px solid;
+        padding: 10%;
+        transition: all 0.1s;
+        filter: brightness(1.1);
       }
     }
   }
@@ -158,7 +164,7 @@ export const NavMenu = styled.ul`
     width: 100%;
     opacity: ${props => (props.show ? "1" : "0")};
     visibility: ${props => (props.show ? "visible" : "hidden")};
-    transition: all 0.6s;
+    transition: opacity 0.3s, visibility 0.1s, background-color 0s;
     left: 0;
     top: 0;
     display: flex;

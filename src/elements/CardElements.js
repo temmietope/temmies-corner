@@ -11,18 +11,19 @@ export const CardWrapper = styled(props => <Link {...props} />)`
   text-decoration: none;
   color: inherit;
   position: relative;
-  transition: all 1s;
+  transition: all 0.5s;
   background: #fff;
   border-radius: 7px;
   h2 {
     font-weight: 700;
+    text-align: left;
   }
   .excerpt {
-    line-height: 150%;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
     overflow: hidden;
+    text-align: left;
   }
   small {
     /* min-height: 10%;
@@ -36,33 +37,26 @@ export const CardWrapper = styled(props => <Link {...props} />)`
     }
   }
   :hover {
-    /* box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.5);
-    transform: scale(1.025); */
+    box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.5);
     transform: scale(1.025);
-    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
-    border-radius: 6% 12% 15% 10%/20% 10% 7% 15%;
   }
   ${props =>
     props.page === "allPosts" &&
     css`
       height: inherit;
-      box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.4);
+      box-shadow: 1px 0.5px 5px 0 rgba(0, 0, 0, 0.3);
       display: inline-block;
       margin: 0.25rem;
-      /* width: 100%; */
-      background: #efefef;
-      filter: brightness(1.03);
-      /* width: 100%; */
+      /* background: #efefef; */
       box-sizing: border-box;
       /* border-radius: 12% 25% 30% 20%/50% 20% 15% 30%; */
 
-      box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.3);
       border-left: 10px solid #a786df;
       /* animation: morph 8s ease-in infinite; */
       padding: 5%;
       transition: 0.5s;
       h2 {
-        font-size: 1.7rem;
+        /* font-size: 1.7rem; */
       }
       /* grid-row: ${props => (props.sec === "long" ? "1/3" : "3/4")}; */
     `}
@@ -73,7 +67,7 @@ export const CardWrapper = styled(props => <Link {...props} />)`
       h2 {
         min-height: 30%;
         max-height: 30%;
-        font-size: 1.6rem;
+        /* font-size: 1.6rem; */
       }
       @media ${props => props.theme.breakpoints.tablet} {
         padding: 4%;

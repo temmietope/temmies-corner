@@ -12,7 +12,7 @@ export const PostWrapper = styled.main`
   h6 {
     line-height: 120%;
     margin: 3% 0;
-    transition: all 1s;
+    transition: all 0.5s;
   }
   h1 {
     font-size: 3.5rem;
@@ -116,7 +116,7 @@ export const AuthorLink = styled.div`
   margin: 1rem 0;
   margin-bottom: 5%;
   font-size: 1.2rem;
-  transition: all 1s;
+  transition: all 0.5s;
   display: flex;
   align-items: center;
   justify-content: center;

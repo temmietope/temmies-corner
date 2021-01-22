@@ -15,7 +15,7 @@ export const P = styled.p`
         return "1.4375rem"
     }
   }}; */
-  line-height: 120%;
+  line-height: 150%;
   text-decoration: ${props =>
     props.textDecoration ? props.textDecoration : "none"};
   font-weight: ${props => {
@@ -83,8 +83,8 @@ export const H1 = styled.h1`
 `
 
 export const H2 = styled.h2`
-  font-size: 2rem;
-  line-height: 1.875rem;
+  font-size: 1.7rem;
+  line-height: 120%;
   color: ${props => {
     switch (props.color) {
       case "dark1":
@@ -105,15 +105,15 @@ export const H2 = styled.h2`
   text-align: ${props => (props.textAlign ? props.textAlign : "none")};
   margin: ${props => (props.margin ? props.margin : 0)};
   @media ${props => props.theme.breakpoints.tablet} {
-    font-size: 1.8rem;
+    font-size: 1.55rem;
   }
   @media ${props => props.theme.breakpoints.mobile} {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 `
 
 export const H3 = styled.h3`
-  font-size: 1.8rem;
+  font-size: 1.55rem;
   text-shadow: 1px 2px 1px rgba(167, 134, 223, 0.3);
   line-height: 1.875rem;
   color: ${props => {
@@ -136,10 +136,10 @@ export const H3 = styled.h3`
   text-align: ${props => (props.textAlign ? props.textAlign : "none")};
   margin: ${props => (props.margin ? props.margin : 0)};
   @media ${props => props.theme.breakpoints.tablet} {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
   @media ${props => props.theme.breakpoints.mobile} {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 `
 

@@ -64,7 +64,7 @@ export default function Header({ fluid }) {
             height: "100%",
             // borderRadius: "50%",
             borderRadius: "12% 25% 30% 20%/50% 20% 15% 30%",
-
+            boxShadow: "4px 4px 2px rgba(0, 0, 0, 0.3)",
             objectFit: "cover",
           }}
         />

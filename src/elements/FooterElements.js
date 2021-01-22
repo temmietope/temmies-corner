@@ -72,7 +72,7 @@ export const FooterCopyright = styled.div`
 `
 
 export const FooterEmail = styled.div`
-  transition: all 0.7s;
+  transition: all 0.5s;
   position: absolute;
   bottom: 80%;
   height: 10rem;
