@@ -12,12 +12,16 @@ export default function allPosts({ pageContext, data, location }) {
   const posts = data.allMdx.edges
   return (
     <Container>
-      <Seo pathname={location.pathname} title="Blog" />
+      <Seo
+        pathname={location.pathname}
+        title="Blog"
+        description="Articles on frontend development. Written by Temitope Ayodele, Frontend and Web Accessibility engineer"
+      />
       {/* <FeatureImage />
       <Header /> */}
       <Content page="allPosts">
         <PageHead>Blog Posts</PageHead>
-        <div className="posts">
+        <div className="posts" >
           {posts.map(post => (
             <ContentCard
               page="allPosts"

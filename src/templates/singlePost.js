@@ -36,7 +36,6 @@ export default function singlePost({ data, pageContext, fixed, location }) {
         image={seoImage}
         description={data.mdx.frontmatter.excerpt}
         keywords={data.mdx.frontmatter.keywords}
-        // pathname={data.mdx.frontmatter.slug}
         pathname={location.pathname}
       />
       {/* <FeatureImage fixed={featureImage} /> */}

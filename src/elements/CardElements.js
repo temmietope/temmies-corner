@@ -14,6 +14,7 @@ export const CardWrapper = styled(props => <Link {...props} />)`
   transition: all 0.5s;
   background: #fff;
   border-radius: 7px;
+  filter: brightness(1);
   h2 {
     font-weight: 700;
     text-align: left;
@@ -38,7 +39,7 @@ export const CardWrapper = styled(props => <Link {...props} />)`
   }
   :hover {
     box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.5);
-    transform: scale(1.025);
+    transform: scale(1.02);
   }
   ${props =>
     props.page === "allPosts" &&

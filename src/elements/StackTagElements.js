@@ -17,4 +17,8 @@ export const StackTag = styled.p`
   @media ${props => props.theme.breakpoints.mobile} {
     font-size: 0.7rem !important;
   }
+  @media ${props => props.theme.breakpoints.small} {
+    opacity: 1;
+    background-color: ${props => props.color && props.color};
+  }
 `

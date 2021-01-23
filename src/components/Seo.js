@@ -54,8 +54,6 @@ export function Seo({
     ? site.siteMetadata.keywords.concat(keywords)
     : site.siteMetadata.keywords
 
-
-    console.log(canonical)
   return (
     <Helmet
       htmlAttributes={{
@@ -102,6 +100,10 @@ export function Seo({
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: `og:url`,
+          content: canonical || site.siteMetadata.url,
         },
         {
           name: `twitter:creator`,
