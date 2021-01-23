@@ -29,7 +29,6 @@ export default function singlePost({ data, pageContext, fixed, location }) {
   const truncate = (str, no_words = 3) => {
     return `${str.split(" ").splice(0, no_words).join(" ")} ...`
   }
-  console.log(location)
   return (
     <Container>
       <Seo

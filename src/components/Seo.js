@@ -41,9 +41,6 @@ export function Seo({
     ? site.siteMetadata.keywords.concat(keywords)
     : site.siteMetadata.keywords
 
-  console.log(image)
-  console.log(metaImage)
-  console.log(site.siteMetadata.image)
   return (
     <Helmet
       htmlAttributes={{
