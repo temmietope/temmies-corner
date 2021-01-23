@@ -54,6 +54,8 @@ export function Seo({
     ? site.siteMetadata.keywords.concat(keywords)
     : site.siteMetadata.keywords
 
+
+    console.log(canonical)
   return (
     <Helmet
       htmlAttributes={{

@@ -1,7 +1,7 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: "Temitope | Frontend Engineer",
+    title: "Temitope Ayodele | Frontend Engineer",
     description:
       "Temitope Ayodele's personal website. She is a Frontend and Web Accessibility Engineer and she is passionate about optimizing for web performance, user experience and accessibility.",
     url: "https://temmie.me",
