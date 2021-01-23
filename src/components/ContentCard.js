@@ -9,7 +9,7 @@ export const ContentCard = ({ date, title, excerpt, slug, page, tags }) => {
   return (
     <CardWrapper
       data-sal="slide-up"
-      data-sal-delay="200"
+      data-sal-delay="50"
       data-sal-easing="ease"
       to={slug}
       page={page}
