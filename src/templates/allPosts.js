@@ -13,16 +13,17 @@ import Pagination from "../components/Pagination"
 import Header from "../components/Header"
 import { Helmet } from "react-helmet"
 
-export default function allPosts({ pageContext, data }) {
+export default function allPosts({ pageContext, data, location }) {
   const { currentPage, numPages } = pageContext
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
   const prevPage = currentPage - 1 === 1 ? "/blog" : `/blog/${currentPage - 1}`
   const nextPage = `/blog/${currentPage + 1}`
   const posts = data.allMdx.edges
+  console.log(data)
   return (
     <Container>
-      <Seo />
+      <Seo pathname={location.pathname}/>
       <Helmet>
         <title>Blog - Temitope Ayodele | Frontend Developer</title>
       </Helmet>

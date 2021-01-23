@@ -17,10 +17,11 @@ import { Container, FeatureImage, Post, Seo } from "../components"
 import ImageLoad from "../utils/ImageLoader"
 import StackLang from "../components/StackTag"
 
-export default function singlePost({ data, pageContext, fixed }) {
+export default function singlePost({ data, pageContext, fixed, location }) {
   // const featureImage = data.mdx.frontmatter.featureImage.childImageSharp.fixed
-  const postImage = data.mdx.frontmatter.featureImage
-  const seoImage = postImage ? postImage : null
+  const seoImage = data.mdx.frontmatter.featureImage
+    ? data.mdx.frontmatter.featureImage.childImageSharp.resize
+    : null
   const { previous, next } = pageContext
   const tagsArray = data.mdx.frontmatter.tags.split(", ")
   const minRead = data.mdx.timeToRead
@@ -28,12 +29,16 @@ export default function singlePost({ data, pageContext, fixed }) {
   const truncate = (str, no_words = 3) => {
     return `${str.split(" ").splice(0, no_words).join(" ")} ...`
   }
+  console.log(location)
   return (
     <Container>
       <Seo
         title={data.mdx.frontmatter.title}
         image={seoImage}
         description={data.mdx.frontmatter.excerpt}
+        keywords={data.mdx.frontmatter.keywords}
+        // pathname={data.mdx.frontmatter.slug}
+        pathname={location.pathname}
       />
       {/* <FeatureImage fixed={featureImage} /> */}
       <Post>
@@ -119,11 +124,14 @@ export const pageQuery = graphql`
         slug
         title
         tags
+        keywords
         featureImage {
           publicURL
           childImageSharp {
-            fixed {
-              ...GatsbyImageSharpFixed
+            resize(width: 1200) {
+              src
+              height
+              width
             }
           }
         }

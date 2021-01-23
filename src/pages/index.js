@@ -15,14 +15,14 @@ import Contact from "../components/Contact"
 import Stack from "../components/Stack"
 import { Helmet } from "react-helmet"
 
-export default function Home({ pageContext, data }) {
+export default function Home({ pageContext, data, location }) {
   const posts = data.allMdx.edges
   // useEffect(() => {
   //   window.scrollTo(0, 0)
   // }, [])
   return (
     <Container>
-      <Seo />
+      <Seo pathname={location.pathname}/>
       <Helmet>
         <title>Home - Temitope Ayodele | Frontend Developer</title>
       </Helmet>
