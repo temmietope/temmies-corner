@@ -1,7 +1,7 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 import { StaticQuery, graphql } from "gatsby"
-
+import favicon from "../images/logo.png"
 export const Seo = ({ description, keywords, title, image, url, author }) => {
   const slug = typeof window !== "undefined" ? window.location.pathname : ""
   return (
@@ -24,11 +24,22 @@ export const Seo = ({ description, keywords, title, image, url, author }) => {
         ]
         return (
           <Helmet
-            title={title}
+            title={metaTitle}
+            link={[
+              { rel: "shortcut-icon", type: "image/png", href: `${favicon}` },
+            ]}
             meta={[
               {
-                name: `description`,
+                name: `charSet`,
+                content: "utf-8",
+              },
+              {
+                name: "description",
                 content: metaDescription,
+              },
+              {
+                name: "auto",
+                content: metaAuthor,
               },
               {
                 property: `og:title`,
@@ -36,12 +47,20 @@ export const Seo = ({ description, keywords, title, image, url, author }) => {
               },
               {
                 property: `og:description`,
-                content: metaTitle,
+                content: metaDescription,
               },
-              //   {
-              //     property: `og:type`,
-              //     content: website,
-              //   },
+              {
+                property: `og:type`,
+                content: `website`,
+              },
+              {
+                property: `og:site_name`,
+                content: "Temitope Ayodele",
+              },
+              {
+                property: `og:site_name`,
+                content: "Temitope Ayodele",
+              },
               {
                 property: `og:image`,
                 content: metaImage,
@@ -53,6 +72,10 @@ export const Seo = ({ description, keywords, title, image, url, author }) => {
               {
                 name: `twitter:card`,
                 content: `summary_large_image`,
+              },
+              {
+                property: `twitter:url`,
+                content: metaUrl,
               },
               {
                 name: `twitter:creator`,
