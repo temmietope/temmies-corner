@@ -24,6 +24,7 @@ export const Seo = ({ description, keywords, title, image, url, author }) => {
         ]
         return (
           <Helmet
+            htmlAttributes={{ lang: "en" }}
             title={metaTitle}
             link={[
               { rel: "shortcut-icon", type: "image/png", href: `${favicon}` },
