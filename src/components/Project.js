@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import StackLang from "./StackTag"
-import { useStaticQuery } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import { Project, ProjectsList, StackWrapper, H2, P } from "../elements"
 
 const ProjectCard = ({ project }) => {
