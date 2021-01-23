@@ -1,33 +1,17 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { graphql, Link } from "gatsby"
-import {
-  FeatureImage,
-  Content,
-  Container,
-  ContentCard,
-  Seo,
-  PageHead,
-} from "../components"
-import { H1, P, H3 } from "../elements"
-import Pagination from "../components/Pagination"
+import { Content, Container, ContentCard, Seo } from "../components"
+import { P, H3 } from "../elements"
 import Header from "../components/Header"
 import Contact from "../components/Contact"
 import Stack from "../components/Stack"
-import { Helmet } from "react-helmet"
 
-export default function Home({ pageContext, data, location }) {
+export default function Home({ data, location }) {
   const posts = data.allMdx.edges
-  // useEffect(() => {
-  //   window.scrollTo(0, 0)
-  // }, [])
   return (
     <Container>
-      <Seo pathname={location.pathname}/>
-      <Helmet>
-        <title>Home - Temitope Ayodele | Frontend Developer</title>
-      </Helmet>
+      <Seo pathname={location.pathname} title="Home" />
       <Header />
-      {/* <FeatureImage/> */}
       <Content page="home">
         <div className="home__content-header">
           <H3>Recent Posts</H3>

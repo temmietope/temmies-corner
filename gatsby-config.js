@@ -4,8 +4,7 @@ module.exports = {
     title: "Temitope | Frontend Engineer",
     description:
       "Temitope Ayodele's personal website. She is a Frontend and Web Accessibility Engineer and she is passionate about optimizing for web performance, user experience and accessibility.",
-    url: "https://www.temmie.me",
-    image: "logo.png",
+    url: "https://temmie.me",
     twitterUsername: "@temmmie_",
     author: "Temitope Ayodele",
     keywords: ["frontend", "tech", "javascript", "framework", "react", "vue"],

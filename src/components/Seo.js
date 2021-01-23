@@ -13,9 +13,18 @@ export function Seo({
   keywords,
   pathname,
 }) {
-  const { site } = useStaticQuery(
+  const { site, file } = useStaticQuery(
     graphql`
       query {
+        file(relativePath: { eq: "logo.png" }) {
+          childImageSharp {
+            resize(width: 1200) {
+              width
+              height
+              src
+            }
+          }
+        }
         site {
           siteMetadata {
             title
@@ -23,17 +32,21 @@ export function Seo({
             author
             keywords
             url
-            image
           }
         }
       }
     `
   )
-
   const metaDescription = description || site.siteMetadata.description
+
   const image =
     metaImage && metaImage.src
       ? `${site.siteMetadata.url}${metaImage.src}`
+      : null
+
+  const defaultImage =
+    file.childImageSharp && file.childImageSharp.resize.src
+      ? `${site.siteMetadata.url}${file.childImageSharp.resize.src}`
       : null
 
   const canonical = pathname ? `${site.siteMetadata.url}${pathname}` : null
@@ -46,8 +59,8 @@ export function Seo({
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      title={title || site.siteMetadata.title}
+      titleTemplate={`%s - ${site.siteMetadata.title}`}
       link={
         canonical
           ? [
@@ -121,15 +134,26 @@ export function Seo({
                   content: "summary_large_image",
                 },
               ]
+            : file.childImageSharp.resize
+            ? [
+                {
+                  property: "og:image",
+                  content: defaultImage,
+                },
+                {
+                  property: "og:image:width",
+                  content: file.childImageSharp.resize.width,
+                },
+                {
+                  property: "og:image:height",
+                  content: file.childImageSharp.resize.height,
+                },
+                {
+                  name: "twitter:card",
+                  content: "summary_large_image",
+                },
+              ]
             : [
-                {
-                  property: `og:image`,
-                  content: site.siteMetadata.image,
-                },
-                {
-                  property: `twitter:image`,
-                  content: site.siteMetadata.image,
-                },
                 {
                   name: "twitter:card",
                   content: "summary",

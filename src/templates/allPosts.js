@@ -1,17 +1,7 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
-import {
-  FeatureImage,
-  Content,
-  Container,
-  ContentCard,
-  Seo,
-  PageHead,
-} from "../components"
-import { H1, P } from "../elements"
+import { graphql } from "gatsby"
+import { Content, Container, ContentCard, Seo, PageHead } from "../components"
 import Pagination from "../components/Pagination"
-import Header from "../components/Header"
-import { Helmet } from "react-helmet"
 
 export default function allPosts({ pageContext, data, location }) {
   const { currentPage, numPages } = pageContext
@@ -20,13 +10,9 @@ export default function allPosts({ pageContext, data, location }) {
   const prevPage = currentPage - 1 === 1 ? "/blog" : `/blog/${currentPage - 1}`
   const nextPage = `/blog/${currentPage + 1}`
   const posts = data.allMdx.edges
-  console.log(data)
   return (
     <Container>
-      <Seo pathname={location.pathname}/>
-      <Helmet>
-        <title>Blog - Temitope Ayodele | Frontend Developer</title>
-      </Helmet>
+      <Seo pathname={location.pathname} title="Blog" />
       {/* <FeatureImage />
       <Header /> */}
       <Content page="allPosts">
