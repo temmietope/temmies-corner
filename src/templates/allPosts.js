@@ -2,7 +2,6 @@ import React from "react"
 import { graphql } from "gatsby"
 import { Content, Container, ContentCard, Seo, PageHead } from "../components"
 import Pagination from "../components/Pagination"
-import Fade from "react-reveal/Fade"
 
 export default function allPosts({ pageContext, data, location }) {
   const { currentPage, numPages } = pageContext
