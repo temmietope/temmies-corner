@@ -1,4 +1,4 @@
-export const generalTheme = {
+export default {
   fonts: {
     // main: "Muli, sans-serif",
     main: "Nunito, sans-serif",
@@ -35,7 +35,7 @@ export const generalTheme = {
 }
 
 // export const lightTheme = {
-//   ...generalTheme,
+//   ...Theme,
 //   body: "#fffff",
 //   navbar: "rgba(255, 255, 255, 0.8)",
 //   paragraph: "#333",
@@ -49,7 +49,7 @@ export const generalTheme = {
 // }
 
 // export const darkTheme = {
-//   ...generalTheme,
+//   ...Theme,
 //   body: "#232946",
 //   navbar: "rgba(35, 41, 70, 0.8)",
 //   paragraph: "#fafafa",
@@ -62,38 +62,38 @@ export const generalTheme = {
 //   tagText: "#000",
 // }
 
-export const lightTheme = {
-  ...generalTheme,
-  body: "#fffffe",
-  navbar: "rgba(255, 255, 254, 0.8)",
-  paragraph: "#2d334a",
-  header: "#53316c",
-  footerText: "#f2f2f2",
-  footerBody: "#d4d8f0",
-  footerEmail: "#232946",
-  // card: "#eff0f3",
-  card: "#fffffe",
+// export const lightTheme = {
+//   ...Theme,
+//   body: "#fffffe",
+//   navbar: "rgba(255, 255, 254, 0.8)",
+//   paragraph: "#2d334a",
+//   header: "#53316c",
+//   footerText: "#f2f2f2",
+//   footerBody: "#d4d8f0",
+//   footerEmail: "#232946",
+//   // card: "#eff0f3",
+//   card: "#fffffe",
 
-  tag: "#fec7d7",
-  tagText: "#0e172c",
-  allPosts: "#d4d8f0",
-  // allPosts: "rgba(39, 35, 67, 0.28)",
-  // allPosts: "#d9d4e7",
-  allPostsButton: "#fec7d7",
-}
+//   tag: "#fec7d7",
+//   tagText: "#0e172c",
+//   allPosts: "#d4d8f0",
+//   // allPosts: "rgba(39, 35, 67, 0.28)",
+//   // allPosts: "#d9d4e7",
+//   allPostsButton: "#fec7d7",
+// }
 
-export const darkTheme = {
-  ...generalTheme,
-  body: "#232946",
-  navbar: "rgba(35, 41, 70, 0.95)",
-  paragraph: "#fffffe",
-  header: "#b8c1ec",
-  footerText: "#f2f2f2",
-  footerEmail: "#121629",
-  footerBody: "#001858",
-  card: "#232946",
-  tag: "#eebbc3",
-  tagText: "#000",
-  allPosts: "#001858",
-  allPostsButton: "#eebbc3e7",
-}
+// export const darkTheme = {
+//   ...Theme,
+//   body: "#232946",
+//   navbar: "rgba(35, 41, 70, 0.95)",
+//   paragraph: "#fffffe",
+//   header: "#b8c1ec",
+//   footerText: "#f2f2f2",
+//   footerEmail: "#121629",
+//   footerBody: "#001858",
+//   card: "#232946",
+//   tag: "#eebbc3",
+//   tagText: "#000",
+//   allPosts: "#001858",
+//   allPostsButton: "#eebbc3e7",
+// }

@@ -1,8 +1,29 @@
 import React from "react"
+import { createGlobalStyle, ThemeProvider } from "styled-components"
+import Theme from "./src/themes/theme"
 import { MDXProvider } from "@mdx-js/react"
 import { preToCodeBlock } from "mdx-utils"
 import "./language-tabs.css"
 import Code from "./src/components/Code"
+
+const GlobalStyles = createGlobalStyle`
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body,html {
+        font-family: ${props => props.theme.fonts.main};
+        /* height: 100%; */
+        background-color: ${props => props.theme.colors.light1};
+        scroll-behavior: smooth;
+  @media ${props => props.theme.breakpoints.mobile} {
+        .no-scroll{
+          overflow: hidden;
+        }
+      }
+    }
+`
 
 const components = {
   pre: preProps => {
@@ -16,5 +37,10 @@ const components = {
 }
 
 export const wrapRootElement = ({ element }) => (
-  <MDXProvider components={components}>{element}</MDXProvider>
+  <MDXProvider components={components}>
+    <ThemeProvider theme={Theme}>
+      <GlobalStyles />
+      {element}
+    </ThemeProvider>
+  </MDXProvider>
 )
