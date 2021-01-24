@@ -26,12 +26,12 @@ export const Container = ({ children }) => {
     }
 `
   const [theme, toggleTheme, componentMounted] = useDarkMode()
-  // useEffect(() => {
-  //   if (!componentMounted) {
-  //     return <div></div>
-  //   }
-  //   // eslint-disable-next-line
-  // }, [])
+  useEffect(() => {
+    if (!componentMounted) {
+      return <div></div>
+    }
+    // eslint-disable-next-line
+  }, [])
   const footer = useRef(null)
   const scrollToRef = ref => {
     let div = (0, ref.current.offsetTop)
