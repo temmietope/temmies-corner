@@ -4,11 +4,13 @@
   margin: 1rem 0;
   border-radius: 10px;
   -webkit-overflow-scrolling: touch;
-  background-color: transparent;
+  /* background-color: transparent; */
   max-width: 100%;
   overflow-x: auto;
   box-sizing: border-box;
   font-size: 1.1rem;
+  /* background-color: #232946 !important; */
+  /* background-color: #121629 !important; */
 }
 
 .token {
@@ -17,7 +19,8 @@
 
 p > code,
 li > code {
-  background: rgb(1, 22, 39);
+  /* background: rgb(1, 22, 39); */
+  background: #232946;
   color: rgb(214, 222, 235);
   padding: 0.3% 0.5%;
   box-sizing: border-box;

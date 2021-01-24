@@ -69,7 +69,8 @@ export const PaginationElement = styled(props => <Link {...props} />)`
   line-height: 1.125rem;
   font-weight: 400;
   padding: 0 1rem;
-  color: #333;
+  color: ${props=>props.theme.paragraph}
+;
 
   &:hover,
   &:focus {

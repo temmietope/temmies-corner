@@ -9,7 +9,7 @@ export const NavWrapper = styled.nav`
   align-items: center;
   left: 0;
   top: 0;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: ${props => props.theme.navbar};
   -webkit-backdrop-filter: blur(10px);
   -o-backdrop-filter: blur(10px);
   -moz-backdrop-filter: blur(10px);
@@ -90,7 +90,7 @@ export const NavDiv = styled.div`
       position: relative;
       transition: background 0.2s ease-out;
       width: 1.7rem;
-      background: #444;
+      background: ${props=>props.theme.header}
     }
     .menu-icon .navicon:before,
     .menu-icon .navicon:after {
@@ -100,7 +100,7 @@ export const NavDiv = styled.div`
       position: absolute;
       transition: all 0.2s ease-out;
       width: 100%;
-      background: #444;
+      background: ${props=>props.theme.header}
     }
     .menu-icon .navicon:before {
       top: 6px;
@@ -144,16 +144,18 @@ export const NavMenu = styled.ul`
       text-decoration: none;
       font-size: 1rem;
       text-transform: uppercase;
-      color: #53316C;
+      /* color: #53316C; */
+      color: ${props => props.theme.header};
 
       /* text-shadow: 1px 2px 1px rgba(167, 134, 223, 0.3); */
       position: relative;
-      :after{
+      :after {
         position: absolute;
         width: 0;
         height: 2px;
-        background: #a786df;
-        content: '';
+        /* background: #a786df; */
+        background: ${props=>props.theme.allPostsButton};
+        content: "";
         left: 0;
         bottom: 0;
         transition: width 0.3s;
@@ -162,11 +164,21 @@ export const NavMenu = styled.ul`
         transition: all 0.1s;
         filter: brightness(1.1);
         transform: scale(1.1);
-        :after{
+        :after {
           width: 100%;
         }
       }
     }
+    button{
+      border: none;
+      background: none;
+      outline: none;
+    img{
+      width: 1.3rem;
+      height: 1.3rem;
+    }
+  }
+
   }
   @media ${props => props.theme.breakpoints.mobile} {
     position: absolute;
@@ -180,7 +192,7 @@ export const NavMenu = styled.ul`
     display: flex;
     flex-flow: column;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: ${props=>props.theme.navbar};
     -webkit-backdrop-filter: blur(4px);
     -o-backdrop-filter: blur(4px);
     -moz-backdrop-filter: blur(4px);

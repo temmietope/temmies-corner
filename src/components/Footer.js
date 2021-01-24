@@ -13,7 +13,7 @@ import {
 export const Footer = () => {
   const data = useStaticQuery(graphql`
     query {
-      logo: file(relativePath: { eq: "white-logo.svg" }) {
+      logo: file(relativePath: { eq: "logo.svg" }) {
         publicURL
       }
       twitter: file(relativePath: { eq: "twitter.svg" }) {

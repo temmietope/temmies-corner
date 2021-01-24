@@ -3,11 +3,15 @@ import styled, { css } from "styled-components"
 export const ContentWrapper = styled.main`
   width: 100%;
   transition: all 0.5s;
+  h3 {
+    /* color: ${props => props.theme.body}; */
+  }
   ${props =>
     props.page === "home" &&
     css`
       padding: 3% var(--padding);
-      background: #d9d4e7;
+      /* background: #d9d4e7; */
+      background: ${props=>props.theme.allPosts};
       .posts {
         margin-top: 2rem;
         display: grid;
@@ -31,9 +35,9 @@ export const ContentWrapper = styled.main`
           border: 0.7px solid;
           padding: 2%;
           transition: all 0.5s;
-          /* text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3); */
           filter: brightness(1.1);
-          background: #d9d4e7;
+          /* background: #d9d4e7; */
+          background: ${props => props.theme.allPostsButton};
           :hover {
             transform: scale(1.07);
           }

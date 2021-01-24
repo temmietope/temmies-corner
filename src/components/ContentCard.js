@@ -7,28 +7,30 @@ export const ContentCard = ({ date, title, excerpt, slug, page, tags }) => {
   const tagsArray = tags && tags.split(", ")
   const [coloredTag, setColoredTag] = useState(false)
   return (
-    <CardWrapper
-      data-sal="slide-up"
-      data-sal-delay="50"
-      data-sal-easing="ease"
-      to={slug}
-      page={page}
-      onMouseEnter={() => setColoredTag(true)}
-      onMouseLeave={() => setColoredTag(false)}
-    >
-      <H2>{title}</H2>
-      <TagsAndDate>
-        <Tags page="home">
-          {tagsArray
-            ? tagsArray.map((tag, index) => {
-                return <StackLang lang={tag} key={index} active={coloredTag} />
-              })
-            : ""}
-        </Tags>
-        <Date>{date}</Date>
-      </TagsAndDate>
+      <CardWrapper
+        // data-sal="slide-up"
+        // data-sal-delay="50"
+        // data-sal-easing="ease"
+        to={slug}
+        page={page}
+        onMouseEnter={() => setColoredTag(true)}
+        onMouseLeave={() => setColoredTag(false)}
+      >
+        <H2>{title}</H2>
+        <TagsAndDate>
+          <Tags page="home">
+            {tagsArray
+              ? tagsArray.map((tag, index) => {
+                  return (
+                    <StackLang lang={tag} key={index} active={coloredTag} />
+                  )
+                })
+              : ""}
+          </Tags>
+          <Date>{date}</Date>
+        </TagsAndDate>
 
-      <P className="excerpt">{excerpt}</P>
-    </CardWrapper>
+        <P className="excerpt">{excerpt}</P>
+      </CardWrapper>
   )
 }

@@ -25,7 +25,7 @@ export const ContainerWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-flow: column;
-  background: white;
+  background: ${props=>props.theme.body};
   --padding: 10%;
   position: relative;
   width: 100vw;

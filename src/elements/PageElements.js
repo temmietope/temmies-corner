@@ -16,7 +16,6 @@ export const PageHeader = styled.div`
   }
   h1 {
     font-weight: bold;
-    color: #53316c;
     /* background: #d9d4e7; */
     width: fit-content;
     /* box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);

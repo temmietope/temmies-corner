@@ -28,7 +28,7 @@ export const P = styled.p`
         return 400
     }
   }};
-  color: #333;
+  color: ${props => props.theme.paragraph};
 
   /* color: ${props => {
     switch (props.color) {
@@ -55,7 +55,7 @@ export const P = styled.p`
 export const H1 = styled.h1`
   font-size: 2.8rem;
   line-height: 120%;
-  color: ${props => {
+  /* color: ${props => {
     switch (props.color) {
       case "dark1":
         return props.theme.colors.dark1
@@ -71,7 +71,8 @@ export const H1 = styled.h1`
       default:
         return props.theme.colors.dark1
     }
-  }};
+  }}; */
+  color: ${props => props.theme.header};
   font-weight: 400;
   text-align: ${props => (props.textAlign ? props.textAlign : "none")};
   margin: ${props => (props.margin ? props.margin : 0)};
@@ -87,7 +88,7 @@ export const H1 = styled.h1`
 export const H2 = styled.h2`
   font-size: 1.7rem;
   line-height: 120%;
-  color: #53316c;
+  color: ${props => props.theme.header};
 
   /* color: ${props => {
     switch (props.color) {
@@ -120,22 +121,7 @@ export const H3 = styled.h3`
   font-size: 1.55rem;
   /* text-shadow: 1px 2px 1px rgba(167, 134, 223, 0.3); */
   line-height: 1.875rem;
-  color: ${props => {
-    switch (props.color) {
-      case "dark1":
-        return props.theme.colors.dark1
-      case "dark2":
-        return props.theme.colors.dark2
-      case "dark3":
-        return props.theme.colors.dark3
-      case "light1":
-        return props.theme.colors.light1
-      case "light2":
-        return props.theme.colors.light2
-      default:
-        return props.theme.colors.dark1
-    }
-  }};
+  color: ${props=>props.theme.paragraph};
   font-weight: 400;
   text-align: ${props => (props.textAlign ? props.textAlign : "none")};
   margin: ${props => (props.margin ? props.margin : 0)};

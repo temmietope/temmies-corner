@@ -2,10 +2,19 @@ import React, { useState, useEffect } from "react"
 import { useStaticQuery, Link, graphql } from "gatsby"
 import { Logo, NavDiv, NavWrapper, NavMenu } from "../elements"
 
-export const Nav = ({ scrollToRef }) => {
+export const Nav = ({ scrollToRef, theme, toggleTheme }) => {
   const data = useStaticQuery(graphql`
     query {
-      logo: file(relativePath: { eq: "logo.svg" }) {
+      lightlogo: file(relativePath: { eq: "logo.svg" }) {
+        publicURL
+      }
+      darklogo: file(relativePath: { eq: "white-logo.svg" }) {
+        publicURL
+      }
+      sun: file(relativePath: { eq: "sun.svg" }) {
+        publicURL
+      }
+      moon: file(relativePath: { eq: "moon.svg" }) {
         publicURL
       }
     }
@@ -26,7 +35,14 @@ export const Nav = ({ scrollToRef }) => {
       <NavDiv>
         <Logo>
           <Link to="/" className="brand" onClick={() => window.scrollTo(0, 0)}>
-          <img src={data.logo.publicURL} alt="my logo" />
+            <img
+              src={
+                theme === "light"
+                  ? data.lightlogo.publicURL
+                  : data.darklogo.publicURL
+              }
+              alt="my logo"
+            />
           </Link>
         </Logo>
         <input
@@ -59,6 +75,16 @@ export const Nav = ({ scrollToRef }) => {
             <span className="nav-link" onClick={scrollToRef}>
               Contact
             </span>
+          </li>
+          <li className="mode__toggle">
+            <button onClick={() => toggleTheme()}>
+              <img
+                src={
+                  theme === "light" ? data.moon.publicURL : data.sun.publicURL
+                }
+                alt="toggle icon"
+              />
+            </button>
           </li>
         </NavMenu>
       </NavDiv>

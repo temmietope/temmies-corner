@@ -4,7 +4,7 @@ export const PostWrapper = styled.main`
   padding: 0rem 8rem;
   margin-bottom: 10rem;
   font-size: 1.1rem;
-  color: #333;
+  color: ${props => props.theme.paragraph};
 
   /* font-size: 1.5rem; */
   h1,
@@ -16,7 +16,7 @@ export const PostWrapper = styled.main`
     line-height: 120%;
     margin: 3% 0;
     transition: all 0.5s;
-    color: #53316c;
+    color: ${props => props.theme.header};
   }
   h1 {
     font-size: 2.8rem;
@@ -63,7 +63,7 @@ export const PostWrapper = styled.main`
   p {
     margin: 1rem 0;
     line-height: 150%;
-    color: #333;
+    color: ${props => props.theme.paragraph};
     font-size: 1.1rem;
     @media ${props => props.theme.breakpoints.mobile} {
       font-size: 1rem;
@@ -89,6 +89,9 @@ export const PostWrapper = styled.main`
     float: left;
     margin: 2%;
     margin-left: 0;
+  }
+  .prism-code{
+    background: ${props=>props.theme.footerEmail} !important;
   }
   @media ${props => props.theme.breakpoints.tablet} {
     padding: 2rem 5%;

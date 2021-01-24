@@ -8,11 +8,10 @@ export const FooterWrapper = styled.footer`
   justify-content: center;
   align-items: center;
   flex-flow: column;
-  background: #a786df;
+  /* background: #a786df; */
+  background: ${props => props.theme.footerBody};
   margin-top: auto;
-  /* background: #5d909e; */
-  /* background-color: #edf7fa; */
-  color: white;
+  /* color: white; */
   position: relative;
   .mantra {
     text-align: center;
@@ -41,8 +40,11 @@ export const FooterSocialWrapper = styled.div`
     place-items: center;
     /* padding: 1rem; */
     /* border: 1px solid; */
-    /* box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.5); */
-    /* border-radius: 50%; */
+    background: ${props => props.theme.footerEmail};
+    border: 3px solid ${props => props.theme.allPostsButton};
+
+    box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
     /* border-radius: 12% 25% 30% 20%/50% 20% 15% 30%; */
 
     box-sizing: border-box;
@@ -60,7 +62,7 @@ export const FooterSocialWrapper = styled.div`
 
 export const FooterCopyright = styled.div`
   margin-top: 2%;
-  color: white;
+  /* color: white; */
   p {
     font-size: 1rem;
     /* filter: brightness(0.8); */
@@ -76,14 +78,17 @@ export const FooterEmail = styled.div`
   bottom: 80%;
   height: 10rem;
   width: 80%;
-  background: #0e172c;
+  /* background: #0e172c; */
+  background: ${props => props.theme.footerEmail};
   border-radius: 20px;
   padding: 0 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.5);
-
+  h3 {
+    color: #fff;
+  }
   p {
     width: 50%;
     font-size: 1.25rem;
@@ -96,9 +101,10 @@ export const FooterEmail = styled.div`
     justify-content: center;
     align-items: center;
     background-color: inherit;
-    border: 3px solid #a786df;
+    border: none;
+    border: 3px solid ${props => props.theme.allPostsButton};
     border-radius: 100px 100px;
-    padding: 1% 2%;
+    padding: 2% 2%;
     a {
       width: 100%;
       text-decoration: none;

@@ -1,10 +1,10 @@
 import styled from "styled-components"
 
 export const StackTag = styled.p`
-  opacity: ${props => (props.active ? "1" : "0.5")};
-  color: #fff !important;
-  transition: all 1s;
-  background-color: ${props => (props.active ? props.color : "#888")};
+  opacity: ${props => (props.active ? "1" : "0.7")};
+  color: ${props => (props.active ? "#fff" : props.theme.tagText)} !important;
+  transition: all 0.5s;
+  background-color: ${props => (props.active ? props.color : props.theme.tag)};
   cursor: pointer;
   border: none !important;
   box-shadow: none !important;

@@ -10,7 +10,7 @@ export const HomeHeader = styled.div`
   align-items: center;
   box-sizing: border-box;
   a:not(.brand) {
-    // color: #333;
+    color: ${props=>props.theme.paragraph};
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 0.15em;
@@ -62,15 +62,14 @@ export const HomeHeaderProfileSummary = styled.div`
   transition: all 0.5s;
   .intro {
     h1 {
-      color: #333;
-
+      color: ${props=>props.theme.paragraph};
       font-weight: 700;
       span {
-        color: #53316C;
+        color: ${props=>props.theme.header};
       }
     }
     h2{
-      color: #333;
+      color: ${props=>props.theme.paragraph}
     }
 
     .summary {
