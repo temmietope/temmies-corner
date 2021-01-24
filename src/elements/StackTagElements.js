@@ -8,6 +8,7 @@ export const StackTag = styled.p`
   cursor: pointer;
   border: none !important;
   box-shadow: none !important;
+  text-transform: lowercase;
   :hover {
     transform: scale(1.07);
   }

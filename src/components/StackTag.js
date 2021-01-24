@@ -54,9 +54,13 @@ const tags = {
     color: "#92014577",
     text: "Beginners",
   },
-  accessibility: {
+  a11y: {
     color: "#3e2a8166",
-    text: "Accessibility",
+    text: "a11y",
+  },
+  frontend: {
+    color: "#a4d366",
+    text: "Frontend",
   },
 }
 const StackLang = ({ lang, active }) => {

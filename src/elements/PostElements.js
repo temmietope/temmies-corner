@@ -69,7 +69,7 @@ export const PostWrapper = styled.main`
       font-size: 1rem;
     }
   }
-  ol{
+  ol {
     margin-left: 8%;
   }
   img {
@@ -99,9 +99,9 @@ export const PostWrapper = styled.main`
       font-size: 3rem;
     } */
   }
-    @media ${props => props.theme.breakpoints.mobile} {
-      font-size: 1rem;
-    }
+  @media ${props => props.theme.breakpoints.mobile} {
+    font-size: 1rem;
+  }
   /* @media ${props => props.theme.breakpoints.mobile} {
     font-size: 1.2rem;
 
@@ -173,6 +173,10 @@ export const AuthorLink = styled.div`
     align-items: center;
     text-decoration: none;
     color: inherit;
+    p {
+      font-weight: 700;
+    }
+
     :hover {
       text-decoration: underline;
     }
@@ -191,6 +195,11 @@ export const AuthorLink = styled.div`
     margin: 1% 0;
     p {
       font-size: 0.8rem !important;
+    }
+    .link {
+      .gatsby-image-wrapper {
+        margin-right: 0.4rem !important;
+      }
     }
   }
   @media ${props => props.theme.breakpoints.small} {

@@ -88,7 +88,7 @@ export const Footer = () => {
         </a>
       </FooterSocialWrapper>
       <FooterCopyright>
-        <p>Designed and Developed by me, Temitope</p>
+        <p>Designed and Developed by me</p>
       </FooterCopyright>
     </FooterWrapper>
   )

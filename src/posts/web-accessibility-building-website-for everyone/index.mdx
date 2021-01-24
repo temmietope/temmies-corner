@@ -1,0 +1,92 @@
+---
+title: Web Accessibility - Buillding website for everyone
+slug: web-accessibility-building-website-for-everyone
+date: "2021-01-24"
+tags: a11y, frontend
+excerpt: It is important to consider the audience (users) when building a website. There are different categories of people that have access to the internet and you have to ensure that they can use your website without any hindrance, and at the same time, get the full message your website passes and offers.
+---
+
+When building a website, it is important to consider the audience (users). There are different categories of people that have access to the internet and you have to ensure that they can use your website without any hindrance, and at the same time, get the full message your website passes and offers.
+
+When we talk of different categories, we also have those with disabilities included.(no matter how little). There are different disabilities in this world, some of which include:
+
+**1. Physical disabilities** - Users with difficulties moving specific parts of their body. It affects their mobility and dexterity. This can for instance affect how they use the mouse and keyboard, or if they can use it at all.
+
+**2. Visual impairment** - Users with partial or total inability to see or to perceive color contrasts.
+
+**3. Intellectual disability** - Users who have greater difficulty with mental tasks than the average person. They have reduced capacity to read, learn tasks or process information.
+
+**4. Hearing impairment** - Users who have difficulties with hearing. It could be partial or total deafness.
+
+As developers, we need to ensure that no one, no matter their physical or mental condition, should miss out on information your website is passing.
+
+Now how do we make that happen? Web accessibility comes to the rescue.
+
+Accessibility is being able to obtain and/or use. It is the quality of being easily understood and appreciated. Web accessibility is the practice that ensures that there are no barriers that prevent interaction with/access to websites by people with disabilities.
+
+WEB ACCESSIBILITY TIPS
+
+### 1. Website should be keyboard friendly.
+
+The site should be easy to navigate through with just the keyboard, for situations when the mouse is not available. This is because many assistive technologies rely on keyboard-only navigation. You should be able to use all of your site’s major features with a keyboard and nothing else. Pages, links and content should be accessible with the keyboard only.
+
+### 2. Use Alt texts on images.
+
+For all images, ensure that you add an alt text which should give a perfect description of what the image is. The text acts as a replacement for the image if it fails to load. Also, the text is accessed by screen readers to “read” the picture. They are read aloud to blind users on a screen reader and other screen assistive technologies.
+
+###3. Don't use tables for anything except Tabular data.
+This is because can be confusing to screen readers and similar devices.
+
+###4. Design your forms for Accessibility
+Ensure you add `label` to your form elements though they might not be visible. You can add labels for screen readers and still hide them from displaying to other users.
+
+```js
+<form action="./contact.php" method="POST">
+  <label for="fullname">Full name</label>
+  <input type="text" name="fullname" id="fullname" />
+  <label for="email">Email address</label>
+  <input type="email" name="email" id="email" />
+  <label for="phone">Telephone</label>
+  <input type="number" name="phone" id="phone" />
+</form>
+```
+
+### 5. Choose Your Colors Carefully
+
+The most pressing issue is making sure text stands out against the background. Ideally, you should set a dark color against a light one, making sure that they don’t bleed into each other.
+
+### 6. Use Headers to Structure Your Content Correctly
+
+It will make your content easily understandable, and users will get the flow. You should only use one H1 per page – usually as the page title, then the h2 for subheaders and so on.
+
+### 7. Avoid Automatic Media and Navigation
+
+Avoid including elements that start without the user first prompting them. Do no autoplay video, music or othee music files.
+
+### 8. Pay attention to relatively minor things.
+
+For instance, let a link be a noticeable link, therefore, either use a different color, or underline. Also, fully write out acronyms, it helps in the reading.
+
+### 9. Always Use the Title Tag
+
+Browsers don’t always display the HTML title tag in the webpage body, but it is helpful for screen readers and tabs title. So ensure each of your website’s pages has a descriptive but short title that tells visitors what the page is all about.
+
+### 10. Reduce your divs and make use of semantic elements
+
+HTML5 provides additional elements, such as `nav` , section and `aside`, to better structure your content.
+
+### 11. Always specify your web app language
+
+```js
+<html lang="en-US"> // American english
+```
+
+```js
+<html lang="en-UK"> // British english
+```
+
+```js
+<html lang="fr"> // French
+```
+
+These are various web accessibility techniques we should start implementing in our applications, to ensure that everyone, no matter the disability, gets the full information your website is passing, and also ensure great users' experience
