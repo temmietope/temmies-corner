@@ -8,9 +8,6 @@ export const ContentCard = ({ date, title, excerpt, slug, page, tags }) => {
   const [coloredTag, setColoredTag] = useState(false)
   return (
       <CardWrapper
-        // data-sal="slide-up"
-        // data-sal-delay="50"
-        // data-sal-easing="ease"
         to={slug}
         page={page}
         onMouseEnter={() => setColoredTag(true)}
