@@ -1,0 +1,213 @@
+---
+title: Light theme.. Swoosh! Dark Theme
+slug: light-theme-swoosh-dark-theme
+date: "2021-01-27"
+featureImage: light-and-dark-theme.jpg
+tags: react, beginners, css
+keywords: theme, dark-theme, light-theme
+excerpt: Many people prefer to read on a dark screen, while others prefer the light mode. Giving users the ability to switch between these two modes is a great user experience feature. It is pretty easy to implement this in your code, and in this article, I will work you through how to do this in React using `styled-components`.
+---
+
+Many people prefer to read on a dark screen, while others prefer the light mode. Giving users the ability to switch between these two modes is a great user experience feature. It is pretty easy to implement this in your code, and in this article, I will work you through how to do this in React using `styled-components`. I used this method to implement this on my [portfolio website](temmie.me)
+
+First, (assuming you have not started a React project)
+Start a react project
+
+```
+npx create-react-app awesome-app
+```
+
+When this is done, install `styled-components`
+
+```
+npm install styled-components
+```
+
+You can check out [documentation of styled-components](https://styled-components.com/)
+
+We will now create some components
+
+###1. Theme Component
+This component will contain your preferred colors for dark mode and light mode.
+
+```js
+// theme.js
+export const lightTheme = {
+  body: "#fffffe",
+  header: "#094067",
+  text: "#5f6c7b",
+  button: "#3da9fc",
+}
+export const darkTheme = {
+  body: "#094067",
+  header: "#fffffe",
+  text: "#d8eefe",
+  button: "#3da9fc",
+}
+```
+
+###2. Wrapping the app with ThemeProvider
+To make this theme available to all pages, the component(in our case, App.js) is wrapped in the `ThemeProvider`. This way, all styled-components within the ThemeProvider has access to the provided theme, no matter how deep.
+
+```js
+import { ThemeProvider } from "styled-components"
+import { lightTheme, darkTheme } from "./theme"
+
+///STYLED-COMPONENTS
+import { H1, Layout, P } from "./styles"
+
+export default function App() {
+  return (
+    <ThemeProvider theme={lightTheme}>
+      <Layout>
+        <H1>My Awesome App</H1>
+        <P>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel....
+        </P>
+        <Button>Toggle mode</Button>
+      </Layout>
+    </ThemeProvider>
+  )
+}
+```
+
+In the above snippet, we wrapped the component with the ThemeProvider and passed the lightTheme to the theme prop.
+
+###3. Create Global Stylesheet
+With styled components, you can specify global styles that spans across your application. You do this by importing `createGlobalStyle` from styled-components. Now that our app is wrapped withing the `ThemeProvider`, every component within it now has access to the theme.
+
+```js
+// GlobalStyles.js
+import { createGlobalStyle } from "styled-components"
+export const GlobalStyles = createGlobalStyle`
+  body {
+    background: ${({ theme }) => theme.body};
+    color: ${({ theme }) => theme.text};
+    font-family: Roboto, sans-serif;
+    transition: all 0.4s linear;
+  }
+  `
+```
+
+###4. Accessing the theme prop for styled-components
+We can also go ahead to defined colors on our styled-components using the theme props
+
+```js
+// styles.js
+import styled from "styled-components"
+
+export const Layout = styled.div`
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  padding: 2%;
+  box-sizing: border-box;
+`
+
+export const H1 = styled.h1`
+  font-size: 2rem;
+  color: ${props => props.theme.header};
+`
+
+export const P = styled.p`
+  font-size: 1.2rem;
+  color: ${props => props.theme.text};
+`
+
+export const Button = styled.button`
+  border: none;
+  padding: 0.7rem 1rem;
+  background: ${props => props.theme.button};
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: ${props => props.theme.body};
+`
+```
+
+##**TOGGLE BETWEEN LIGHT MODE AND DARKMODE**
+To toggle between the two modes, we can use a custom hook, called the **useDarkMode.**
+
+```js
+// useDarkMode.js
+import { useEffect, useState } from "react"
+export const useDarkMode = () => {
+  const [theme, setTheme] = useState("light")
+  const [componentMounted, setComponentMounted] = useState(false)
+
+  const setMode = mode => {
+    window.localStorage.setItem("theme", mode)
+    setTheme(mode)
+  }
+
+  const toggleTheme = () => {
+    if (theme === "light") {
+      setMode("dark")
+    } else {
+      setMode("light")
+    }
+  }
+
+  useEffect(() => {
+    const localTheme = window.localStorage.getItem("theme")
+    if (localTheme) {
+      setTheme(localTheme)
+    } else {
+      setMode("light")
+    }
+    setComponentMounted(true)
+  }, [])
+
+  return [theme, toggleTheme, componentMounted]
+}
+```
+
+- `setMode` saves the user's preferred theme in localStorage. This ensures that when the user selects a theme, the preferred choice persists even after the user leaves the app.
+- `toggleTheme` function toggles between light theme and dark theme
+- `useEffect` lifecycle hook checks on component mounting if there is a previuosly stored theme in the localStorage, if yes, the theme is set to that value. If there isn't the theme is set to light (or dark if you please)
+
+**Next we import this custom hook to the App.js**
+
+```js
+import React, { useEffect } from "react"
+import { Button, H1, Layout, P } from "./styles"
+import { ThemeProvider } from "styled-components"
+import { lightTheme, darkTheme } from "./theme"
+import { GlobalStyles } from "./GlobalStyles"
+import { useDarkMode } from "./useDarkMode"
+
+export default function App() {
+  //New
+  const [theme, toggleTheme, componentMounted] = useDarkMode()
+  useEffect(() => {
+    if (!componentMounted) {
+      return <div />
+    }
+    // eslint-disable-next-line
+  }, [])
+  //..New
+
+  return (
+    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+      <GlobalStyles />
+      <Layout>
+        <H1>My Awesome App</H1>
+        <P>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel...
+        </P>
+        <Button onClick={() => toggleTheme()}>Toggle mode</Button>
+      </Layout>
+    </ThemeProvider>
+  )
+}
+```
+
+In the above snippet, we imported the useDarkMode custom hook which returns the theme, the toggle functionallity and the componentMounted.
+
+- First, we confirm that the component has mounted using the useEffect lifecycle hook. If it hasn't, we render an empty div.
+- We add the toggleTheme functionality to the button, which toggles the theme onClick(light and dark mode),
+- then in the ThemeProvider, we dynamically render lightTheme or darkTheme based on the theme returned by the useDarkMode hook.
+
+That is all! We can now easily toggle between the light mode and the darkmode. Below is the codesandbox for the full code.
+
+{% codesandbox broken-lake-fht2j %}
