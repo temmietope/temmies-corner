@@ -18,6 +18,7 @@ export const PostWrapper = styled.main`
     transition: all 0.5s;
     color: ${props => props.theme.header};
   }
+
   h1 {
     font-size: 2.8rem;
     font-weight: bold;
@@ -29,37 +30,45 @@ export const PostWrapper = styled.main`
     @media ${props => props.theme.breakpoints.tablet} {
       font-size: 2.5rem;
     }
+
     @media ${props => props.theme.breakpoints.mobile} {
       font-size: 2.3rem;
     }
   }
+
   h2 {
     font-size: 1.7rem;
     @media ${props => props.theme.breakpoints.tablet} {
       font-size: 1.55rem;
     }
+
     @media ${props => props.theme.breakpoints.mobile} {
       font-size: 1.4rem;
     }
   }
+
   h3 {
     font-size: 1.55rem;
     @media ${props => props.theme.breakpoints.tablet} {
       font-size: 1.4rem;
     }
+
     @media ${props => props.theme.breakpoints.mobile} {
       font-size: 1.2rem;
     }
   }
+
   h4 {
     font-size: 1.4rem;
     @media ${props => props.theme.breakpoints.tablet} {
       font-size: 1.2rem;
     }
+
     @media ${props => props.theme.breakpoints.mobile} {
       font-size: 1rem;
     }
   }
+
   p {
     margin: 1rem 0;
     line-height: 150%;
@@ -69,12 +78,19 @@ export const PostWrapper = styled.main`
       font-size: 1rem;
     }
   }
+
   a {
     color: ${props => props.theme.header};
   }
+
   ol {
     margin-left: 8%;
   }
+
+  li {
+    padding: 1% 0;
+  }
+
   img {
     border-radius: 10px;
     text-align: center;
@@ -84,18 +100,23 @@ export const PostWrapper = styled.main`
       filter: brightness(0.8);
     }
   }
+
   .full-width {
     text-align: center;
     object-fit: contain;
   }
+
   .float {
     float: left;
     margin: 2%;
     margin-left: 0;
   }
-  .prism-code {
+
+  .prism-code,
+  code {
     background: ${props => props.theme.footerEmail} !important;
   }
+
   @media ${props => props.theme.breakpoints.tablet} {
     padding: 2rem 5%;
     margin-bottom: 5%;
@@ -103,25 +124,34 @@ export const PostWrapper = styled.main`
 
     /* h1 {
       font-size: 3rem;
-    } */
+    }
+   */
   }
+
   @media ${props => props.theme.breakpoints.mobile} {
     font-size: 1rem;
   }
-  /* @media ${props => props.theme.breakpoints.mobile} {
+
+  /* @media ${props => props.theme.breakpoints.mobile}
+   {
     font-size: 1.2rem;
 
     h1 {
       font-size: 2.5rem;
     }
+  
   }
-  @media ${props => props.theme.breakpoints.small} {
+  
+  @media ${props => props.theme.breakpoints.small}
+   {
     font-size: 1rem;
 
     h1 {
       font-size: 2rem;
     }
-  } */
+  
+  }
+   */
 `
 
 export const TagsAndDate = styled.div`
@@ -155,9 +185,11 @@ export const Tags = styled.div`
     margin: 0 0.3rem;
     border-radius: 5px;
   }
+
   p:nth-child(1) {
     margin-left: 0;
   }
+
   @media ${props => props.theme.breakpoints.mobile} {
     margin: 1% 0;
     p {
@@ -187,27 +219,33 @@ export const AuthorLink = styled.div`
       text-decoration: underline;
     }
   }
+
   p {
     padding: 0 1%;
     margin: 0;
   }
+
   @media ${props => props.theme.breakpoints.tablet} {
     p {
       font-size: 1rem !important;
     }
+
     margin-bottom: 3%;
   }
+
   @media ${props => props.theme.breakpoints.mobile} {
     margin: 1% 0;
     p {
       font-size: 0.8rem !important;
     }
+
     .link {
       .gatsby-image-wrapper {
         margin-right: 0.4rem !important;
       }
     }
   }
+
   @media ${props => props.theme.breakpoints.small} {
     p {
       font-size: 0.6rem !important;
