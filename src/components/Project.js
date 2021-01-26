@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import StackLang from "./StackTag"
 import { useStaticQuery, graphql } from "gatsby"
 import { Project, ProjectsList, StackWrapper, H2, P } from "../elements"
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa"
 
 const ProjectCard = ({ project }) => {
   const [coloredTag, setColoredTag] = useState(false)
@@ -17,12 +18,6 @@ const ProjectCard = ({ project }) => {
         publicURL
       }
       reactDevtoEmbed: file(relativePath: { eq: "react-devto-embed.svg" }) {
-        publicURL
-      }
-      goTo: file(relativePath: { eq: "go-to-arrow.svg" }) {
-        publicURL
-      }
-      github: file(relativePath: { eq: "github-dark.svg" }) {
         publicURL
       }
     }
@@ -52,7 +47,7 @@ const ProjectCard = ({ project }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={data.github.publicURL} alt="my logo" />
+              <FaGithub />
             </a>
           )}
           {project.hostedLink && (
@@ -61,7 +56,7 @@ const ProjectCard = ({ project }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={data.goTo.publicURL} alt="my logo" />
+              <FaExternalLinkAlt />
             </a>
           )}
         </div>

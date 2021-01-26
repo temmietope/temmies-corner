@@ -54,7 +54,7 @@ export const Project = styled.div`
       transition: all 0.8s;
     }
   }
-  .desc{
+  .desc {
     padding: 3% 0;
   }
   .project-content {
@@ -100,6 +100,18 @@ export const Project = styled.div`
       width: 1.3rem;
       height: 1.3rem;
       margin: 0 1rem;
+    }
+    svg{
+      width: 1.3rem;
+      height: 1.3rem;
+      margin: 0 1rem;
+      path{
+        fill: ${props => props.theme.paragraph};
+      }
+      :hover{
+        filter: brightness(0.8);
+      }
+      
     }
   }
   :hover {

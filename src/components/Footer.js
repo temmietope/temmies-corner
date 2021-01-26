@@ -10,10 +10,13 @@ import {
   FooterEmail,
 } from "../elements"
 
-export const Footer = () => {
+export const Footer = ({ theme }) => {
   const data = useStaticQuery(graphql`
     query {
-      logo: file(relativePath: { eq: "logo.svg" }) {
+      lightlogo: file(relativePath: { eq: "logo.svg" }) {
+        publicURL
+      }
+      darklogo: file(relativePath: { eq: "white-logo.svg" }) {
         publicURL
       }
       twitter: file(relativePath: { eq: "twitter.svg" }) {
@@ -50,7 +53,14 @@ export const Footer = () => {
       </FooterEmail>
       <Logo>
         <Link to="/" className="brand" onClick={() => window.scrollTo(0, 0)}>
-          <img src={data.logo.publicURL} alt="brand-logo" />
+          <img
+            src={
+              theme === "light"
+                ? data.lightlogo.publicURL
+                : data.darklogo.publicURL
+            }
+            alt="my logo"
+          />
         </Link>
       </Logo>
       <div className="mantra">

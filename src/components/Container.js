@@ -48,7 +48,7 @@ export const Container = ({ children }) => {
         />
         <ContainerDiv>{children}</ContainerDiv>
         <span ref={footer} style={{ width: "100%" }}>
-          <Footer />
+          <Footer theme={theme}/>
         </span>
       </ContainerWrapper>
     </ThemeProvider>
