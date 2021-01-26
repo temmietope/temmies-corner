@@ -63,6 +63,8 @@ export const FooterSocialWrapper = styled.div`
 export const FooterCopyright = styled.div`
   margin-top: 2%;
   /* color: white; */
+  color: ${props => props.theme.paragraph};
+
   p {
     font-size: 1rem;
     /* filter: brightness(0.8); */
