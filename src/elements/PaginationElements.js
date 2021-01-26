@@ -46,7 +46,7 @@ export const PaginationWrapper = styled.ul`
     props.page === "singlePost" ? "space-between" : "center"};
   align-items: center;
   height: 4rem;
-  box-shadow: 0px 3px 6px #d9d4e7;
+  box-shadow: 0px 2px 4px #d9d4e7;
   padding: 0 2%;
   margin-top: 2rem;
   box-sizing: border-box;
@@ -69,8 +69,7 @@ export const PaginationElement = styled(props => <Link {...props} />)`
   line-height: 1.125rem;
   font-weight: 400;
   padding: 0 1rem;
-  color: ${props=>props.theme.paragraph}
-;
+  color: ${props => props.theme.paragraph};
 
   &:hover,
   &:focus {
@@ -88,7 +87,7 @@ export const PaginationElement = styled(props => <Link {...props} />)`
     css`
       font-weight: 700;
       font-size: 1rem;
-      padding:0 0.5rem;
+      padding: 0 0.5rem;
       @media ${props => props.theme.breakpoints.tablet} {
         font-size: 0.6rem;
         line-height: 100%;

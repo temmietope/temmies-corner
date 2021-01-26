@@ -69,6 +69,9 @@ export const PostWrapper = styled.main`
       font-size: 1rem;
     }
   }
+  a {
+    color: ${props => props.theme.header};
+  }
   ol {
     margin-left: 8%;
   }
@@ -90,8 +93,8 @@ export const PostWrapper = styled.main`
     margin: 2%;
     margin-left: 0;
   }
-  .prism-code{
-    background: ${props=>props.theme.footerEmail} !important;
+  .prism-code {
+    background: ${props => props.theme.footerEmail} !important;
   }
   @media ${props => props.theme.breakpoints.tablet} {
     padding: 2rem 5%;

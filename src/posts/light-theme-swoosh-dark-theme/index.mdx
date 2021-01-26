@@ -8,16 +8,7 @@ keywords: theme, dark-theme, light-theme
 excerpt: Many people prefer to read on a dark screen, while others prefer the light mode. Giving users the ability to switch between these two modes is a great user experience feature. It is pretty easy to implement this in your code, and in this article, I will work you through how to do this in React using `styled-components`.
 ---
 
-Many people prefer to read on a dark screen, while others prefer the light mode. Giving users the ability to switch between these two modes is a great user experience feature. It is pretty easy to implement this in your code, and in this article, I will work you through how to do this in React using `styled-components`. I used this method to implement this on my [portfolio website](temmie.me)
-
-First, (assuming you have not started a React project)
-Start a react project
-
-```
-npx create-react-app awesome-app
-```
-
-When this is done, install `styled-components`
+Many people prefer to read on a dark screen, while others prefer the light mode. Giving users the ability to switch between these two modes is a great user experience feature. It is pretty easy to implement this in your code, and in this article, I will work you through how to do this in React using `styled-components`. I used this method to implement this website
 
 ```
 npm install styled-components
@@ -27,7 +18,7 @@ You can check out [documentation of styled-components](https://styled-components
 
 We will now create some components
 
-###1. Theme Component
+### 1. Theme Component
 This component will contain your preferred colors for dark mode and light mode.
 
 ```js
@@ -46,7 +37,7 @@ export const darkTheme = {
 }
 ```
 
-###2. Wrapping the app with ThemeProvider
+### 2. Wrapping the app with ThemeProvider
 To make this theme available to all pages, the component(in our case, App.js) is wrapped in the `ThemeProvider`. This way, all styled-components within the ThemeProvider has access to the provided theme, no matter how deep.
 
 ```js
@@ -73,7 +64,7 @@ export default function App() {
 
 In the above snippet, we wrapped the component with the ThemeProvider and passed the lightTheme to the theme prop.
 
-###3. Create Global Stylesheet
+### 3. Create Global Stylesheet
 With styled components, you can specify global styles that spans across your application. You do this by importing `createGlobalStyle` from styled-components. Now that our app is wrapped withing the `ThemeProvider`, every component within it now has access to the theme.
 
 ```js
@@ -89,7 +80,7 @@ export const GlobalStyles = createGlobalStyle`
   `
 ```
 
-###4. Accessing the theme prop for styled-components
+### 4. Accessing the theme prop for styled-components
 We can also go ahead to defined colors on our styled-components using the theme props
 
 ```js
@@ -125,7 +116,7 @@ export const Button = styled.button`
 `
 ```
 
-##**TOGGLE BETWEEN LIGHT MODE AND DARKMODE**
+## **TOGGLE BETWEEN LIGHT MODE AND DARKMODE**
 To toggle between the two modes, we can use a custom hook, called the **useDarkMode.**
 
 ```js
@@ -209,5 +200,4 @@ In the above snippet, we imported the useDarkMode custom hook which returns the 
 - then in the ThemeProvider, we dynamically render lightTheme or darkTheme based on the theme returned by the useDarkMode hook.
 
 That is all! We can now easily toggle between the light mode and the darkmode. Below is the codesandbox for the full code.
-
-{% codesandbox broken-lake-fht2j %}
+<CodeSandbox codeSandboxId="broken-lake-fht2j" editable="true" />
