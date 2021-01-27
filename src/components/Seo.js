@@ -31,7 +31,7 @@ export function Seo({
             description
             author
             keywords
-            url
+            siteUrl
           }
         }
       }
@@ -41,15 +41,15 @@ export function Seo({
 
   const image =
     metaImage && metaImage.src
-      ? `${site.siteMetadata.url}${metaImage.src}`
+      ? `${site.siteMetadata.siteUrl}${metaImage.src}`
       : null
 
   const defaultImage =
     file.childImageSharp && file.childImageSharp.resize.src
-      ? `${site.siteMetadata.url}${file.childImageSharp.resize.src}`
+      ? `${site.siteMetadata.siteUrl}${file.childImageSharp.resize.src}`
       : null
 
-  const canonical = pathname ? `${site.siteMetadata.url}${pathname}` : null
+  const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
   const metaKeywords = keywords
     ? site.siteMetadata.keywords.concat(keywords)
     : site.siteMetadata.keywords
@@ -103,7 +103,7 @@ export function Seo({
         },
         {
           property: `og:url`,
-          content: canonical || site.siteMetadata.url,
+          content: canonical || site.siteMetadata.siteUrl,
         },
         {
           name: `twitter:creator`,
@@ -187,5 +187,3 @@ Seo.propTypes = {
   }),
   pathname: PropTypes.string,
 }
-
-// export default Seo

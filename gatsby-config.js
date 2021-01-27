@@ -4,10 +4,18 @@ module.exports = {
     title: "Temitope Ayodele | Frontend Engineer",
     description:
       "Temitope Ayodele's personal website. She is a Frontend and Web Accessibility Engineer and she is passionate about optimizing for web performance, user experience and accessibility.",
-    url: "https://temmie.me",
+    siteUrl: "https://temmie.me",
     twitterUsername: "@temmmie_",
     author: "Temitope Ayodele",
-    keywords: ["frontend", "tech", "javascript", "framework", "react", "vue"],
+    keywords: [
+      "frontend",
+      "tech",
+      "javascript",
+      "framework",
+      "react",
+      "vue",
+      "blog",
+    ],
   },
   plugins: [
     {
@@ -35,6 +43,8 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-mdx-embed`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-robots-txt`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
