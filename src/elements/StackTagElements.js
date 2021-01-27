@@ -20,6 +20,7 @@ export const StackTag = styled.p`
   }
   @media ${props => props.theme.breakpoints.small} {
     opacity: 1;
+    color: #fff !important;
     background-color: ${props => props.color && props.color};
   }
 `
