@@ -83,7 +83,8 @@ export const PostWrapper = styled.main`
     color: ${props => props.theme.header};
   }
 
-  ol {
+  ol,
+  ul {
     margin-left: 8%;
   }
 
@@ -111,6 +112,31 @@ export const PostWrapper = styled.main`
     margin: 2%;
     margin-left: 0;
   }
+  .text-left {
+    text-align: left;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  table td,
+  table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  table tr:hover {
+    filter: brightness(0.7);
+  }
+
+  table th {
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    text-align: left;
+    background-color: ${props => props.theme.footerEmail} !important;
+    color: white;
+  }
 
   .prism-code,
   code {
@@ -121,11 +147,6 @@ export const PostWrapper = styled.main`
     padding: 2rem 5%;
     margin-bottom: 5%;
     font-size: 1.3rem;
-
-    /* h1 {
-      font-size: 3rem;
-    }
-   */
   }
 
   @media ${props => props.theme.breakpoints.mobile} {

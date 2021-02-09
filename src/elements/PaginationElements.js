@@ -48,6 +48,7 @@ export const PaginationWrapper = styled.ul`
   height: 4rem;
   box-shadow: 0px 2px 4px #d9d4e7;
   padding: 0 2%;
+  margin-left: 0 !important;
   margin-top: 2rem;
   box-sizing: border-box;
   @media ${props => props.theme.breakpoints.tablet} {
