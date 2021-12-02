@@ -104,8 +104,8 @@ export const HomeHeaderAvatar = styled.div`
   display: flex;
   align-items: center;
   margin-left: 5%;
-  width: 18rem;
-  height: 18rem;
+  width: 20rem;
+  height: 22rem;
   transition: all 0.5s;
   .gatsby-image-wrapper {
     transition: all 0.5s;
