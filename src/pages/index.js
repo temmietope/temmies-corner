@@ -8,6 +8,7 @@ import Stack from "../components/Stack"
 
 export default function Home({ data, location }) {
   const posts = data.allMdx.edges
+
   return (
     <Container>
       <Seo pathname={location.pathname} title="Home" />

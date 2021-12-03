@@ -1,0 +1,103 @@
+---
+title: Logical Assignment Operators
+slug: logical-assignment-operators
+date: "2021-12-03"
+tags: javascript, beginners, es6
+keywords: theme, dark-theme, light-theme
+excerpt: Logical Assignment Operators was introduced in the ECMAScript 2021 update. It is a new feature that combines the assignment operator(=) with the logical operators (||, &&, ??). It that allows you to assign a value to a variable if true (&&=), false (||=) or null (??=).
+---
+
+Logical Assignment Operators was introduced in the ECMAScript 2021 update. It is a new feature that combines the assignment operators with the logical operators (||, &&, ??). It that allows you to assign a value to a variable if true (`&&=`), false (`||=`) or null (`??=`).
+
+## Types of Logical Assignment Operators
+
+- Logical OR assignment operator ||=
+- Logical AND assignment operator &&=
+- Nullish coalescing assignment operator ??=
+
+### Logical OR assignment operator ||=
+
+This accessor is used to assign a value to a variable if the variable is not already assigned. If the variable is already assigned, the value is not changed.
+
+```javascript
+//Syntax
+a ||= b
+```
+
+This syntax is also similar to:
+
+```javascript
+if (!a) {
+  a = b
+}
+```
+
+An example is
+
+```javascript
+let a = 0
+a ||= 1
+console.log(a) // 1
+```
+
+The above example assigns the value `1` to the variable `a` if the variable is not already assigned. If the variable is already assigned, the value is not changed.
+
+### Logical AND assignment operator &&=
+
+This is used to assign a value to a variable only if the value is a truthy
+
+```javascript
+// Syntax
+a &&= b
+```
+
+This syntax is also similar to:
+
+```javascript
+if (a) {
+  a = b
+}
+```
+
+An example is
+
+```javascript
+let a = 0
+a &&= 1
+console.log(a) // 0
+```
+
+In the above example, a is a falsy value, so it will not be reassigned. It will only reassign if the value is truthy.
+
+```javascript
+let a = 4
+a &&= 1
+console.log(a) // 1
+```
+
+### Nullish coalescing assignment operator ??=
+
+This is similar to the Logical OR assignment operator ||=, however, it only reassigns if the left operand is **null** or **undefined**.
+
+```javascript
+// Syntax
+a ??= b
+```
+
+This syntax is also similar to:
+
+```javascript
+if (typeof a === "undefined" || a === null) {
+  a = b
+}
+```
+
+```javascript
+let a = 0
+a ??= 1
+console.log(a) // 0
+
+let b = null
+b ??= 1
+console.log(b) // 1
+```

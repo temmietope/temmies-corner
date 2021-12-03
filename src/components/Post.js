@@ -1,6 +1,10 @@
 import React from "react"
-import { PostWrapper } from "../elements"
+import { PostContainer, PostWrapper } from "../elements"
 
 export const Post = ({ children }) => {
-  return <PostWrapper>{children}</PostWrapper>
+  return (
+    <PostWrapper>
+      <PostContainer>{children}</PostContainer>
+    </PostWrapper>
+  )
 }

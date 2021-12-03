@@ -1,0 +1,189 @@
+---
+title: Logical Operators
+slug: logical-operators
+date: "2021-12-03"
+tags: javascript, beginners, es6
+featureImage: logical-operators.JPG
+keywords: theme, dark-theme, light-theme
+excerpt: Logical operators allow you to compare values and assign a value to a variable if it marches the condition. There are a four logical operators, Logical OR, Logical AND, Logical NOT, Nullish coalescing operator (||, &&, !, ??)
+---
+
+Logical operators are very useful in Javascript as they allow you to compare values and assign a value to a variable if it marches the condition.
+
+There are a four logical operators
+
+## Types of Logical Operators
+
+- Logical OR operator `||`
+- Logical AND operator `&&`
+- Logical NOT operator `!`
+- Nullish coalescing operator `??`
+
+## Logical OR
+
+This is represented with double pipe `||`. It returns the first truthy value of the expression. It is a short-circuit evaluation, so it stops evaluating the right operand if the left operand is true, that is, it keeps processing the arguments until it finds a truthy value and returns immediately, or until it reaches the end of the arguments.
+In other words, for the expression to be evaluated as true, _one of the operands must be true_. If the left operand is true, it evaluates to true even if the right operand is false. If the left operand is false, it evaluates to the right operand. Any value is allowed as an operand. The operand is converted to boolean and if it evaluates to true, it returns the original value, otherwise it returns the right operand.
+
+```javascript
+//Syntax
+true || true // true
+true || false // true
+false || true // true
+false || false // false
+```
+
+```javascript
+let firstName = ""
+let lastName = ""
+
+console.log(firstName || lastName || "Anonymous") // Anonymous
+```
+
+## Logical AND:
+
+This is represented with the double ampersand `&&`. It returns the first falsy value of the expression. For the expression to be evaluated as true, _both operands must be true_. If the left operand is false, it evaluates to false even if the right operand is true. If the left operand is true, it evaluates to the right operand. It is also a short-circuit evaluation, so it stops evaluating the right operand if the left operand is false, that is, it keeps processing the arguments until it finds a false value and returns immediately, or until it reaches the end of the arguments.
+
+```javascript
+//Syntax
+true && true // true
+true && false // false
+false && false // false
+```
+
+```javascript
+console.log(1 && 2 && null && 3) // null
+```
+
+## Logical NOT:
+
+It is represented with the exclamation sign `!`. It accepts only one value as an operand and negates the value. It converts the operand to boolean, if it evaluates to true, it returns false, otherwise it returns true. (ie, return the inverse value)
+
+```javascript
+!true // false
+!false // true
+!0 // true
+```
+
+```javascript
+const employed = true
+console.log(!employed) // false
+```
+
+In the example above, employed is true, but adding the logical NOT (!) operator to it, negates it, hence it will return false.
+This operator is based on a set of rules
+
+```javascript
+let a
+// If a is undefined, the result is true.
+a = undefined
+console.log(!a) // true
+// If a is null, the result is true.
+a = null
+console.log(!a) // true
+// If a is a number other than 0, the result is false.
+a = 42
+console.log(!a) // false
+// If a is NaN, the result is true.
+a = NaN
+console.log(!a) // true
+// If a is an empty string, the result is true. In case a is a non-empty string, the result is false
+a = ""
+console.log(!a) // true
+a = "test string"
+console.log(!a) // false
+// If a is an object, the result is false.
+a = {}
+console.log(!a) // false
+```
+
+## Nullish Coalescing:
+
+This is represented by two question marks `??`. It returns the right operand if the left operand is null or undefined. If the left operand is not null or undefined, it returns the left operand. It returns the first truthy value of the expression.
+
+```javascript
+//Syntax
+null ?? "default" // "default"
+
+const foobar = null ?? "fallback"
+console.log(foobar) // 'fallback'
+
+const bar = "rice" ?? "beans"
+console.log(bar) // 'rice'
+
+// Example 2
+
+const staff = {
+  name: "John",
+  age: 30,
+  isAdmin: true,
+}
+
+const staffName = staff.name ?? "Guest"
+const staffAge = staff.age ?? 18
+const staffAddress = staff.address ?? "Unknown"
+const staffIsAdmin = staff.isAdmin ?? false
+
+console.log(staffName, staffAge, staffAddress, staffIsAdmin) // John 30 Unknown true
+```
+
+### ORDER OF PRECEDENCE OF LOGICAL OPERATORS
+
+The logical operators are evaluated from left to right., but when used together in an expression there is an order of precedence. The order of precedence is:
+
+    1. Logical NOT
+    2. Logical AND
+    3. Logical OR
+    4. Nullish Coalescing
+
+| Logical Operator | PRECEDENCE |
+| ---------------- | ---------- |
+| Logical NOT      | High       |
+| Logical AND      | Medium     |
+| Logical OR       | Low        |
+
+For example,
+
+```javascript
+a && b || c is evaluated as (a && b) || c
+a || b && c is evaluated as a || (b && c)
+a && b && c || d is evaluated as (a && b && c) || d
+a || b || c && d is evaluated as a || b || (c && d)
+a && b || c && d is evaluated as (a && b) || (c && d)
+!(a && b) || c && d is evaluated as (!(a && b) || (c && d))
+!a || b && c is evaluated as !a || (b && c)
+!a && b || c is evaluated as (!a && b) || c
+```
+
+Parentheses can be used to clarify the precedence of the logical operators. For example, the following expression is evaluated as (a && b) || c: (a && b) || c. The parentheses are not necessary, but they are used to clarify the precedence of the logical operators. The following expression is evaluated as a || (b && c): a || (b && c).
+
+```javascript
+(a && b) || c is evaluated as (a && b) || c
+(a || b) && c is evaluated as (a || b) && c
+```
+
+### DIFFERENCE BETWEEN LOGICAL OR AND NULLISH COALESCING ( || vs ??)
+
+The OR operator uses the right operand if the left operand is falsy, but the Nullish coalescing operator uses the right operand if the left operand is null or undefined, ie, only null and undefined are falsy.
+
+Falsy values for OR operator: `false, 0, "", null, undefined`
+
+Falsy values for null coalescing operator: `null, undefined`
+
+```javascript
+false || "age" // 'age'
+false ?? "age" // false
+
+null || "age" // 'age'
+null ?? "age" // 'age'
+
+"" || "age" // 'age'
+"" ?? "age" // ''
+
+0 || "age" //'age'
+0 ?? "age" //0
+```
+
+**When should you use either the logical OR or the nullish coalescing operator?**
+?? only works for null and undefined values, so only use this if false, 0 or an empty string are valid values for your expression and you only want to protect against null or undefined.
+
+|| use this when you expect your value to be valid and not have any falsy values, that is, you don't expect an empty string or 0 or false, or null or undefined.

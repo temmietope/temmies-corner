@@ -1,12 +1,13 @@
 import styled from "styled-components"
 
 export const PostWrapper = styled.main`
-  padding: 0rem 8rem;
+  display: flex;
+  justify-content: center;
+
   margin-bottom: 10rem;
   font-size: 1.1rem;
   color: ${props => props.theme.paragraph};
 
-  /* font-size: 1.5rem; */
   h1,
   h2,
   h3,
@@ -14,9 +15,9 @@ export const PostWrapper = styled.main`
   h5,
   h6 {
     line-height: 120%;
-    margin: 3% 0;
     transition: all 0.5s;
     color: ${props => props.theme.header};
+    margin-top: 2rem;
   }
 
   h1 {
@@ -24,6 +25,8 @@ export const PostWrapper = styled.main`
     font-weight: bold;
     text-align: center;
     padding: 1rem 0;
+    margin: 3% 0;
+
     /* margin: 5% 0; */
     margin: 0;
     margin-bottom: 1%;
@@ -85,11 +88,11 @@ export const PostWrapper = styled.main`
 
   ol,
   ul {
-    margin-left: 8%;
+    margin-left: 5%;
   }
 
   li {
-    padding: 1% 0;
+    padding: 0.5rem 0;
   }
 
   img {
@@ -144,7 +147,6 @@ export const PostWrapper = styled.main`
   }
 
   @media ${props => props.theme.breakpoints.tablet} {
-    padding: 2rem 5%;
     margin-bottom: 5%;
     font-size: 1.3rem;
   }
@@ -152,27 +154,22 @@ export const PostWrapper = styled.main`
   @media ${props => props.theme.breakpoints.mobile} {
     font-size: 1rem;
   }
+`
 
-  /* @media ${props => props.theme.breakpoints.mobile}
-   {
-    font-size: 1.2rem;
+export const PostContainer = styled.div`
+  width: 50%;
 
-    h1 {
-      font-size: 2.5rem;
-    }
-  
+  @media ${props => props.theme.breakpoints.desktop} {
+    width: 65%;
   }
-  
-  @media ${props => props.theme.breakpoints.small}
-   {
-    font-size: 1rem;
 
-    h1 {
-      font-size: 2rem;
-    }
-  
+  @media ${props => props.theme.breakpoints.tablet} {
+    width: 80%;
   }
-   */
+
+  @media ${props => props.theme.breakpoints.mobile} {
+    width: 88%;
+  }
 `
 
 export const TagsAndDate = styled.div`
