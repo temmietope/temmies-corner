@@ -8,7 +8,7 @@ export default function Pagination({
   prevPage,
   nextPage,
   numPages,
-  currentPage,
+  currentpage,
 }) {
   return (
     <PaginationWrapper isFirst={isFirst} isLast={isLast} numPages={numPages}>
@@ -24,7 +24,7 @@ export default function Pagination({
         <li key={`pagination-number${i + 1}`}>
           <PaginationElement
             to={`/blog/${i === 0 ? "" : i + 1}`}
-            currentPage={i + 1 === currentPage}
+            currentpage={i + 1 === currentpage}
           >
             {i + 1}
           </PaginationElement>

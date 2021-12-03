@@ -77,7 +77,7 @@ export const PaginationElement = styled(props => <Link {...props} />)`
     text-decoration: underline;
   }
   ${props =>
-    props.currentPage &&
+    props.currentpage &&
     css`
       text-decoration: underline;
       border-radius: 50%;

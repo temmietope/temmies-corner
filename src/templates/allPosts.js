@@ -4,11 +4,11 @@ import { Content, Container, ContentCard, Seo, PageHead } from "../components"
 import Pagination from "../components/Pagination"
 
 export default function allPosts({ pageContext, data, location }) {
-  const { currentPage, numPages } = pageContext
-  const isFirst = currentPage === 1
-  const isLast = currentPage === numPages
-  const prevPage = currentPage - 1 === 1 ? "/blog" : `/blog/${currentPage - 1}`
-  const nextPage = `/blog/${currentPage + 1}`
+  const { currentpage, numPages } = pageContext
+  const isFirst = currentpage === 1
+  const isLast = currentpage === numPages
+  const prevPage = currentpage - 1 === 1 ? "/blog" : `/blog/${currentpage - 1}`
+  const nextPage = `/blog/${currentpage + 1}`
   const posts = data.allMdx.edges
   return (
     <Container>
@@ -44,7 +44,7 @@ export default function allPosts({ pageContext, data, location }) {
           isLast={isLast}
           prevPage={prevPage}
           nextPage={nextPage}
-          currentPage={currentPage}
+          currentpage={currentpage}
           numPages={numPages}
         />
       </Content>

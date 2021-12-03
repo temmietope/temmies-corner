@@ -40,7 +40,7 @@ exports.createPages = async function ({ actions, graphql }) {
         limit: postPerPage,
         skip: i * postPerPage,
         numPages,
-        currentPage: i + 1,
+        currentpage: i + 1,
       },
     })
   })

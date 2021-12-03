@@ -18,6 +18,7 @@ export const Container = ({ children }) => {
         /* height: 100%; */
         background-color: ${props => props.theme.body};
         scroll-behavior: smooth;
+
   @media ${props => props.theme.breakpoints.mobile} {
         .no-scroll{
           overflow: hidden;
